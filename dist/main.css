@@ -4,3 +4,7 @@ html {
 .container-small {
   max-width: 29rem;
 }
+
+.form-input-borderless:focus {
+  border-color: transparent;
+}

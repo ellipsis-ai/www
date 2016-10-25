@@ -47,8 +47,8 @@ var SignupForm = React.createClass({
   onEmailKeyPress: function(event) {
     if (event.which === 13) {
       event.preventDefault();
-      event.target.blur();
       if (this.hasEmail() && !this.props.hasClickedOk) {
+        event.target.blur();
         this.onOk();
       }
     }
