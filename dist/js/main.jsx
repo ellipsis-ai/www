@@ -217,10 +217,6 @@ var SignupForm = React.createClass({
                   onKeyPress={this.onSubmit}
                 />
               </div>
-              <div id="mce-responses" className="clear">
-                <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-                <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
-              </div>
             </div>
           </div>
         </div>
@@ -234,7 +230,7 @@ var SignupForm = React.createClass({
         <div>
           <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true"><input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_6ad5b3cc3f" tabIndex="-1" value="" /></div>
           <div className="mtxl align-c">
-            <button type="submit" name="subscribe" className="button button-primary" disabled={!!this.state.oneTask}>
+            <button type="submit" name="subscribe" className="button button-primary">
               Keep me updated
             </button>
           </div>

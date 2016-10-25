@@ -252,12 +252,6 @@
                   placeholder: "Totally optional\u2026 press enter to skip",
                   onKeyPress: this.onSubmit
                 })
-              ),
-              React.createElement(
-                "div",
-                { id: "mce-responses", className: "clear" },
-                React.createElement("div", { className: "response", id: "mce-error-response", style: { display: "none" } }),
-                React.createElement("div", { className: "response", id: "mce-success-response", style: { display: "none" } })
               )
             )
           )
@@ -280,7 +274,7 @@
             { className: "mtxl align-c" },
             React.createElement(
               "button",
-              { type: "submit", name: "subscribe", className: "button button-primary", disabled: !!this.state.oneTask },
+              { type: "submit", name: "subscribe", className: "button button-primary" },
               "Keep me updated"
             )
           )
