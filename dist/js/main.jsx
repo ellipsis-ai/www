@@ -277,7 +277,7 @@ var SignupForm = React.createClass({
 });
 
 function nextCharSpeed() {
-   return Math.random() * (50 - 10) + 10;
+   return Math.random() * (40 - 10) + 10;
 }
 
 var counter = 8;
