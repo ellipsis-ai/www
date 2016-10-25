@@ -1,2 +1,0 @@
-#!/bin/sh
-node_modules/.bin/babel js/main.jsx > js/main.js
