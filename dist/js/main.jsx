@@ -35,7 +35,8 @@ var SignupForm = React.createClass({
   getInitialState: function() {
     return {
       email: '',
-      oneTask: ''
+      oneTask: '',
+      hasScrolled: false
     };
   },
 
@@ -200,7 +201,7 @@ var SignupForm = React.createClass({
     var limit = getCounterForTextAtIndex(text2, text2.length);
     if (this.props.hasClickedOk && this.props.counter > limit) {
       return (
-        <div className="column-group fade-in">
+        <div ref="section4" className="column-group fade-in">
           <div className="column-row">
             <div className="column column-shrink pvm">
               {this.renderPersonAvatar()}
@@ -230,7 +231,7 @@ var SignupForm = React.createClass({
     var limit = getCounterForTextAtIndex(text2, text2.length);
     if (this.props.hasClickedOk && this.props.counter > limit) {
       return (
-        <div>
+        <div ref="section5">
           <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true"><input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_6ad5b3cc3f" tabIndex="-1" value="" /></div>
           <div className="mtl mbxxl align-c">
             <button type="submit" name="subscribe" className="button button-primary">
@@ -275,6 +276,18 @@ var SignupForm = React.createClass({
         </g>
       </svg>
     );
+  },
+
+  componentDidUpdate: function() {
+    if (!this.state.hasScrolled && this.refs.section4 && this.refs.section5) {
+      var footerHeight = document.getElementById('footer').offsetHeight;
+      var windowBottom = window.scrollY + window.innerHeight - footerHeight;
+      var section5Bottom = this.refs.section5.offsetTop + this.refs.section5.scrollHeight;
+      var diff = section5Bottom - windowBottom;
+      if (diff <= 0) return;
+      window.scrollTo(0, window.scrollY + diff);
+      this.setState({ hasScrolled: true });
+    }
   }
 });
 

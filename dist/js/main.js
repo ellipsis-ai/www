@@ -30,7 +30,8 @@
     getInitialState: function getInitialState() {
       return {
         email: '',
-        oneTask: ''
+        oneTask: '',
+        hasScrolled: false
       };
     },
 
@@ -235,7 +236,7 @@
       if (this.props.hasClickedOk && this.props.counter > limit) {
         return React.createElement(
           "div",
-          { className: "column-group fade-in" },
+          { ref: "section4", className: "column-group fade-in" },
           React.createElement(
             "div",
             { className: "column-row" },
@@ -273,7 +274,7 @@
       if (this.props.hasClickedOk && this.props.counter > limit) {
         return React.createElement(
           "div",
-          null,
+          { ref: "section5" },
           React.createElement(
             "div",
             { style: { position: "absolute", left: "-5000px" }, "aria-hidden": "true" },
@@ -359,6 +360,18 @@
           )
         )
       );
+    },
+
+    componentDidUpdate: function componentDidUpdate() {
+      if (!this.state.hasScrolled && this.refs.section4 && this.refs.section5) {
+        var footerHeight = document.getElementById('footer').offsetHeight;
+        var windowBottom = window.scrollY + window.innerHeight - footerHeight;
+        var section5Bottom = this.refs.section5.offsetTop + this.refs.section5.scrollHeight;
+        var diff = section5Bottom - windowBottom;
+        if (diff <= 0) return;
+        window.scrollTo(0, window.scrollY + diff);
+        this.setState({ hasScrolled: true });
+      }
     }
   });
 
