@@ -2,29 +2,28 @@
 
 var text1 = [
   "👋 Hi there. I’m Ellipsis.",
-  "I’m learning how to help people be more productive at work.",
-  "If you want to know when I have any announcements, tell me your email address.",
+  "I’m learning to help people be more productive at work.",
+  "Unlike other software, I adapt to the way you and your team work. You ask questions, and I’ll do my best to get you answers.",
+  "I can also perform tedious tasks, and remember information.",
+  "I’d love to keep you updated with any announcements. What is your email address?"
 ];
 
 var text2 = [
-  "OK! Now if you have a moment before I add you to the list, there’s one more thing.",
-  "What’s one repetitive task at work you wish could be automated?"
+  "OK! Now before I add you to the list, I’d love to know:",
+  "What’s one thing I could do to help you?"
 ];
 
-var pad = "***************";
-
-var text1Counters = [
-  0,
-  text1.slice(0, 1).concat("").join(pad).length,
-  text1.slice(0, 2).concat("").join(pad).length,
-  text1.slice(0, 3).join(pad).length,
-];
-
-var text2Counters = [
-  0,
-  text2.slice(0, 1).concat("").join(pad).length,
-  text2.slice(0, 2).join(pad).length
-];
+function getCounterForTextAtIndex(textNodes, index) {
+  if (index === 0) {
+    return 0;
+  } else {
+    let sliced = textNodes.slice(0, index);
+    if (index <= textNodes.length) {
+      sliced = sliced.concat("");
+    }
+    return sliced.join("***************").length;
+  }
+}
 
 var SignupForm = React.createClass({
   propTypes: {
@@ -111,11 +110,12 @@ var SignupForm = React.createClass({
     );
   },
 
-  renderTextSlowly: function(text, textCounters, key) {
+  renderTextSlowly: function(text, key) {
     return text.map((p, i) => {
-      if (this.props.counter > textCounters[i]) {
+      let limit = getCounterForTextAtIndex(text, i);
+      if (this.props.counter > limit) {
         return (
-          <p key={`p${i}-${key}`}>{p.slice(0, this.props.counter - textCounters[i])}</p>
+          <p key={`p${i}-${key}`}>{p.slice(0, this.props.counter - limit)}</p>
         );
       }
     });
@@ -131,16 +131,17 @@ var SignupForm = React.createClass({
     if (this.props.hasClickedOk) {
       return this.renderTextImmediately(text1, 't1');
     } else {
-      return this.renderTextSlowly(text1, text1Counters, 't1');
+      return this.renderTextSlowly(text1, 't1');
     }
   },
 
   renderText2: function() {
-    return this.renderTextSlowly(text2, text2Counters, 't2');
+    return this.renderTextSlowly(text2, 't2');
   },
 
   renderSection2: function() {
-    if (this.props.hasClickedOk || this.props.counter > text1Counters[3]) {
+    var limit = getCounterForTextAtIndex(text1, text1.length);
+    if (this.props.hasClickedOk || this.props.counter > limit) {
       return (
         <div className="column-group fade-in">
           <div className="column-row">
@@ -196,7 +197,8 @@ var SignupForm = React.createClass({
   },
 
   renderSection4: function() {
-    if (this.props.hasClickedOk && this.props.counter > text2Counters[2]) {
+    var limit = getCounterForTextAtIndex(text2, text2.length);
+    if (this.props.hasClickedOk && this.props.counter > limit) {
       return (
         <div className="column-group fade-in">
           <div className="column-row">
@@ -225,15 +227,19 @@ var SignupForm = React.createClass({
   },
 
   renderSection5: function() {
-    if (this.props.hasClickedOk && this.props.counter > text2Counters[2]) {
+    var limit = getCounterForTextAtIndex(text2, text2.length);
+    if (this.props.hasClickedOk && this.props.counter > limit) {
       return (
         <div>
           <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true"><input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_6ad5b3cc3f" tabIndex="-1" value="" /></div>
-          <div className="mtxl align-c">
+          <div className="mtl mbxxl align-c">
             <button type="submit" name="subscribe" className="button button-primary">
               Keep me updated
             </button>
           </div>
+          <p className="type-xs type-weak align-c">
+            Ellipsis is being built and trained by <a href="https://twitter.com/andrewcatton" target="_blank">Andrew</a>, <a href="https://twitter.com/attaboy" target="_blank">Luke</a> and <a href="https://twitter.com/matteomelani" target="_blank">Matteo</a> in Menlo Park and Toronto.
+          </p>
         </div>
       );
     }
