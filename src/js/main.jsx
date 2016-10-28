@@ -1,17 +1,21 @@
 (function() {
 
-var text1 = [
-  "👋 Hi there. I’m Ellipsis.",
-  "I’m learning to help people be more productive at work.",
-  "Unlike other software, I adapt to the way you and your team work. You ask questions, and I’ll do my best to get you answers.",
-  "I can also perform tedious tasks, and remember information.",
-  "I’d love to keep you updated with any announcements. What is your email address?"
-];
+var text1 = (
+  <div>
+    <p>👋 Hi there. I’m <b>Ellipsis.</b></p>
+    <p>I’m learning to help people be more productive at work.</p>
+    <p>Unlike other software, I adapt to the way you and your team work. You ask questions, and I’ll do my best to get you answers.</p>
+    <p>I can also perform tedious tasks, and remember information.</p>
+    <p>I’d love to keep you updated with any announcements. <b>What is your email address?</b></p>
+  </div>
+);
 
-var text2 = [
-  "OK! Now before I add you to the list, I’d love to know:",
-  "What’s one thing I could do to help you?"
-];
+var text2 = (
+  <div>
+    <p>OK! Now before I add you to the list, I’d love to know:</p>
+    <p>What’s <b>one thing</b> I could do to help you?</p>
+  </div>
+);
 
 function getCounterForTextAtIndex(textNodes, index) {
   if (index === 0) {
@@ -36,7 +40,9 @@ var SignupForm = React.createClass({
     return {
       email: '',
       oneTask: '',
-      hasScrolled: false
+      hasScrolled: false,
+      text1Rendered: false,
+      text2Rendered: false
     };
   },
 
@@ -60,10 +66,6 @@ var SignupForm = React.createClass({
 
   onOk: function() {
     this.props.onOk();
-  },
-
-  onSubmit: function() {
-
   },
 
   hasEmail: function() {
@@ -104,45 +106,79 @@ var SignupForm = React.createClass({
             {this.renderEllipsisAvatar()}
           </div>
           <div className="column column-expand">
-            {this.renderText1()}
+            <div ref="text1">
+              {this.renderText1()}
+            </div>
           </div>
         </div>
       </div>
     );
   },
 
-  renderTextSlowly: function(text, key) {
-    return text.map((p, i) => {
-      let limit = getCounterForTextAtIndex(text, i);
-      if (this.props.counter > limit) {
-        return (
-          <p key={`p${i}-${key}`}>{p.slice(0, this.props.counter - limit)}</p>
+  sliceTextFromNodes: function(node, limit, cursor) {
+    var results = [];
+    var nodes = React.Children.toArray(node.props.children);
+    var numNodes = nodes.length;
+    var index = 0;
+    while (cursor.position < limit && index < numNodes) {
+      if (typeof nodes[index] === 'string') {
+        let slicedString = nodes[index].slice(0, limit - cursor.position);
+        results.push(slicedString);
+        cursor.position += slicedString.length;
+      } else {
+        results.push(
+          React.cloneElement.apply(this, [
+            nodes[index], nodes[index].props
+          ].concat(
+            this.sliceTextFromNodes(
+              nodes[index],
+              limit,
+              cursor
+            )
+          ))
         );
       }
-    });
-  },
-
-  renderTextImmediately: function(text, key) {
-    return text.map((p, i) => (
-      <p key={`p${i}-${key}`}>{p}</p>
-    ));
+      index++;
+    }
+    if (cursor.position < limit) {
+      // After a paragraph, cheat with the cursor to delay the next paragraph
+      if (node.type === 'p') {
+        cursor.position += 15;
+      }
+      return node;
+    } else {
+      return React.cloneElement.apply(this, [
+        node, node.props
+      ].concat(results));
+    }
   },
 
   renderText1: function() {
-    if (this.props.hasClickedOk) {
-      return this.renderTextImmediately(text1, 't1');
+    if (this.props.hasClickedOk || this.state.text1Rendered) {
+      return text1;
     } else {
-      return this.renderTextSlowly(text1, 't1');
+      var result = this.sliceTextFromNodes(text1, this.props.counter, { position: 0 });
+      if (result === text1) {
+        this.setState({ text1Rendered: true });
+      }
+      return result;
     }
   },
 
   renderText2: function() {
-    return this.renderTextSlowly(text2, 't2');
+    if (this.state.text2Rendered) {
+      return text2;
+    } else {
+      var result = this.sliceTextFromNodes(text2, this.props.counter, { position: 0 });
+      if (result === text2) {
+        this.setState({ text2Rendered: true });
+      }
+      return result;
+    }
   },
 
   renderSection2: function() {
-    var limit = getCounterForTextAtIndex(text1, text1.length);
-    if (this.props.hasClickedOk || this.props.counter > limit) {
+    if (this.props.hasClickedOk || this.state.text1Rendered) {
       return (
         <div className="column-group fade-in">
           <div className="column-row">
@@ -198,8 +234,7 @@ var SignupForm = React.createClass({
   },
 
   renderSection4: function() {
-    var limit = getCounterForTextAtIndex(text2, text2.length);
-    if (this.props.hasClickedOk && this.props.counter > limit) {
+    if (this.props.hasClickedOk && this.state.text2Rendered) {
       return (
         <div ref="section4" className="column-group fade-in">
           <div className="column-row">
@@ -217,7 +252,6 @@ var SignupForm = React.createClass({
                   className="form-input form-input-borderless"
                   id="mce-ONETASK"
                   placeholder="Totally optional… press enter to skip"
-                  onKeyPress={this.onSubmit}
                 />
               </div>
             </div>
@@ -228,8 +262,7 @@ var SignupForm = React.createClass({
   },
 
   renderSection5: function() {
-    var limit = getCounterForTextAtIndex(text2, text2.length);
-    if (this.props.hasClickedOk && this.props.counter > limit) {
+    if (this.props.hasClickedOk && this.state.text2Rendered) {
       return (
         <div ref="section5">
           <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true"><input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_6ad5b3cc3f" tabIndex="-1" value="" /></div>
@@ -288,6 +321,12 @@ var SignupForm = React.createClass({
       window.scrollTo(0, window.scrollY + diff);
       this.setState({ hasScrolled: true });
     }
+  },
+
+  shouldComponentUpdate: function(nextProps, nextState) {
+    return (nextState !== this.state) ||
+      (!this.state.text1Rendered) ||
+      (nextProps.hasClickedOk && !this.state.text2Rendered);
   }
 });
 
