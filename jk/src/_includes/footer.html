@@ -1,10 +1,10 @@
 <footer class="bg-black type-white">
   <div class="container pvxxl">
-    <p class="type-l">
+    <p class="type-l type-light">
       Ellipsis helps you and your team get work done.
     </p>
 
-    <div class="columns">
+    <div class="columns type-s">
       <div class="column column-one-half">
         {% assign default_paths = site.pages | map: "path" %}
         {% assign page_paths = site.header_pages | default: default_paths %}
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <hr />
+    <hr class="mtl" />
 
     <div class="columns">
       <div class="column column-one-half">
