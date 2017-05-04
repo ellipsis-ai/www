@@ -5,4 +5,4 @@ dist/
 .idea/
 *.iml
 .sass-cache/
-jk/src/_site/
+src/_site/
