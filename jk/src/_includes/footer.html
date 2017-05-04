@@ -1,46 +1,49 @@
-<footer class="site-footer">
+<footer class="bg-black type-white">
+  <div class="container pvxxl">
+    <p class="type-l">
+      Ellipsis helps you and your team get work done.
+    </p>
 
-  <div class="wrapper">
+    <div class="columns">
+      <div class="column column-one-half">
+        {% assign default_paths = site.pages | map: "path" %}
+        {% assign page_paths = site.header_pages | default: default_paths %}
+        {% if page_paths %}
+          <nav>
+            <div>
+              {% for path in page_paths %}
+                {% assign my_page = site.pages | where: "path", path | first %}
+                {% if my_page.title %}
+                  <div>
+                    <a class="link-light display-block pvs" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                  </div>
+                {% endif %}
+              {% endfor %}
 
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>
-            {% if site.author %}
-              {{ site.author | escape }}
-            {% else %}
-              {{ site.title | escape }}
-            {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
-        </ul>
+              <div>
+                <a class="link-light display-block pvs" href="https://bot.ellipsis.ai/">Sign in</a>
+              </div>
+            </div>
+          </nav>
+        {% endif %}
       </div>
+      <div class="column column-one-half">
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description | escape }}</p>
       </div>
     </div>
 
-  </div>
+    <hr />
 
+    <div class="columns">
+      <div class="column column-one-half">
+        <a class="display-inline-block prl align-m" href="{{ "/" | relative_url }}">
+          {% include logo_shape_pink.svg height=36 %}
+        </a>
+        <span class="display-inline-block align-m">&copy; {{ site.time | date: "%Y" }} Ellipsis Co.</span>
+      </div>
+      <div class="column column-one-half align-r">
+        {% include twitter.html height="18" username="EllipsisBot" text="@EllipsisBot" class="link-light" %}
+      </div>
+    </div>
+  </div>
 </footer>
