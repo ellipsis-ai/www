@@ -1,7 +1,7 @@
-<header class="bg-black pvxl" role="banner">
+<header class="bg-black ptxl pbl mobile-ptl mobile-pbs" role="banner">
 
-  <div class="container">
-    <div class="columns columns-elastic">
+  <div class="container container-c">
+    <div class="columns columns-elastic mobile-columns-float">
       {% assign default_paths = site.pages | map: "path" %}
       {% assign page_paths = site.header_pages | default: default_paths %}
       <div class="column column-shrink">
@@ -10,18 +10,18 @@
         </a>
       </div>
 
-      <div class="column column-expand align-r">
+      <div class="column column-expand align-r mobile-align-l">
         {% if page_paths %}
           <nav>
             <div>
               {% for path in page_paths %}
                 {% assign my_page = site.pages | where: "path", path | first %}
                 {% if my_page.title %}
-                  <a class="link-light display-inline-block align-button mhs pbm mobile-pbs" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                  <a class="link-light display-inline-block align-button mrs pbm mobile-pbs" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
                 {% endif %}
               {% endfor %}
 
-              <a class="link-light display-inline-block align-button mhs pbm mobile-pbs" href="https://bot.ellipsis.ai/">Sign in</a>
+              <a class="link-light display-inline-block align-button pbm mobile-pbs" href="https://bot.ellipsis.ai/">Sign in</a>
             </div>
           </nav>
         {% endif %}

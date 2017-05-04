@@ -1,0 +1,36 @@
+@import (reference) "colors";
+
+button.button-l {
+  font-size: 22px;
+  min-width: 240px;
+  border-width: 2px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+button.button-black {
+  background-color: @almost-black;
+  border-color: @almost-black;
+  color: @white;
+}
+
+button.button-black:hover {
+  background-color: @black;
+}
+
+button.button-black:focus {
+  border-color: @black;
+}
+
+button.button-inverted {
+  border-color: @white;
+  color: @white;
+}
+
+button.button-inverted:hover {
+  background-color: @white-subtle;
+}
+
+button.button-inverted:focus {
+  border-width: 4px;
+}

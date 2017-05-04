@@ -1,0 +1,25 @@
+@import (reference) "colors";
+
+.box-chat-large {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  padding: 6px 16px 5px;
+  background-color: @white;
+  color: @black;
+  margin: 5px 0 0 22px;
+  font-weight: 600;
+  font-size: 43px;
+  line-height: 48px;
+}
+
+.box-chat-large::after {
+  content: '';
+  position: absolute;
+  left: -22px;
+  bottom: 0;
+  width: 0;
+  border-left: 22px solid transparent;
+  border-bottom: 22px solid @white;
+}

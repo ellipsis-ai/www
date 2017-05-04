@@ -41,7 +41,19 @@ html {
   font-style: normal;
 }
 
-body, input, select, textarea, button {
+@font-face {
+  font-family: 'Grota Sans Rounded';
+  src: url('../fonts/grotasansrd-semibold-webfont.eot');
+  src: url('../fonts/grotasansrd-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/grotasansrd-semibold-webfont.woff2') format('woff2'),
+  url('../fonts/grotasansrd-semibold-webfont.woff') format('woff'),
+  url('../fonts/grotasansrd-semibold-webfont.ttf') format('truetype'),
+  url('../fonts/grotasansrd-semibold-webfont.svg#grota_sans_rdsemi_bold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+body, input, select, textarea, button, h1 {
   font-family: 'Grota Sans Rounded', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -49,4 +61,8 @@ body {
   margin: 0;
   background-color: @white;
   color: @black;
+}
+
+.container {
+  max-width: 60rem;
 }
