@@ -1,10 +1,18 @@
 version: '2'
 services:
   jekyll:
-    image: jekyll/jekyll
+    build: .
     volumes:
-      - ./src:/srv/jekyll
+      - .:/srv/jekyll
+    volumes_from:
+       - box
     ports:
       - "4000:4000"
-    # working_dir: /srv/jekyll
-    command: "jekyll serve"
+    working_dir: /srv/jekyll/src
+    command: "bundle exec jekyll serve --host=0.0.0.0"
+
+  box:
+    image: busybox
+    command: "echo hello"
+    volumes:
+      - /box
