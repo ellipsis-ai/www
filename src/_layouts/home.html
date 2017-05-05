@@ -35,9 +35,19 @@ layout: default
       </h3>
     </div>
   </div>
-  <div class="bg-white ">
-    <div class="container container-c pvxl">
-      <div class="mrxxxl"><img src="/assets/img/screenshots/calendar1060x260.png" class="width-full align-b"></div>
+  <div class="bg-white pbxxl">
+    <div class="container container-c">
+      <div class="columns">
+        <div class="column column-one-half narrow-column-two-thirds mobile-column-full">
+          {%
+            include image_fade.svg.html
+              width="100%" imageWidth="1060" imageHeight="260"
+              url="/assets/img/screenshots/calendar1060x260.png"
+              id="calendar"
+              title="Ellipsis tells you what’s on your calendar today"
+          %}
+        </div>
+      </div>
     </div>
   </div>
 
@@ -48,9 +58,15 @@ layout: default
       </h3>
     </div>
   </div>
-  <div class="bg-blue-lighter ">
-    <div class="container container-c pvxl">
-      <div class="mrxxxl"><img src="/assets/img/screenshots/install_skills2362x1166.png" class="width-full align-b"></div>
+  <div class="bg-blue-lighter pbxxl">
+    <div class="container container-c">
+      {%
+        include image_fade.svg.html
+          width="100%" imageWidth="2362" imageHeight="1166"
+          url="/assets/img/screenshots/install_skills2362x1166.png"
+          id="install"
+          title="Install skills published by Ellipsis"
+      %}
     </div>
   </div>
 
@@ -61,9 +77,15 @@ layout: default
       </h3>
     </div>
   </div>
-  <div class="bg-lightest ">
-    <div class="container container-c pvxl">
-      <div class="mrxxxl"><img src="/assets/img/screenshots/triggers1824x1100.png" class="width-full align-b"></div>
+  <div class="bg-lightest pbxxl">
+    <div class="container container-c">
+      {%
+        include image_fade.svg.html
+          width="100%" imageWidth="1824" imageHeight="1100"
+          url="/assets/img/screenshots/triggers1824x1100.png"
+          id="triggers"
+          title="Tweak how skills work easily"
+      %}
     </div>
   </div>
 
@@ -75,8 +97,14 @@ layout: default
     </div>
   </div>
   <div class="bg-white ">
-    <div class="container container-c ptxl">
-      <div class="mrxxxl"><img src="/assets/img/screenshots/editor2444x1256.png" class="width-full align-b"></div>
+    <div class="container container-c">
+      {%
+        include image_fade.svg.html
+          width="100%" imageWidth="2444" imageHeight="1256"
+          url="/assets/img/screenshots/editor2444x1256.png"
+          id="editor"
+          title="Edit skills at the source-code level"
+      %}
     </div>
   </div>
 </article>
