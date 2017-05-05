@@ -37,12 +37,12 @@
     <div class="columns">
       <div class="column column-one-half">
         <a class="display-inline-block prl align-m" href="{{ "/" | relative_url }}">
-          {% include logo_shape_pink.svg height=36 %}
+          {% include logo_shape_pink.liquid height=36 %}
         </a>
         <span class="display-inline-block align-m">&copy; {{ site.time | date: "%Y" }} Ellipsis Co.</span>
       </div>
       <div class="column column-one-half align-r">
-        {% include twitter.html height="18" username="EllipsisBot" text="@EllipsisBot" class="link-light" %}
+        {% include twitter.liquid height="18" username="EllipsisBot" text="@EllipsisBot" class="link-light" %}
       </div>
     </div>
   </div>
