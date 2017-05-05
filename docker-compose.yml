@@ -1,3 +1,10 @@
+# NOTE 1: Using the official jekyll docker did not work since we use jekyll-less
+# which requires therubyracer which requires some version of the Javascript V8
+# engine that is NOT compatible with Linux Alpine.
+#
+# NOTE 2: busybox is used to cache the gems so we do not have to bundle install
+# everytime we start the container.
+#
 version: '2'
 services:
   jekyll:
