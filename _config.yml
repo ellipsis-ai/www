@@ -36,7 +36,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-
 #collections:
 #  faqs:
 #    output: true

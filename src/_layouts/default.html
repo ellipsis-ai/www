@@ -13,6 +13,9 @@
 
     {% include footer.liquid %}
 
+    {% if layout.script %}
+      <script src="/assets/js/{{layout.script}}.js"></script>
+    {% endif %}
   </body>
 
 </html>
