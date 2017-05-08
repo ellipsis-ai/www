@@ -5,8 +5,18 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     colorator (1.1.0)
     commonjs (0.2.7)
+    css_press (0.3.2)
+      csspool-st (= 3.1.2)
+      json
+    csspool-st (3.1.2)
+    execjs (2.7.0)
     ffi (1.9.18)
     forwardable-extended (2.6.0)
+    html_press (0.8.2)
+      htmlentities
+      multi_css (>= 0.1.0)
+      multi_js (>= 0.1.0)
+    htmlentities (4.3.4)
     jekyll (3.4.3)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -23,10 +33,16 @@ GEM
     jekyll-less (0.0.4)
       jekyll (>= 0.10.0)
       less (>= 2.0.5)
+    jekyll-press (0.2.1)
+      html_press (>= 0.8.2)
+      jekyll
+      multi_css (>= 0.1.0)
+      multi_js (>= 0.1.0)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
+    json (2.1.0)
     kramdown (1.13.2)
     less (2.6.0)
       commonjs (~> 0.2.7)
@@ -36,8 +52,10 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
-    minima (2.1.1)
-      jekyll (~> 3.3)
+    multi_css (0.1.0)
+      css_press
+    multi_js (0.1.0)
+      uglifier (~> 2)
     pathutil (0.14.0)
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
@@ -51,6 +69,9 @@ GEM
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
+    uglifier (2.7.2)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -59,7 +80,7 @@ DEPENDENCIES
   jekyll (= 3.4.3)
   jekyll-feed (~> 0.6)
   jekyll-less
-  minima (~> 2.0)
+  jekyll-press
   therubyracer
   tzinfo-data
 

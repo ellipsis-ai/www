@@ -1,5 +1,11 @@
 @import (reference) "colors";
 
+.button-with-form-input {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  min-width: 0 !important;
+}
+
 button.button-l {
   font-size: 22px;
   min-width: 240px;
@@ -33,4 +39,8 @@ button.button-inverted:hover {
 
 button.button-inverted:focus {
   border-width: 4px;
+}
+
+button.button-primary[disabled] {
+  background-color: @blue-medium;
 }
