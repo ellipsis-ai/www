@@ -30,8 +30,7 @@ google_analytics: UA-86412831-1
 
 # Build settings
 markdown: kramdown
-gems:
-  - jekyll-feed
+# gems:
 exclude:
   - Gemfile
   - Gemfile.lock
