@@ -22,7 +22,7 @@
     var error;
     if (!emailField.value) {
       error = "Please enter your email address to continue.";
-    } else if (/.+@.+/.test(emailField.value)) {
+    } else if (!/.+@.+/.test(emailField.value)) {
       error = "Please enter a valid email address.";
     }
 
