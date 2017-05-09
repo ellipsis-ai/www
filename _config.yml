@@ -20,8 +20,7 @@ destination: dist/
 title: Ellipsis · Get work done in chat
 email: info@ellipsis.ai
 description: > # this means to ignore newlines until "baseurl:"
-  Ellipsis is a fully customizable chatbot that helps you and your team get work done.
-  It can answer questions and perform tasks.
+  Ellipsis is a bot that helps you build and run sophisticated workflows in chat — where your team already works.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ellipsis.ai" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: EllipsisBot
