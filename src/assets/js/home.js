@@ -42,13 +42,14 @@
 
   var messages = [
     "run stand-up meetings",
-    "manage your calendars",
-    "on-board new employees",
-    "deploy new code",
-    "compile sales reports",
-    "approve job offers",
-    "celebrate team success",
-    "manage shared resources",
+    "share a team calendar",
+    "run 1-on-1 meetings",
+    "run a smart service desk",
+    "find out who is in the office today",
+    "share staging environments",
+    "deploy your code to production",
+    "get a quick sales report",
+    "get a quick product stats report",
     "get your work done"
   ];
 
