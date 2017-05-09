@@ -64,16 +64,19 @@
     innerMessage.innerHTML = "…";
     nextMessage.appendChild(innerMessage);
     var container = document.createElement("div");
-    container.className = "position-absolute animate-top";
-    container.style.top = "100px";
+    container.className = "position-absolute animate-layout";
+    container.style.top = chatBox.clientHeight + "px";
+    container.style.opacity = "0";
     container.appendChild(nextMessage);
     chatBox.appendChild(container);
     setTimeout(function() {
       var nextMessageLength = messages[messageIndex].length;
       if (lastMessage) {
-        lastMessage.style.top = "-100px";
+        lastMessage.style.top = "-" + lastMessage.clientHeight + "px";
+        lastMessage.style.opacity = "0";
       }
       container.style.top = "0px";
+      container.style.opacity = "1";
       lastMessage = container;
       setTimeout(writeNextMessage, nextMessageLength * 100);
     }, 1);
@@ -84,8 +87,9 @@
     nextMessage.className = "box-chat-large";
     nextMessage.innerHTML = "…";
     var container = document.createElement("div");
-    container.className = "position-absolute animate-top";
+    container.className = "position-absolute animate-layout";
     container.style.top = "0px";
+    container.style.opacity = "1";
     container.appendChild(nextMessage);
     chatBox.removeChild(lastMessage);
     chatBox.appendChild(container);
@@ -95,6 +99,9 @@
     function nextChar() {
       if (nextIndex <= text.length) {
         nextMessage.innerHTML = "…" + text.slice(0, nextIndex);
+        if (chatBox.scrollHeight > chatBox.clientHeight) {
+          chatBox.style.height = chatBox.scrollHeight + "px";
+        }
         nextIndex++;
         setTimeout(nextChar, Math.max(Math.random() * 75, 10))
       } else {
@@ -112,5 +119,6 @@
   }
 
   sampleMessage.className += " visibility-hidden";
+  chatBox.style.height = chatBox.clientHeight + "px";
   doTyping();
 })();
