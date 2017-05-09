@@ -5,6 +5,7 @@
   var warning = document.getElementById("emailWarning");
   var chatBox = document.getElementById("chatBox");
   var sampleMessage = document.getElementById("sampleMessage");
+  var messageDuration = 1500;
 
   function handleKeypress(event) {
     if (event.which === 13) {
@@ -99,7 +100,7 @@
         lastMessage = container;
         if (messageIndex + 1 < messages.length) {
           messageIndex++;
-          setTimeout(doTyping, 2000);
+          setTimeout(doTyping, messageDuration);
         } else {
           messageIndex = 0;
           setTimeout(doTyping, 10000);
