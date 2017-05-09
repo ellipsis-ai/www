@@ -1,5 +1,19 @@
 (function() {
 
+  var messages = [
+    "run stand-up meetings",
+    "share a team calendar",
+    "run 1-on-1 meetings",
+    "run a smart service desk",
+    "find out who is in the office today",
+    "share staging environments",
+    "deploy your code to production",
+    "get a quick sales report",
+    "get a quick product stats report",
+    "do just about anything else you can think of",
+    "get your work done"
+  ];
+
   var inviteSubmitButton = document.getElementById("inviteSubmit");
   var emailField = document.getElementById("email");
   var warning = document.getElementById("emailWarning");
@@ -39,19 +53,6 @@
 
   emailField.addEventListener("keypress", handleKeypress);
   inviteSubmitButton.addEventListener("click", checkEmail);
-
-  var messages = [
-    "run stand-up meetings",
-    "share a team calendar",
-    "run 1-on-1 meetings",
-    "run a smart service desk",
-    "find out who is in the office today",
-    "share staging environments",
-    "deploy your code to production",
-    "get a quick sales report",
-    "get a quick product stats report",
-    "get your work done"
-  ];
 
   var messageIndex = 0;
   var lastMessage;
