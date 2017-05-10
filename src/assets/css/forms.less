@@ -1,0 +1,27 @@
+@import (reference) "colors";
+
+.form-input-l {
+  font-size: 1.2222rem !important;
+  line-height: 32px;
+  height: 56px;
+}
+
+.form-input-inverted {
+  background-color: @blue-faded-darkest;
+  border-color: @blue-medium !important;
+  color: white;
+}
+
+@inverted-placeholder-color: @blue-faded-medium;
+
+.form-input-inverted::-webkit-input-placeholder {
+  color: @inverted-placeholder-color;
+}
+
+.form-input-inverted::-moz-placeholder {
+  color: @inverted-placeholder-color;
+}
+
+.form-input-inverted::placeholder {
+  color: @inverted-placeholder-color;
+}

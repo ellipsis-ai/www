@@ -1,0 +1,31 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
+  <!--[if IE]><link rel="shortcut icon" href="https://assets.ellipsis.ai/images/favicon.ico"><![endif]-->
+
+  <!-- IE 10+ "Metro" Tiles - 144x144 pixels in size icon should be transparent -->
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="https://assets.ellipsis.ai/images/favicon-144x144.png">
+
+  <!-- Touch Icons - iOS and Android 2.1+ 152x152 pixels in size. -->
+  <link rel="apple-touch-icon-precomposed" href="https://assets.ellipsis.ai/images/favicon-apple-152x152.png">
+
+  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 96x96 pixels in size. -->
+  <link rel="icon" href="https://assets.ellipsis.ai/images/favicon-256x256.png" sizes="256x256">
+  <link rel="icon" href="https://assets.ellipsis.ai/images/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" href="https://assets.ellipsis.ai/images/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" href="https://assets.ellipsis.ai/images/favicon-16x16.png" sizes="16x16">
+
+  <link href="https://assets.ellipsis.ai/stylesheets/1dc45bbefdbb06a70562f5e1ebd8835c-main.css" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.liquid %}
+  {% endif %}
+</head>

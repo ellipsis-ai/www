@@ -4,3 +4,5 @@ node_modules/
 dist/
 .idea/
 *.iml
+.sass-cache/
+src/_site/
