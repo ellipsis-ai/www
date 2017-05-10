@@ -1,5 +1,6 @@
 (function() {
-  var requiredFieldNames = ["FNAME", "LNAME", "COMPANY", "EMAIL", "METHOD"];
+  var requiredFieldNames = ["FNAME", "LNAME", "COMPANY", "EMAIL"];
+  var requiredRadios = ["METHOD"];
   var fieldDescriptions = {
     "FNAME": "first name",
     "LNAME": "last name",
@@ -29,6 +30,18 @@
       }
       if (input.type === "email" && isInvalidEmail(input.value)) {
         invalidEmail = true;
+      }
+    });
+    requiredRadios.forEach(function(name) {
+      var radios = contactForm.elements[name];
+      var anyChecked = false;
+      var index = 0;
+      while (!anyChecked && index < radios.length) {
+        anyChecked = radios[index].checked;
+        index++;
+      }
+      if (!anyChecked) {
+        fieldsMissing.push(name);
       }
     });
     if (fieldsMissing.length === 1) {
