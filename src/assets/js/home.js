@@ -65,7 +65,7 @@
     innerMessage.innerHTML = "…";
     nextMessage.appendChild(innerMessage);
     var container = document.createElement("div");
-    container.className = "position-absolute animate-layout";
+    container.className = "position-absolute transition-layout";
     container.style.top = chatBox.clientHeight + "px";
     container.style.opacity = "0";
     container.appendChild(nextMessage);
@@ -88,7 +88,7 @@
     nextMessage.className = "box-chat-large";
     nextMessage.innerHTML = "…";
     var container = document.createElement("div");
-    container.className = "position-absolute animate-layout";
+    container.className = "position-absolute transition-layout";
     container.style.top = "0px";
     container.style.opacity = "1";
     container.appendChild(nextMessage);
