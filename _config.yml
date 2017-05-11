@@ -30,6 +30,14 @@ header_pages:
   - about.html
   - contact.html
 
+## Enable a different asset URL to test changes to the assets
+## S3 direct (skip cloudfront cache):
+# assetUrl: http://ellipsis-assets.s3-website-us-east-1.amazonaws.com
+assetUrl: https://assets.ellipsis.ai
+
+# This refers to the desired asset tag as deployed by the production app to S3
+assetTag: 3dd8a346a71f91a73d8535fed84d1c92
+
 # Build settings
 markdown: kramdown
 # gems:
