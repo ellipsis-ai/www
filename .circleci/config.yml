@@ -21,6 +21,6 @@ jobs:
           command: |
             bundle exec jekyll build
       - run:
-          name: Copy site to staging
+          name: Deploy on staging: www.el.tc
           command: |
             aws s3 sync ./dist s3://www.el.tc/ --acl=public-read
