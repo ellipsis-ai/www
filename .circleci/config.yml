@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    # branches:
+    #   only:
+    #     - master
+    docker:
+      - image: ellipsis/circleci_www:1.0
+        environment:
+          AWS_REGION: us-east-1
+
+    working_directory: ~/www
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            bundle install
+      - run:
+          name: Compile site
+          command: |
+            bundle exec jekyll build
+      - run:
+          name: No crawlers
+          command: |
+            echo -e "User-agent: *\nDisallow: /" >> robot.txt
+      - run:
+          name: "Deploy on staging: www.el.tc, el.tc. nocache.www.el.tc"
+          command: |
+            aws s3 sync ./dist s3://www.el.tc/ --acl=public-read
