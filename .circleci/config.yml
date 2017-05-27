@@ -27,4 +27,15 @@ jobs:
       - run:
           name: "Deploy on staging: www.el.tc, el.tc. nocache.www.el.tc"
           command: |
-            aws s3 sync ./dist s3://www.el.tc/ --acl=public-read
+            mkdir ~/.aws
+            echo -e "[el-wwwstag-deployer]\naws_access_key_id = ${WWWSTAG_AWS_ACCESS_KEY}\naws_secret_access_key = ${WWWSTAG_AWS_SECRET_KEY}\nregion = us-east-1" >> ~/.aws/credentials
+            aws s3 sync ./dist s3://www.el.tc/ --acl=public-read --profile=el-wwwstag-deployer
+      - run:
+          name: "Maybe deploy on prod"
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "prod" ]
+            then
+              mkdir ~/.aws
+              echo -e "[el-wwwprod-deployer]\naws_access_key_id = ${WWWPROD_AWS_ACCESS_KEY}\naws_secret_access_key = ${WWWPROD_AWS_SECRET_KEY}\nregion = us-east-1" >> ~/.aws/credentials
+              aws s3 sync ./dist s3://www.el.tc/ --acl=public-read --profile=el-prod-deployer
+            fi
