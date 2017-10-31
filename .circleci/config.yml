@@ -41,7 +41,6 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "prod" ]
             then
-              mkdir ~/.aws
               echo -e "[el-wwwprod-deployer]\naws_access_key_id = ${WWWPROD_AWS_ACCESS_KEY}\naws_secret_access_key = ${WWWPROD_AWS_SECRET_KEY}\nregion = us-east-1" >> ~/.aws/credentials
               aws s3 sync ./dist s3://www.ellipsis.ai/ --acl=public-read --profile=el-wwwprod-deployer
             fi
