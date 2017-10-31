@@ -12,10 +12,16 @@ jobs:
     working_directory: ~/www
     steps:
       - checkout
+      - restore_cache:
+          key: www-gem-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
       - run:
           name: Install dependencies
           command: |
-            bundle install
+            bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+      - save_cache:
+          key: www-gem-{{ .Branch }}-{{ checksum "Gemfile.lock" }}
+          paths:
+            - "vendor/bundle"
       - run:
           name: Compile site
           command: |
