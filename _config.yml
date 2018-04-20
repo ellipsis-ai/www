@@ -36,7 +36,7 @@ header_pages:
 assetUrl: https://assets.ellipsis.ai
 
 # This refers to the desired asset tag as deployed by the production app to S3
-assetTag: 3b436c4365d59a6ee162337637d4bf8b
+assetTag: e225a0200f65df224aac662afd4eb871
 
 # Build settings
 markdown: kramdown
