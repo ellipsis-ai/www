@@ -12,10 +12,9 @@ layout: default
     <div class="container container-c container-narrow phn">
       <div class="columns columns-elastic narrow-columns-float">
         <div class="column column-one-half narrow-column-full bg-blue-lighter prn">
-          <div class="container container-c container-narrow phxxl mobile-phxl ptm pbm type-l">
-            <h3 class="type-regular">
-              Bring data governance workflows and tools to the places where your colleagues already are
-            </h3>
+          <div class="container container-c container-narrow phxxl mobile-phxl ptm type-l">
+            <h3>Find the answers you need in the company chatroom</h3>
+            <h4 class="type-regular">Bring data governance workflows and tools to the places where your colleagues already are</h4>
           </div>
           <div class="pbxxl">
             <div class="container container-c container-narrow phxxl mobile-phxl">
@@ -35,8 +34,9 @@ layout: default
           </div>
         </div>
         <div class="column column-one-half narrow-column-full bg-white prn">
-          <div class="container container-c container-narrow phxxl mobile-phxl ptm pbm type-l">
-            <h3 class="type-regular">We partner with you to deliver <b>real productivity-boosting results</b> — not off-the-shelf tools</h3>
+          <div class="container container-c container-narrow phxxl mobile-phxl ptm type-l">
+            <h3>Get your tasks done without leaving the conversation behind</h3>
+            <h4 class="type-regular">We partner with you to deliver <b>real productivity-boosting results</b> — not off-the-shelf tools</h4>
           </div>
           <div class="pbxxl">
             <div class="container container-c container-narrow phxxl mobile-phxl">
@@ -63,20 +63,15 @@ layout: default
       <div class="columns columns-elastic narrow-columns-float">
         <div class="column column-one-half narrow-column-full bg-white prn">
           <div class="container container-c container-narrow phxxl mobile-phxl ptm pbm type-l">
-            <h3 class="type-regular">Integrate with all your tools and data sources in one place      </h3>
+
+            <h3>Integrate all your tools and data sources in one place</h3>
+            <h4 class="type-regular">Unite your systems of records with business logic you own and a single point of reference for employees</h4>
           </div>
           <div class="pbxxl">
             <div class="container container-c container-narrow phxxl mobile-phxl">
               <div class="columns">
                 <div class="column column-full narrow-column-three-quarters mobile-column-full">
-                  {%
-                    include image_fade.liquid
-                      width="100%" imageWidth="1380" imageHeight="980"
-                      url="/assets/img/screenshots/datacitizen/shared_calendar1380x980.png"
-                      id="calendar"
-                      title="Shared calendars"
-                      fadeTop=true
-                  %}
+                  <img src="/assets/img/screenshots/datacitizen/schematic1152x736.png" width="100%" alt="Integration points">
                 </div>
               </div>
             </div>
@@ -88,7 +83,7 @@ layout: default
 
     <div class="ptm type-white">
       <div class="container container-c container-narrow phxxl mobile-phxl">
-        <h3 class="mobile-mtn mbn type-regular">Contact us</h3>
+        <h3 class="mobile-mtn mbn type-regular">Talk to us</h3>
       </div>
     </div>
 
@@ -116,7 +111,7 @@ layout: default
           </div>
         </div>
 
-        <div class="columns mvl">
+        <div class="columns mtl mbxxl">
           <div class="column column-one-half narrow-column-one-half mobile-column-full mobile-mbxl">
             <h5><label for="EMAIL">Email address</label></h5>
             <input type="email" value="" name="EMAIL" class="form-input form-input-borderless form-input-inverted" id="EMAIL">
@@ -127,13 +122,7 @@ layout: default
             <input type="hidden" value="Email" name="METHOD" id="METHOD-0">
           </div>
         </div>
-
-        <div class="mvl">
-          <h5><label for="ABOUT">What can we help with? <span class="type-regular opacity-50">(Optional)</span></label></h5>
-          <div>
-            <textarea name="ABOUT" id="ABOUT" rows="4" class="form-input form-input-height-auto"></textarea>
-          </div>
-        </div>
+        <input name="ABOUT" id="ABOUT" type="hidden" value="">
 
         <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
