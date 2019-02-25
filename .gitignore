@@ -1,8 +1,8 @@
 .DS_Store
-logs/
 node_modules/
-dist/
 .idea/
 *.iml
-.sass-cache/
-src/_site/
+v2/src/_site/
+v2/dist/
+out/
+.next/
