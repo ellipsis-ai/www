@@ -1,0 +1,65 @@
+@import (reference) "measurements.less";
+@import (reference) "colors.less";
+@import (reference) "fonts.less";
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 @m 0;
+  font-weight: normal;
+}
+
+h1, h2, h3 {
+  .grota();
+}
+
+h1 {
+  font-size: @type-xxl;
+  font-weight: bold;
+  line-height: @line-height-xxl;
+  margin-top: @line-height-xxl;
+  .light-antialiasing();
+}
+
+.h2 {
+  font-size: @type-xl;
+  line-height: @line-height-xl;
+  font-weight: bold;
+  .light-antialiasing();
+}
+
+h2 {
+  .h2();
+  margin-top: @line-height-xl;
+}
+
+h3 {
+  margin-top: @xl;
+  font-size: @type-l;
+  line-height: @xxl;
+  font-weight: 600;
+}
+
+h4 {
+  margin-top: @l;
+  font-size: @type-m;
+  line-height: @xl;
+  font-weight: 600;
+}
+
+h5 {
+  margin-top: @l;
+  font-size: @type-s;
+  line-height: @xl;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+h6 {
+  font-size: @type-xs;
+  line-height: @l;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: @xs;
+}

@@ -1,0 +1,815 @@
+@import (reference) "measurements";
+@import (reference) "colors";
+@import (reference) "type";
+
+@button-height: @s * 2 + @xl;
+@button-small-height: @xs * 2 + @l;
+@button-large-height: @l * 2 + @xl;
+
+button, a.button {
+  text-align: center;
+}
+
+button,
+a.button,
+.form-select-element,
+.form-toggle-group,
+.checkbox-button {
+  font-size: @type-m;
+  line-height: @xl;
+  padding: (@s - @border-width + 1) (@l - @border-width) (@s - @border-width - 1);
+  min-height: @button-height;
+  box-sizing: border-box;
+  border-width: @border-width;
+  border-style: solid;
+  border-color: @blue-medium;
+  background-color: transparent;
+  color: @blue-medium-text;
+  min-width: @s * 20;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  vertical-align: bottom;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  touch-action: manipulation;
+  margin: 0;
+}
+
+@media (max-width: @mobile-max-width) {
+  button, a.button, .form-select-element {
+    min-width: 0;
+  }
+}
+
+.form-select {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  border-radius: @border-radius;
+}
+
+.form-select-element {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
+/* Removes unwanted dotted line from Firefox: https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff/18853002#18853002 */
+select.form-select-element:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+a.button, .form-toggle-group, .checkbox-button {
+  display: inline-block;
+}
+
+.checkbox-button {
+  min-width: 0;
+  height: auto;
+  min-height: @button-height;
+}
+
+a.button:hover {
+  text-decoration: none;
+}
+
+@dropdown-trigger-right-padding: 28px;
+@dropdown-trigger-small-right-padding: 24px;
+
+button.pvn,
+button.pvn:focus,
+button.pvn:active,
+button.button-dropdown-trigger-borderless.pvn:focus,
+button.button-dropdown-trigger-borderless.button-dropdown-trigger-menu-open.pvn {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+button.button-dropdown-trigger,
+.form-select-element {
+  position: relative;
+  padding-right: @dropdown-trigger-right-padding - @border-width;
+  border-color: @border-color-dropdown;
+  color: @black;
+  min-width: 0 !important;
+  text-align: left;
+  white-space: nowrap;
+}
+
+button.button-dropdown-trigger.button-color {
+  border-color: @blue-medium;
+  color: @blue-medium-text;
+}
+
+.form-select-light .form-select-element {
+  border-color: @border-color;
+}
+
+button.button-dropdown-trigger,
+.form-select {
+  &::before {
+    content: ' ';
+    width: .75em;
+    height: 1.5em;
+    background-image: url(/static/images/dropdown_triangles.svg);
+    background-size: 100%;
+    position: absolute;
+    top: @s - @border-width - 1;
+    right: .33em;
+  }
+}
+
+.form-select {
+  &::before {
+    top: @s - @border-width;
+  }
+}
+
+button.button-dropdown-trigger.button-s,
+.form-select-s {
+  &::before {
+    top: @border-width;
+  }
+}
+
+button.button-dropdown-trigger.button-dropdown-trigger-borderless {
+  padding-right: @dropdown-trigger-right-padding !important;
+}
+
+button.button-dropdown-trigger.button-s.button-dropdown-trigger-borderless {
+  &::before {
+    top: @xs - @border-width;
+  }
+}
+
+.form-select-s {
+  font-size: @type-s;
+  line-height: @l;
+}
+
+a.button-s,
+button.button-s,
+.form-select-s .form-select-element,
+.form-toggle-group-s,
+.checkbox-button-s {
+  font-size: @type-s;
+  line-height: @l;
+  padding: (@xs - @border-width + 1) (@m - @border-width) (@xs - @border-width - 1);
+  height: @button-small-height;
+}
+
+/* Workaround for Firefox not supporting line-height on <select>: https://bugzilla.mozilla.org/show_bug.cgi?id=454625 */
+.form-select-s .form-select-element {
+  line-height: @button-small-height - @border-width;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.form-select-s {
+  border-radius: @border-radius-small;
+}
+
+button.button-l, a.button-l, .checkbox-button-l {
+  font-size: @type-button-l;
+  font-weight: 600;
+  line-height: @line-height-l;
+  min-height: @button-large-height;
+  border-width: @border-width-thick;
+  padding-top: @m - @border-width-thick;
+  padding-bottom: @m - @border-width-thick;
+  padding-left: 36px;
+  padding-right: 36px;
+  min-width: @m * 20;
+}
+
+.checkbox-button-l {
+  font-size: @type-m;
+  line-height: @xl;
+  padding-top: @xs + @m - @border-width-thick;
+  padding-bottom: @xs + @m - @border-width-thick;
+  min-height: @button-large-height;
+  height: auto;
+}
+
+button.button-dropdown-trigger.button-s,
+.form-select-s .form-select-element {
+  padding-right: @dropdown-trigger-small-right-padding - @border-width;
+}
+
+button.button-dropdown-trigger-borderless,
+.form-select-borderless .form-select-element {
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 0 0 @border-width 0;
+  padding-left: 0 !important;
+  border-radius: 0 !important;
+}
+
+.form-select-borderless {
+  border-radius: 0;
+}
+
+button.button-dropdown-trigger-borderless + .popup-dropdown-container {
+  top: @border-width-thick;
+}
+
+button.button-dropdown-trigger-symbol {
+  min-width: 0;
+  width: 40px;
+  text-align: center;
+  padding-right: 0;
+  padding-left: 0;
+  border-width: 0;
+  color: @gray-dark;
+  &::before {
+    content: none;
+  }
+}
+
+button.button-dropdown-trigger-no-icon {
+  padding-right: (@l - @border-width);
+  &::before {
+    content: none;
+  }
+}
+
+button.button-dropdown-trigger-wide {
+  width: @dropdown-menu-width * 3/2;
+}
+
+button[disabled] {
+  border-color: @gray-light !important;
+  color: @gray-medium !important;
+  cursor: default !important;
+}
+
+a.button-shrink,
+button.button-shrink {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+button.button-symbol {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  padding-left: (@s - @border-width);
+  padding-right: (@s - @border-width);
+  text-align: center !important;
+}
+
+button.button-raw,
+button.button-block {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  min-width: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  height: auto;
+}
+
+button.button-nav {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: none !important;
+  color: inherit;
+  line-height: @xl;
+  height: auto;
+  .light-antialiasing();
+  min-width: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button.button-no-wrap {
+  white-space: nowrap;
+}
+
+button.button-block {
+  display: block;
+  text-align: left;
+  color: inherit;
+}
+
+button.button-block .link {
+  color: @blue-medium-text;
+}
+
+button.button-s.button-symbol {
+  width: 24px;
+  min-width: 24px;
+  max-width: 24px;
+  padding-left: (@xs - @border-width);
+  padding-right: (@xs - @border-width);
+}
+
+button.button-subtle {
+  border-color: transparent;
+  color: inherit;
+}
+
+button.button-subtle[disabled] {
+  border-color: transparent !important;
+}
+
+button.button-inherit {
+  border-color: inherit !important;
+  color: inherit;
+}
+
+button.button-dropdown-item,
+a.button-dropdown-item {
+  display: block;
+  font-size: @type-s;
+  line-height: @l;
+  padding-left: (@s - @border-width);
+  padding-right: (@s - @border-width);
+  border-color: transparent !important;
+  color: inherit;
+  text-align: left;
+  height: auto;
+  min-height: 32px;
+  transition: none !important;
+}
+
+button.button-tab {
+  border-width: @border-width @border-width 0 @border-width;
+  border-color: @gray-medium;
+  border-radius: 0;
+  background-color: @almost-white;
+  padding: @s @m;
+  color: inherit;
+  text-align: left;
+  min-width: 0;
+}
+
+button.button-tab-subtle {
+  background-color: transparent;
+  border-width: 0;
+  padding: @s 0;
+}
+
+button:focus,
+a.button:focus {
+  outline: none;
+  border-color: @blue-dark;
+}
+
+button.button-l:focus,
+a.button-l:focus {
+  padding-top: @m - @border-width-thick * 2;
+  padding-bottom: @m - @border-width-thick * 2;
+}
+
+button.button-dropdown-item:focus,
+button.button-dropdown-item:hover,
+button.button-dropdown-item-hover,
+a.button-dropdown-item:focus,
+a.button-dropdown-item:hover {
+  padding-left: (@s - @border-width);
+  padding-right: (@s - @border-width);
+  background-color: @blue-medium;
+  color: white;
+}
+
+button.button-tab:focus {
+  padding-left: (@m - @border-width);
+  padding-right: (@m - @border-width);
+  border-color: @gray-dark;
+  border-bottom-width: 0;
+}
+
+button.button-tab-subtle:focus {
+  border-width: 0 0 @border-width-thick 0;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+button.button-dropdown-trigger:focus,
+button.button-dropdown-trigger-menu-open,
+.form-select-element:focus {
+  z-index: 11;
+  outline: none;
+  padding: (@s - @border-width-thick + 1) (@l - @border-width-thick) (@s - @border-width-thick - 1);
+  padding-right: @dropdown-trigger-right-padding - @border-width-thick;
+  color: @black;
+  border-width: @border-width-thick;
+  border-color: @border-color-dropdown;
+}
+
+button.button-dropdown-trigger:focus,
+button.button-dropdown-trigger-menu-open,
+.form-select-focus {
+  background-color: white;
+}
+
+.form-select-s .form-select-element:focus {
+  line-height: @button-small-height - @border-width-thick;
+  padding-left: @m - @border-width-thick;
+  padding-right: @dropdown-trigger-small-right-padding - @border-width-thick;
+}
+
+.form-select-borderless.form-select-s .form-select-element:focus {
+  padding-right: @dropdown-trigger-small-right-padding - @border-width;
+}
+
+button.button-dropdown-trigger:focus,
+button.button-dropdown-trigger-menu-open {
+  &::before {
+    margin-right: @border-width - @border-width-thick;
+  }
+}
+
+button.button-dropdown-trigger.button-l:focus,
+button.button-dropdown-trigger-menu-open.button-l {
+  padding-top: (@m - @border-width-thick) !important;
+  padding-bottom: @m !important;
+  padding-left: (@l - @border-width) !important;
+  padding-right: (@l - @border-width) !important;
+}
+
+button.button-dropdown-trigger.button-s:focus,
+button.button-dropdown-trigger-menu-open.button-s {
+  padding-top: (@xs - @border-width-thick + 1);
+  padding-left: (@m - @border-width-thick);
+  padding-right: @dropdown-trigger-small-right-padding - @border-width-thick;
+  padding-bottom: (@xs - @border-width-thick - 1);
+}
+
+button.button-dropdown-trigger-menu-open,
+button.button-dropdown-trigger-menu-open:focus {
+  border-color: @border-color;
+  border-radius: @border-radius @border-radius 0 0;
+  border-bottom-width: 0 !important;
+}
+
+button.button-l.button-dropdown-trigger-menu-open,
+button.button-l.button-dropdown-trigger-menu-open:focus {
+  border-radius: @border-radius-large @border-radius-large 0 0;
+}
+
+button.button-dropdown-trigger-menu-above.button-dropdown-trigger-menu-open {
+  border-radius: 0 0 @border-radius @border-radius;
+  border-top-width: 0 !important;
+  border-bottom-width: @border-width-thick !important;
+}
+
+button.button-l.button-dropdown-trigger-menu-above.button-dropdown-trigger-menu-open {
+  border-radius: 0 0 @border-radius-large @border-radius-large;
+}
+
+button.button-dropdown-trigger-symbol:focus,
+button.button-dropdown-trigger-symbol.button-dropdown-trigger-menu-open {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+button.button-dropdown-trigger-no-icon:focus,
+button.button-dropdown-trigger-no-icon.button-dropdown-trigger-menu-open {
+  padding-right: (@l - @border-width-thick);
+}
+
+button.button-dropdown-trigger-borderless:focus,
+button.button-dropdown-trigger-borderless.button-dropdown-trigger-menu-open,
+.form-select-borderless .form-select-element:focus {
+  border-width: 0 0 @border-width-thick 0;
+  padding-top: @border-width-thick * 2 !important;
+}
+
+button.button-s:focus,
+a.button-s:focus {
+  padding: (@xs - @border-width-thick + 1) (@m - @border-width-thick) (@xs - @border-width-thick - 1);
+}
+
+button.button-subtle:focus,
+button.button-subtle:active {
+  border-color: @border-color !important;
+}
+
+button.button-dropdown-trigger-menu-open:focus {
+  border-color: @border-color !important;
+}
+
+button.button-raw:hover,
+button.button-block:hover .link {
+  text-decoration: underline;
+}
+
+button.button-raw:focus,
+button.button-block:focus {
+  padding: 0;
+}
+
+button.button-raw:focus,
+button.button-block:focus .link {
+  color: @blue-medium-alt;
+}
+
+button.button-nav:hover {
+  color: @pink-medium;
+}
+
+button:active {
+  background-color: @black-translucent;
+  border-color: @blue-dark;
+}
+
+button.button-raw:active,
+button.button-block:active {
+  border: none;
+  background-color: transparent;
+}
+
+button.button-raw:active,
+button.button-block:active .link {
+  color: @blue-dark;
+}
+
+button.button-none,
+button.button-none:focus,
+button.button-none:active {
+  background-color: transparent;
+  border-width: 0;
+  padding: 0;
+  min-width: 0;
+  color: inherit;
+  height: auto;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+button.button-primary,
+a.button-primary,
+button.button-error,
+a.button-error,
+button.button-inverted,
+a.button-inverted,
+.checkbox-button.button-inverted,
+button.button-slack,
+a.button-slack,
+button.button-msteams,
+a.button-msteams {
+  font-weight: 600;
+  color: @white;
+  .light-antialiasing();
+}
+
+button.button-primary,
+a.button-primary,
+.checkbox-button-checked {
+  background-color: @pink-dark;
+  border-color: @pink-dark;
+  color: @white;
+}
+
+button.button-primary:hover,
+a.button-primary:hover {
+  background-color: @pink-darker;
+  border-color: @pink-darker;
+}
+
+button.button-primary:focus,
+a.button-primary:focus {
+  background-color: @pink-dark;
+  border-color: @pink-darker;
+}
+
+button.button-primary:active,
+a.button-primary:active {
+  background-color: @pink-darkest;
+  border-color: @pink-darkest;
+  color: @white;
+}
+
+button.button-slack,
+a.button-slack {
+  background-color: @slack-green;
+  border-color: @slack-green;
+  color: @white;
+}
+
+button.button-slack:focus,
+a.button-slack:focus {
+  background-color: @slack-green;
+  border-color: @slack-green-dark;
+}
+
+button.button-slack:active,
+a.button-slack:active {
+  background-color: @slack-green-dark;
+  border-color: @slack-green-dark;
+}
+
+button.button-msteams,
+a.button-msteams {
+  background-color: @msTeams-blue;
+  border-color: @msTeams-blue;
+  color: @white;
+}
+
+button.button-msteams:focus,
+a.button-msteams:focus {
+  background-color: @msTeams-blue;
+  border-color: @msTeams-blue-dark;
+}
+
+button.button-msteams:active,
+a.button-msteams:active {
+  background-color: @msTeams-blue-dark;
+  border-color: @msTeams-blue-dark;
+}
+
+button.button-error,
+a.button-error {
+  background-color: @pink-medium;
+  border-color: @pink-medium;
+}
+
+button.button-error:focus,
+a.button-error:focus {
+  background-color: @pink-medium;
+  border-color: @pink-dark;
+}
+
+button.button-error:active,
+a.button-error:focus {
+  background-color: @pink-dark;
+  border-color: @pink-dark;
+  color: @white;
+}
+
+button.button-inverted,
+a.button-inverted {
+  font-weight: bold;
+  border-color: @white-subtle !important;
+  border-width: 4px;
+  color: @white;
+  padding: 4px 20px;
+}
+
+.checkbox-button.button-inverted {
+  border-color: @blue-medium !important;
+  color: @white;
+}
+
+.checkbox-button-checked.button-inverted {
+  background-color: @blue-darkest;
+  border-color: @blue-darkest !important;
+  color: @white;
+}
+
+button.button-inverted:hover,
+a.button-inverted:hover {
+  background-color: @white-subtle;
+}
+
+button.button-primary[disabled],
+button.button-error[disabled],
+button.button-slack[disabled],
+button.button-msteams[disabled] {
+  background-color: @gray-medium-translucent !important;
+  border-color: transparent !important;
+  color: @white !important;
+}
+
+.button-labels {
+  display: block;
+  position: relative;
+}
+
+.button-label-absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button-activated-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+
+/* Note this technique requires the activated label to be shorter than the normal label */
+button.button-activated {
+  .button-activated-label {
+    display: block;
+  }
+  .button-normal-label {
+    visibility: hidden;
+  }
+}
+
+.form-toggle-group {
+  min-width: 0;
+  padding: 0;
+  white-space: nowrap;
+  button.button-toggle {
+    margin: 2px 0 0 0;
+    height: 34px;
+    padding: 5px @xl;
+    border-width: 0;
+    border-radius: 0;
+    background-clip: padding-box;
+    min-width: 0;
+    vertical-align: top;
+
+    &.button-toggle-active {
+      background-color: @blue-medium;
+      color: @white;
+    }
+
+    &:first-child {
+      border-top-left-radius: @border-radius-small;
+      border-bottom-left-radius: @border-radius-small;
+      margin-left: 2px;
+    }
+
+    &:last-child {
+      border-top-right-radius: @border-radius-small;
+      border-bottom-right-radius: @border-radius-small;
+      margin-right: 2px;
+    }
+
+    &:focus {
+      padding: 5px @xl;
+      margin-top: 0;
+      height: 38px;
+      border-top: 1px solid @blue-medium;
+      border-bottom: 1px solid @blue-medium;
+    }
+
+    &:first-child:focus {
+      margin-left: 0;
+      border-left: 1px solid @blue-medium;
+      padding-left: @xl + 1px;
+    }
+
+    &:last-child:focus {
+      margin-right: 0;
+      border-right: 1px solid @blue-medium;
+      padding-right: @xl + 1px;
+    }
+  }
+}
+
+.form-toggle-group-s button.button-toggle,
+.checkbox-button-s {
+  font-size: @type-xs;
+  line-height: @line-height-xs;
+}
+
+.checkbox-button-s {
+  vertical-align: middle;
+  padding: 3px @xs;
+  height: auto;
+  min-height: @button-small-height;
+}
+
+.form-toggle-group-s {
+  padding: 0;
+  button.button-toggle {
+    margin: 1px 0 0 0;
+    height: 20px;
+    padding: 2px @s;
+
+    &:first-child {
+      border-top-left-radius: @border-radius-tiny;
+      border-bottom-left-radius: @border-radius-tiny;
+      margin-left: 1px;
+    }
+
+    &:last-child {
+      border-top-right-radius: @border-radius-tiny;
+      border-bottom-right-radius: @border-radius-tiny;
+      margin-right: 1px;
+    }
+
+    &:focus {
+      margin-top: 0;
+      height: 22px;
+      padding: 2px @s;
+    }
+
+    &:first-child:focus {
+      padding-left: @s;
+      border-top-left-radius: @border-radius-tiny - 1;
+      border-bottom-left-radius: @border-radius-tiny - 1;
+    }
+
+    &:last-child:focus {
+      padding-right: @s;
+      border-top-right-radius: @border-radius-tiny - 1;
+      border-bottom-right-radius: @border-radius-tiny - 1;
+    }
+  }
+}

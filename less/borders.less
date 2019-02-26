@@ -1,0 +1,228 @@
+@import (reference) "measurements";
+@import (reference) "colors";
+
+.border {
+  border-width: @border-width;
+  border-style: solid;
+  border-color: @border-color;
+}
+
+.border-dotted {
+  border-style: dotted;
+}
+
+.border-thick {
+  border-width: @border-width-thick;
+}
+
+.border-emphasis-bottom {
+  border-bottom-width: @xs;
+  border-bottom-style: solid;
+  border-bottom-color: @border-color;
+}
+
+.border-emphasis-top {
+  border-top-width: @xs;
+  border-top-style: solid;
+  border-top-color: @border-color;
+}
+
+.border-emphasis-left {
+  border-left-width: @xs;
+  border-left-style: solid;
+  border-left-color: @border-color;
+}
+
+.border-emphasis-right {
+  border-right-width: @xs;
+  border-right-style: solid;
+  border-right-color: @border-color;
+}
+
+.border-top {
+  border-top-width: @border-width;
+  border-top-color: @border-color;
+  border-top-style: solid;
+}
+
+.border-top-thick {
+  border-top-width: @border-width-thick;
+  border-top-color: @border-color;
+  border-top-style: solid;
+}
+
+.border-bottom {
+  border-bottom-width: @border-width;
+  border-bottom-color: @border-color;
+  border-bottom-style: solid;
+}
+
+.border-bottom-thick {
+  border-bottom-width: @border-width-thick;
+  border-bottom-color: @border-color;
+  border-bottom-style: solid;
+}
+
+.border-left {
+  border-left-width: @border-width;
+  border-left-color: @border-color;
+  border-left-style: solid;
+}
+
+.border-left-thick {
+  border-left-width: @border-width-thick;
+  border-left-color: @border-color;
+  border-left-style: solid;
+}
+
+.border-right {
+  border-right-width: @border-width;
+  border-right-color: @border-color;
+  border-right-style: solid;
+}
+
+.border-right-thick {
+  border-right-width: @border-width-thick;
+  border-right-color: @border-color;
+  border-right-style: solid;
+}
+
+.border-light {
+  border-color: @border-color-light;
+}
+
+.border-blue-light {
+  border-color: @blue-light;
+}
+
+.border-blue {
+  border-color: @blue-light-alt;
+}
+
+.border-blue-medium {
+  border-color: @blue-medium;
+}
+
+.border-pink {
+  border-color: @pink-medium;
+}
+
+.border-pink-light {
+  border-color: @pink-light;
+}
+
+.border-green {
+  border-color: @green-medium;
+}
+
+.border-yellow {
+  border-color: @yellow-light;
+}
+
+.border-black {
+  border-color: @black;
+}
+
+.border-faint {
+  border-color: @black-translucent;
+}
+
+.border-radius {
+  border-radius: @border-radius;
+}
+
+.border-round {
+  border-radius: 50%;
+}
+
+.border-radius-top-left {
+  border-top-left-radius: @border-radius !important;
+}
+
+.border-radius-top-right {
+  border-top-right-radius: @border-radius !important;
+}
+
+.border-radius-bottom-left {
+  border-bottom-left-radius: @border-radius !important;
+}
+
+.border-radius-bottom-right {
+  border-bottom-right-radius: @border-radius !important;
+}
+
+.border-radius-top {
+  .border-radius-top-left();
+  .border-radius-top-right();
+}
+
+.border-radius-top-none {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.border-radius-bottom {
+  .border-radius-bottom-left();
+  .border-radius-bottom-right();
+}
+
+.border-radius-bottom-none {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.border-radius-bottom-left-none {
+  border-bottom-left-radius: 0 !important;
+}
+
+.border-radius-left {
+  .border-radius-top-left();
+  .border-radius-bottom-left();
+}
+
+.border-radius-right {
+  .border-radius-top-right();
+  .border-radius-bottom-right();
+}
+
+.border-warning {
+  border-left: @xs solid @yellow-light;
+}
+
+.border-error {
+  border-left: @xs solid @pink-medium;
+}
+
+.border-error-top {
+  border-top: @border-width-thick solid @pink-medium;
+}
+
+@media (max-width: @mobile-max-width) {
+  .mobile-border-top {
+    border-top: @border-width solid @border-color;
+  }
+
+  .mobile-border-bottom {
+    border-bottom: @border-width solid @border-color;
+  }
+
+  .mobile-border-none {
+    border: none;
+  }
+
+  .mobile-border-top-none {
+    border-top: none;
+  }
+
+  .mobile-border-left-none {
+    border-left: none;
+  }
+
+  .mobile-border-right-none {
+    border-right: none;
+  }
+
+  .mobile-border-bottom-none {
+    border-bottom: none;
+  }
+}

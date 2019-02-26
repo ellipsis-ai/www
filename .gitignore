@@ -3,6 +3,7 @@ node_modules/
 .idea/
 *.iml
 v2/src/_site/
+v2/src/.sass-cache/
 v2/dist/
 out/
 .next/

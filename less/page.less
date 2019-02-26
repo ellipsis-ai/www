@@ -1,0 +1,24 @@
+@import (reference) "measurements";
+@import (reference) "colors";
+@import (reference) "bg";
+
+html {
+  font-size: @type-desktop-m;
+  line-height: unit(@line-height-m);
+}
+
+@media (max-width: @mobile-max-width) {
+  html {
+    font-size: @type-mobile-m;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: @white;
+  color: @black;
+}
+
+.content {
+  .bg-lightest();
+}

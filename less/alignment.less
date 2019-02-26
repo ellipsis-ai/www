@@ -1,0 +1,97 @@
+@import (reference) "measurements.less";
+@import (reference) "colors.less";
+
+.align-l {
+  text-align: left;
+}
+
+.align-c {
+  text-align: center;
+}
+
+.align-r {
+  text-align: right;
+}
+
+@media (max-width: @narrow-max-width) {
+  .narrow-align-l {
+    text-align: left;
+  }
+
+  .narrow-align-c {
+    text-align: center;
+  }
+
+  .narrow-align-r {
+    text-align: right;
+  }
+}
+
+@media (max-width: @mobile-max-width) {
+  .mobile-align-l {
+    text-align: left;
+  }
+
+  .mobile-align-c {
+    text-align: center;
+  }
+
+  .mobile-align-r {
+    text-align: right;
+  }
+}
+
+.align-t {
+  vertical-align: top !important;
+}
+
+.align-b {
+  vertical-align: bottom !important;
+}
+
+.align-m {
+  vertical-align: middle !important;
+}
+
+.align-button {
+  display: inline-block;
+  line-height: @xl;
+  padding: @s 0;
+  vertical-align: bottom;
+}
+
+.align-button-border {
+  border-width: @border-width;
+  border-color: @border-color;
+  border-style: solid;
+  padding: (@s - @border-width) (@l - @border-width);
+  box-sizing: border-box;
+}
+
+.align-button-l {
+  display: inline-block;
+  line-height: @xl;
+  padding: @l 0;
+  vertical-align: bottom;
+}
+
+.align-button-s {
+  font-size: @type-s;
+  line-height: @l;
+  padding: @xs 0;
+}
+
+@media (max-width: @mobile-max-width) {
+  .align-button-s {
+    font-size: @type-m;
+  }
+}
+
+.align-button-s.align-button-border {
+  padding: (@xs - @border-width + 1) (@m - @border-width) (@xs - @border-width - 1);
+}
+
+.align-form-input {
+  line-height: 40px;
+  vertical-align: middle;
+}
