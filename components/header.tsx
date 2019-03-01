@@ -2,10 +2,12 @@ import * as React from 'react'
 import Link from 'next/link'
 import EllipsisLogo from './ellipsis_logo';
 import MenuIcon from './menu_icon';
+import autobind from '../lib/autobind';
 
 interface Props {
   isHomeVisible: boolean
   activePage?: string
+  onToggleContactForm: () => void
 }
 
 interface State {
@@ -15,6 +17,7 @@ interface State {
 class Header extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
+    autobind(this);
     this.state = {
       expandMenu: false
     };
@@ -44,7 +47,10 @@ class Header extends React.Component<Props, State> {
                 ) : null}
                 <span className="mrxxl align-button "><Link prefetch href="/product"><a className="link-light">Product</a></Link></span>
                 <span className="mrxxl align-button "><Link prefetch href="/about"><a className="link-light">About</a></Link></span>
-                <button type="button" className="button-shrink button-inverted type-label type-bold">Schedule a demo</button>
+                <button type="button"
+                  className="button-shrink button-inverted type-label type-bold"
+                  onClick={this.props.onToggleContactForm}
+                >Schedule a demo</button>
               </div>
               <div className="narrow-display-only position-relative position-z-popup-trigger">
                 <button type="button" className="button-raw type-white" onClick={this.toggleMenu}><MenuIcon open={this.state.expandMenu} /></button>
@@ -60,7 +66,10 @@ class Header extends React.Component<Props, State> {
                 <div className="mvxl"><Link prefetch href="/product"><a className="link-light">Product</a></Link></div>
                 <div className="mvxl"><Link prefetch href="/about"><a className="link-light">About</a></Link></div>
                 <div className="bg-pink pvs">
-                  <button type="button" className="button-shrink button-l button-primary type-label type-bold">Schedule a demo</button>
+                  <button type="button"
+                    className="button-shrink button-l button-primary type-label type-bold"
+                    onClick={this.props.onToggleContactForm}
+                  >Schedule a demo</button>
                 </div>
               </div>
             </div>

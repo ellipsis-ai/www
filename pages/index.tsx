@@ -3,8 +3,29 @@ import EllipsisHead from '../components/ellipsis_head';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import ContactForm from '../components/contact_form';
+import autobind from '../lib/autobind';
 
-class Home extends React.Component {
+interface Props {
+
+}
+
+interface State {
+  contactFormVisible: boolean
+}
+
+class Home extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    autobind(this);
+    this.state = {
+      contactFormVisible: false
+    };
+  }
+
+  toggleContactForm(): void {
+    this.setState({ contactFormVisible: !this.state.contactFormVisible });
+  }
+
   render() {
     return (
       <div>
@@ -12,7 +33,7 @@ class Home extends React.Component {
 
         <div className="page">
           <div className="bg-blue-fade">
-            <Header isHomeVisible={false} />
+            <Header isHomeVisible={false} onToggleContactForm={this.toggleContactForm} />
 
             <div id="hero" className="hero align-c ptxxxxl narrow-ptxxl mobile-ptn pbhuge narrow-pbxxxl type-white">
               <div className="container container-c">
@@ -26,7 +47,11 @@ class Home extends React.Component {
                       workflows in existing chat tools in less than a week.
                     </p>
 
-                    <button type="button" className="button button-l button-primary type-label">Get more info &amp; a proof-of-concept</button>
+                    <button
+                      type="button"
+                      className="button button-l button-primary type-label"
+                      onClick={this.toggleContactForm}
+                    >Get more info &amp; a proof-of-concept</button>
                   </div>
                   <div className="column column-one-fifth narrow-display-none"></div>
                 </div>
@@ -38,36 +63,47 @@ class Home extends React.Component {
           <div className="">
 
             <div id="benefits" className="">
-              <div className="grid columns columns-elastic mobile-columns-float">
-                <div className="column-group">
-                  <div className="column-row">
-                    <div className="column column-one-half mobile-column-full bg-gray-light prn"></div>
-                    <div className="column column-one-half mobile-column-full pthuge narrow-ptxxxl">
+              <div className="flex-columns mobile-flex-no-columns">
+                <div className="flex-column column-one-half mobile-column-full screencast-fiix-report"></div>
+                <div className="flex-column column-one-half mobile-column-full pthuge narrow-ptxxxl">
 
-                      <div className="max-width-30 plhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
-                        <div className="">
+                  <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
+                    <div className="columns columns-elastic">
+                      <div className="column column-shrink mobile-display-only prxl">
+                        <img src="/static/images/icons/getting_done@2x.png" width="50" />
+                      </div>
+                      <div className="column column-expand">
+                        <div className="mobile-display-none">
                           <img src="/static/images/icons/getting_done@2x.png" width="101" />
                         </div>
 
-                        <h2 className="">Rest assured, it’s getting done</h2>
+                        <h2 className="mobile-mtn">Rest assured, it’s getting done</h2>
                         <p className="type-l">
                           The difference between a complicated workflow and easy automation is
                           the difference between tasks sitting on a backlog and getting done.
                         </p>
                       </div>
-
                     </div>
                   </div>
-                  <div className="column-row">
-                    <div className="column column-one-half mobile-column-full pthuge narrow-ptxxxl prn">
 
-                      <div className="column-right">
-                        <div className="max-width-30 prhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
-                          <div className="">
+                </div>
+              </div>
+              <div className="flex-columns mobile-flex-no-columns">
+                <div className="flex-column flex-column-right mobile-flex-column-left column-one-half mobile-column-full screencast-quick-approval"></div>
+                <div className="flex-column column-one-half mobile-column-full mobile-flex-column-right pthuge narrow-ptxxxl prn">
+
+                  <div className="column-right">
+                    <div className="max-width-30 plxxxxl prhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
+                      <div className="columns columns-elastic">
+                        <div className="column column-shrink mobile-display-only prxl">
+                          <img src="/static/images/icons/save_time@2x.png" width="45" />
+                        </div>
+                        <div className="column column-expand">
+                          <div className="mobile-display-none">
                             <img src="/static/images/icons/save_time@2x.png" width="91" />
                           </div>
-                
-                          <h2 className="">Save time</h2>
+            
+                          <h2 className="mobile-mtn">Save time</h2>
                           <p className="type-l">
                             Empower your employees to focus on the things that matter. Close the gaps.
                             Collaborate better. Everyone likes moving faster.
@@ -75,41 +111,40 @@ class Home extends React.Component {
 
                         </div>
                       </div>
-
                     </div>
-                    <div className="column column-one-half mobile-column-full bg-gray-light"></div>
                   </div>
-                  <div className="column-row">
-                    <div className="column column-one-half mobile-column-full bg-gray-light photo-happy-employees position-relative">
-                      <div>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                      </div>
-                      <div className="position-absolute position-bottom-right">
-                        <div className="mrhuge narrow-mhxxl max-width-30 mobile-max-width-none type-tight">
-                          <span className="bg-white">Employees at Plenty use Ellipsis to deliver mission-critical reports every day to their colleagues.</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="column column-one-half mobile-column-full pthuge narrow-ptxxxl">
 
-                      <div className="max-width-30 plhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
-                        <div className="">
+                </div>
+              </div>
+              <div className="flex-columns mobile-flex-no-columns">
+                <div className="flex-column column-one-half mobile-column-full bg-gray-light photo-happy-employees position-relative">
+                  <div className="position-absolute position-bottom-right mobile-position-bottom-left">
+                    <div className="mrhuge mlxxxxl narrow-mhxxl max-width-30 mobile-max-width-none type-tight">
+                      <span className="bg-white">Employees at Plenty use Ellipsis to deliver mission-critical reports every day to their colleagues.</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-column column-one-half mobile-column-full pthuge narrow-ptxxxl">
+
+                  <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
+                    <div className="columns columns-elastic">
+                      <div className="column column-shrink mobile-display-only prxl">
+                        <img src="/static/images/icons/happiness@2x.png" width="49" className="mobile-display-only" />
+                      </div>
+                      <div className="column column-expand">
+                        <div className="mobile-display-none">
                           <img src="/static/images/icons/happiness@2x.png" width="98" />
                         </div>
-                        <h2 className="">Employee happiness</h2>
+                        <h2 className="mobile-mtn">Employee happiness</h2>
                         <p className="type-l">
                           The less paperwork and process, the better. Create a beautiful, seamless
                           workplace for healthier, happier, people.
-                        </p>
-
+                        </p>                      
                       </div>
-
                     </div>
+
                   </div>
+
                 </div>
               </div>
             </div>
@@ -160,7 +195,10 @@ class Home extends React.Component {
                 </div>
 
                 <div className="align-c pvxxxxl narrow-pvxxl">
-                  <button type="button" className="button button-primary button-l type-label">Get a proof of concept</button>
+                  <button type="button"
+                    className="button button-primary button-l type-label"
+                    onClick={this.toggleContactForm}
+                  >Get a proof of concept</button>
                 </div>
               </div>
             </div>
@@ -201,14 +239,19 @@ class Home extends React.Component {
               <h2>Ready to learn more? Reach out for your free proof-of-concept.</h2>
 
               <div className="pvxl">
-                <button type="button" className="button button-l button-primary type-label">Get a proof of concept</button>
+                <button type="button"
+                  className="button button-l button-primary type-label"
+                  onClick={this.toggleContactForm}
+                >Get a proof of concept</button>
               </div>
             </div>
 
           </div>
 
-          <div className="position-fixed-full bg-scrim position-z-front">
-            <ContactForm />
+          <div className={`position-fixed-full bg-scrim position-z-front fade-in ${
+            this.state.contactFormVisible ? "" : "display-none"
+          }`}>
+            <ContactForm onDone={this.toggleContactForm} isVisible={this.state.contactFormVisible} />
           </div>
           <Footer />
         </div>

@@ -10,8 +10,11 @@ class EllipsisHead extends React.Component<Props> {
   render() {
     return (
       <Head>
+        <meta charSet="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <title>{this.props.title}{this.props.title ? " · " : ""}Ellipsis.ai</title>
-        <link href='https://fonts.googleapis.com/css?Source+Sans+Pro:400,300,600,400italic,300italic,600italic' rel='stylesheet' type='text/css'></link>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i" rel="stylesheet" />
       </Head>
     );
   }

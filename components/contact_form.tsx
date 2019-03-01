@@ -3,22 +3,33 @@ import autobind from '../lib/autobind';
 import FormInput from './form_input';
 import Textarea from './textarea';
 
-interface Props {}
+interface Props {
+  onDone: () => void
+  isVisible: boolean
+}
 
-interface State {
-  firstName: string
-  lastName: string
-  companyName: string
-  jobTitle: string
-  email: string
-  phone: string
-  contactMethod: "Phone" | "Email"
-  about: string
+type FormFieldKeys = "firstName" | "lastName" | "companyName" | "jobTitle" | "email" | "phone" | "contactMethod" | "about"
+type FormFieldValues = { [K in FormFieldKeys]: string };
+type State = FormFieldValues & {
+  error: string
 }
 
 const mailChimpActionUrl = "https://ellipsis.us14.list-manage.com/subscribe/post?u=7e90c1fb7ff3d6aab44c1c25e&amp;id=20ddfafccc";
+const requiredFields: Array<FormFieldKeys> = ["firstName", "lastName", "companyName", "email", "contactMethod"];
+const descriptions: FormFieldValues = {
+  firstName: "first name",
+  lastName: "last name",
+  companyName: "company name",
+  jobTitle: "job title",
+  email: "email address",
+  phone: "phone number",
+  contactMethod: "contact method",
+  about: "how we can help"
+}
 
 class ContactForm extends React.Component<Props, State> {
+  focusableField: FormInput | null | undefined;
+
   constructor(props: Props) {
     super(props);
     autobind(this);
@@ -30,7 +41,14 @@ class ContactForm extends React.Component<Props, State> {
       email: "",
       phone: "",
       contactMethod: "Email",
-      about: ""
+      about: "",
+      error: ""
+    };
+  }
+
+  componentWillReceiveProps(newProps: Props) {
+    if (newProps.isVisible && !this.props.isVisible && this.focusableField) {
+      this.focusableField.focus();
     }
   }
 
@@ -70,21 +88,43 @@ class ContactForm extends React.Component<Props, State> {
     this.setState({ about: newValue });
   }
 
+  validateAndSend(event: React.FormEvent): void {
+    const missingFields = requiredFields.filter((ea) => !this.state[ea].trim());
+    if (missingFields.length > 0) {
+      event.preventDefault();
+      this.setState({
+        error: `Please provide the following information: ${missingFields.map((ea) => descriptions[ea]).join(", ")}`
+      });
+    }
+  }
+
+  cancel(): void {
+    this.props.onDone();
+  }
+
   render() {
     return (
       <div>
+        
         <form action={mailChimpActionUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
           <div className="columns">
             <div className="column column-one-fifth narrow-display-none"></div>
-            <div className="column column-three-fifths  narrow-column-full">
-              <div className="pvxxxl bg-white">
+            <div className="column column-three-fifths narrow-column-full">
+              <div className="mtxxl narrow-mtn pvm bg-white">
                 <div className="container container-c container-narrow phxxl mobile-phxl">
+
+                  <h2>Get more info &amp; a proof-of-concept</h2>
+
+                  <p>Compliance work, daily reporting, service requests, data governance, and more — it doesn’t have to be painful.</p>
+
+                  <p>Send us your contact details and we’ll be in touch shortly.</p>
+
                   <div className="columns mvxl">
                     <div className="column column-one-third narrow-column-one-half mobile-column-full mobile-mbxl">
                       <h5><label htmlFor="FNAME">First name </label></h5>
-                      <FormInput onChange={this.setFirstName} autoFocus={true} value={this.state.firstName} name="FNAME" className="form-input form-input-borderless" id="FNAME" />
+                      <FormInput ref={(el) => this.focusableField = el} onChange={this.setFirstName} autoFocus={true} value={this.state.firstName} name="FNAME" className="form-input form-input-borderless" id="FNAME" />
                     </div>
-                    <div className="column column-one-third narrow-column-one-half mobile-column-full mobile-mbxl">
+                    <div className="column column-two-thirds narrow-column-one-half mobile-column-full mobile-mbxl">
                       <h5><label htmlFor="LNAME">Last name </label></h5>
                       <FormInput onChange={this.setLastName} value={this.state.lastName} name="LNAME" className="form-input form-input-borderless" id="LNAME" />
                     </div>
@@ -128,22 +168,16 @@ class ContactForm extends React.Component<Props, State> {
                     </div>
                   </div>
 
-                  <div className="mvxl">
-                    <h5><label htmlFor="ABOUT">What can we help with? <span className="type-regular type-disabled">(Optional)</span></label></h5>
-                    <div>
-                      <Textarea onChange={this.setAbout} name="ABOUT" id="ABOUT" rows={4} className="form-input form-input-height-auto" value={this.state.about} />
-                    </div>
-                  </div>
-
                   <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
-                    <input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_20ddfafccc" tabIndex={-1} value="" />
+                    <input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_20ddfafccc" tabIndex={-1} value="" readOnly={true} />
                   </div>
                   <div>
                     <button type="submit" name="subscribe" id="mc-embedded-subscribe"
-                      className="button button-primary">Send contact details</button>
+                      className="button button-primary mrm mbm" onClick={this.validateAndSend}>Send contact details</button>
+                    <button type="button" className="button mbm" onClick={this.cancel}>Cancel</button>
                   </div>
 
-                  <div id="errorMessages" className="mtxl type-pink type-bold"></div>
+                  <div id="errorMessages" className="mtl type-pink type-bold">{this.state.error}</div>
 
                 </div>
               </div>
