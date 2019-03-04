@@ -31,7 +31,7 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <EllipsisHead />
+        <EllipsisHead description="Ellipsis.ai helps enterprise companies automate their workflows across multiple tools,  integrated into Slack or Microsoft Teams." />
 
         <div className="page">
           <div className="bg-blue-fade">

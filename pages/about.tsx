@@ -28,7 +28,7 @@ class About extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <EllipsisHead title="About Us" />
+        <EllipsisHead title="About Ellipsis" description="Ellipsis is dedicated to helping companies roll out digital transformations by automating workflows in chat." />
         <div className="page">
           <div className="bg-blue-fade">
             <Header isHomeVisible={true} onToggleContactForm={this.toggleContactForm} activePage={Page.About} />
@@ -64,7 +64,7 @@ class About extends React.Component<Props, State> {
                   chat tools. Automation ensures accurate, unified, and efficient reporting
                   that takes a fraction of the time. Adoption is easy because Ellipsis doesn’t
                   require training, new software, or a new UI. Instead, it works out loud in
-                  Slack fostering social proof for new processes.
+                  Slack or Microsoft Teams, fostering social proof for new processes.
                 </p>
 
                 <p className="type-disabled align-c type-l">· · ·</p>
