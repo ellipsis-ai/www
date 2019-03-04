@@ -104,8 +104,9 @@ class ContactForm extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
-        
+      <div className={`position-fixed-full bg-scrim position-z-front fade-in ${
+        this.props.isVisible ? "" : "display-none"
+        }`}>
         <form action={mailChimpActionUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
           <div className="columns">
             <div className="column column-one-fifth narrow-display-none"></div>

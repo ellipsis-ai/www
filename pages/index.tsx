@@ -4,6 +4,8 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import ContactForm from '../components/contact_form';
 import autobind from '../lib/autobind';
+import ResponsiveContainer from '../components/responsive_container';
+import LogoStrip from '../components/logo_strip';
 
 interface Props {
 
@@ -35,11 +37,11 @@ class Home extends React.Component<Props, State> {
           <div className="bg-blue-fade">
             <Header isHomeVisible={false} onToggleContactForm={this.toggleContactForm} />
 
-            <div id="hero" className="hero align-c ptxxxxl narrow-ptxxl mobile-ptn pbhuge narrow-pbxxxl type-white">
+            <div id="hero" className="hero align-c ptxxxl narrow-ptxl mobile-ptn pbhuge narrow-pbxxxl type-white">
               <div className="container container-c">
-                <div className="columns pbxxxxl mobile-pbn">
-                  <div className="column column-one-fifth narrow-display-none"></div>
-                  <div className="column column-three-fifths narrow-column-full narrow-phxl">
+              
+                <div className="mbxxxxl mobile-pbn">
+                  <ResponsiveContainer>
                     <h1 className="">The happiest way to roll out new internal workflows</h1>
 
                     <p className="mbxxxxl mobile-mbxxl type-l color-gray-lightest">
@@ -52,8 +54,7 @@ class Home extends React.Component<Props, State> {
                       className="button button-l button-primary type-label"
                       onClick={this.toggleContactForm}
                     >Get more info &amp; a proof-of-concept</button>
-                  </div>
-                  <div className="column column-one-fifth narrow-display-none"></div>
+                  </ResponsiveContainer>
                 </div>
               </div>
             </div>
@@ -153,14 +154,9 @@ class Home extends React.Component<Props, State> {
 
               <div className="container container-c">
 
-                <div className="columns">
-                  <div className="column column-one-fifth narrow-display-none"></div>
-                  <div className="column column-three-fifths narrow-column-full narrow-phxxl">
-                    <h1 className="align-c">Get 10x adoption of your pesky workflows in less than a week</h1>
-
-                  </div>
-                  <div className="column column-one-fifth narrow-display-none"></div>
-                </div>
+                <ResponsiveContainer>
+                  <h1 className="align-c">Get 10x adoption of your pesky workflows in less than a week</h1>
+                </ResponsiveContainer>
 
                 <div className="columns">
                   <div className="column column-one-third mobile-column-full ptxxxxl narrow-ptxxxl mobile-ptxxl align-c">
@@ -206,10 +202,7 @@ class Home extends React.Component<Props, State> {
             <div id="logoStrip" className="bg-white">
               <div className="container container-c">
                 <div className="ptxxl pbl align-c">
-                  <img className="mrxl mbxl align-m" src="/static/images/logos/amex_1600x1600.png" alt="American Express" width="80" />
-                  <img className="mhxl mbxl align-m" src="/static/images/logos/collibra_1496x408.png" alt="Collibra" width="130" />
-                  <img className="mhxl mbxl align-m" src="/static/images/logos/mighty_networks_1174x300.svg" alt="Mighty Networks" width="130" />
-                  <img className="mhxl mbxl align-m" src="/static/images/logos/plenty_color_528x368.png" alt="Plenty" width="80" />                  
+                  <LogoStrip />
                 </div>
               </div>
             </div>
@@ -217,9 +210,8 @@ class Home extends React.Component<Props, State> {
             <div id="customer-stories" className="pvxxxxl narrow-ptl mobile-pbxxl mobile-phxxl align-c bg-lightest">
               <h2 className="">Hear our customer stories</h2>
 
-              <div className="columns">
-                <div className="column column-one-fifth narrow-display-none" />
-                <div className="column column-three-fifths narrow-column-full ptxxxl mobile-ptl narrow-phxxl">
+              <ResponsiveContainer>
+                <div className="ptxxxl mobile-ptl">
 
                   <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="border-round" />
 
@@ -231,14 +223,13 @@ class Home extends React.Component<Props, State> {
                     <p>—Perry Skorcz, Head of Farm Operations at Plenty</p>
                   </blockquote>
                 </div>
-                <div className="column column-one-fifth narrow-display-none" />
-              </div>
+              </ResponsiveContainer>
             </div>
 
             <div id="last-chance" className="pvxxxxl narrow-pvl narrow-phxxl align-c">
               <h2>Ready to learn more? Reach out for your free proof-of-concept.</h2>
 
-              <div className="pvxl">
+              <div className="ptxl">
                 <button type="button"
                   className="button button-l button-primary type-label"
                   onClick={this.toggleContactForm}
@@ -248,12 +239,10 @@ class Home extends React.Component<Props, State> {
 
           </div>
 
-          <div className={`position-fixed-full bg-scrim position-z-front fade-in ${
-            this.state.contactFormVisible ? "" : "display-none"
-          }`}>
-            <ContactForm onDone={this.toggleContactForm} isVisible={this.state.contactFormVisible} />
-          </div>
+          <ContactForm onDone={this.toggleContactForm} isVisible={this.state.contactFormVisible} />
+
           <Footer />
+
         </div>
 
       </div>

@@ -7,27 +7,20 @@ class Footer extends React.Component {
   render() {
     const year = (new Date()).getFullYear();
     return (
-      <footer className="nav container container-c ptl pbxxxl">
+      <footer className="nav container container-c pvxxxl">
         <div className="columns">
           <div className="column column-one-quarter mobile-column-full mobile-align-c mobile-pbl">
             <Link href="/"><a className="link-subtle"><EllipsisLogo height={36} /></a></Link>
           </div>
           <div className="column align-c column-one-half mobile-column-full phxxl mts">
             <div className="mobile-display-none">
-              <span className="mrl align-button align-button-s">
-                <Link href="/privacy_policy"><a className="link-subtle">Privacy policy</a></Link>
-              </span>
-              <span className="mrl align-button align-button-s type-disabled">·</span>
               <span className="align-button align-button-s">
-                <Link href="/terms_of_service"><a className="link-subtle">Terms of service</a></Link>
+                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle">Privacy policy</a></Link>
               </span>
             </div>
             <div className="mobile-display-only type-l">
               <div className="mbl">
-                <Link href="/privacy_policy"><a className="link-subtle">Privacy policy</a></Link>
-              </div>
-              <div className="">
-                <Link href="/terms_of_service"><a className="link-subtle">Terms of service</a></Link>
+                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle">Privacy policy</a></Link>
               </div>
             </div>
           </div>
