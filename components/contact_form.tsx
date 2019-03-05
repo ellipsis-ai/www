@@ -1,7 +1,6 @@
 import * as React from 'react'
 import autobind from '../lib/autobind';
 import FormInput from './form_input';
-import Textarea from './textarea';
 
 interface Props {
   onDone: () => void
@@ -99,95 +98,97 @@ class ContactForm extends React.Component<Props, State> {
   }
 
   cancel(): void {
-    this.props.onDone();
+    this.setState({
+      error: ""
+    }, () => {
+      this.props.onDone();
+    })
   }
 
   render() {
     return (
-      <div className={`position-fixed-full bg-scrim position-z-front fade-in ${
-        this.props.isVisible ? "" : "display-none"
-        }`}>
-        <form action={mailChimpActionUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
-          <div className="columns">
-            <div className="column column-one-fifth narrow-display-none"></div>
-            <div className="column column-three-fifths narrow-column-full">
-              <div className="mtxxl narrow-mtn pvm bg-white">
-                <div className="container container-c container-narrow phxxl mobile-phxl">
+      <div className={`fade-in ${this.props.isVisible ? "" : "display-none"}`}>
+        <div className="position-fixed-full bg-scrim position-z-scrim fade-in" />
+        <div className="position-fixed-top position-top-full position-z-front">
+          <form action={mailChimpActionUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+            <div className="columns">
+              <div className="column column-one-fifth narrow-display-none"></div>
+              <div className="column column-three-fifths narrow-column-full">
+                <div className="mtxxl narrow-mtn pvm bg-white">
+                  <div className="container container-c container-narrow phxxl mobile-phxl">
 
-                  <h2>Get more info &amp; a proof-of-concept</h2>
+                    <h2 className="mobile-mtm">Get more info &amp; a proof-of-concept</h2>
 
-                  <p>Compliance work, daily reporting, service requests, data governance, and more — it doesn’t have to be painful.</p>
+                    <p>Compliance work, daily reporting, service requests, data governance, and more — it doesn’t have to be painful.</p>
 
-                  <p>Send us your contact details and we’ll be in touch shortly.</p>
+                    <p>Send us your contact details and we’ll be in touch shortly.</p>
 
-                  <div className="columns mvxl">
-                    <div className="column column-one-third narrow-column-one-half mobile-column-full mobile-mbxl">
-                      <h5><label htmlFor="FNAME">First name </label></h5>
-                      <FormInput ref={(el) => this.focusableField = el} onChange={this.setFirstName} autoFocus={true} value={this.state.firstName} name="FNAME" className="form-input form-input-borderless" id="FNAME" />
-                    </div>
-                    <div className="column column-two-thirds narrow-column-one-half mobile-column-full mobile-mbxl">
-                      <h5><label htmlFor="LNAME">Last name </label></h5>
-                      <FormInput onChange={this.setLastName} value={this.state.lastName} name="LNAME" className="form-input form-input-borderless" id="LNAME" />
-                    </div>
-                    <div className="column column-one-half narrow-column-full"></div>
-                  </div>
-
-                  <div className="columns mvxl">
-                    <div className="column column-one-half mobile-column-full mobile-mbxl">
-                      <h5><label htmlFor="COMPANY">Company name </label></h5>
-                      <FormInput onChange={this.setCompanyName} value={this.state.companyName} name="COMPANY" className="form-input form-input-borderless" id="COMPANY" />
-                    </div>
-                    <div className="column column-one-half mobile-column-full mobile-mbxl">
-                      <h5><label htmlFor="TITLE">Job title <span className="type-regular type-disabled">(Optional)</span></label></h5>
-                      <FormInput onChange={this.setTitle} value={this.state.jobTitle} name="TITLE" className="form-input form-input-borderless" id="TITLE" />
-                    </div>
-                    <div className="column column-one-half narrow-column-full"></div>
-                  </div>
-
-                  <div className="columns mvxl">
-                    <div className="column column-one-half narrow-column-full narrow-mbxl">
-                      <h5><label htmlFor="EMAIL">Email address</label></h5>
-                      <FormInput onChange={this.setEmail} type="email" value={this.state.email} name="EMAIL" className="form-input form-input-borderless" id="EMAIL" />
-                    </div>
-                    <div className="column column-one-half narrow-column-full narrow-mbxl">
-                      <h5><label htmlFor="PHONE">Phone number <span className="type-regular type-disabled">(Optional)</span></label></h5>
-                      <FormInput onChange={this.setPhone} type="tel" name="PHONE" className="form-input form-input-borderless" value={this.state.phone} id="PHONE" />
-                    </div>
-                    <div className="column column-one-quarter narrow-column-full narrow-mbxl"></div>
-                  </div>
-
-                  <div className="mvxl">
-                    <h5 className="mbm">Preferred contact method</h5>
-                    <div className="columns">
-                      <div className="column column-one-quarter mobile-column-one-half">
-                        <input onChange={this.setContactMethodEmail} type="radio" value="Email" name="METHOD" id="METHOD-0" checked={this.state.contactMethod === "Email"} /><label htmlFor="METHOD-0"> Email</label>
+                    <div className="columns mvxl mobile-mvn">
+                      <div className="column column-one-third narrow-column-one-half">
+                        <h5><label htmlFor="FNAME">First name </label></h5>
+                        <FormInput ref={(el) => this.focusableField = el} onChange={this.setFirstName} autoFocus={true} value={this.state.firstName} name="FNAME" className="form-input form-input-borderless" id="FNAME" />
                       </div>
-                      <div className="column column-one-quarter mobile-column-one-half">
-                        <input onChange={this.setContactMethodPhone} type="radio" value="Phone" name="METHOD" id="METHOD-1" checked={this.state.contactMethod === "Phone"} /><label htmlFor="METHOD-1"> Phone</label>
+                      <div className="column column-two-thirds narrow-column-one-half">
+                        <h5><label htmlFor="LNAME">Last name </label></h5>
+                        <FormInput onChange={this.setLastName} value={this.state.lastName} name="LNAME" className="form-input form-input-borderless" id="LNAME" />
                       </div>
-                      <div className="column column-one-half narrow-column-full"></div>
                     </div>
-                  </div>
 
-                  <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
-                    <input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_20ddfafccc" tabIndex={-1} value="" readOnly={true} />
-                  </div>
-                  <div>
-                    <button type="submit" name="subscribe" id="mc-embedded-subscribe"
-                      className="button button-primary mrm mbm" onClick={this.validateAndSend}>Send contact details</button>
-                    <button type="button" className="button mbm" onClick={this.cancel}>Cancel</button>
-                  </div>
+                    <div className="columns mvxl mobile-mvn">
+                      <div className="column column-one-half">
+                        <h5><label htmlFor="COMPANY">Company name </label></h5>
+                        <FormInput onChange={this.setCompanyName} value={this.state.companyName} name="COMPANY" className="form-input form-input-borderless" id="COMPANY" />
+                      </div>
+                      <div className="column column-one-half">
+                        <h5><label htmlFor="TITLE">Job title <span className="type-regular type-disabled">(Optional)</span></label></h5>
+                        <FormInput onChange={this.setTitle} value={this.state.jobTitle} name="TITLE" className="form-input form-input-borderless" id="TITLE" />
+                      </div>
+                    </div>
 
-                  <div id="errorMessages" className="mtl type-pink type-bold">{this.state.error}</div>
+                    <div className="columns mvxl mobile-mvn">
+                      <div className="column column-one-half mobile-column-full narrow-mbl mobile-mbn">
+                        <h5><label htmlFor="EMAIL">Email address</label></h5>
+                        <FormInput onChange={this.setEmail} type="email" value={this.state.email} name="EMAIL" className="form-input form-input-borderless" id="EMAIL" />
+                      </div>
+                      <div className="column column-one-half mobile-display-none narrow-mbl mobile-mbn">
+                        <h5><label htmlFor="PHONE">Phone number <span className="type-regular type-disabled">(Optional)</span></label></h5>
+                        <FormInput onChange={this.setPhone} type="tel" name="PHONE" className="form-input form-input-borderless" value={this.state.phone} id="PHONE" />
+                      </div>
+                    </div>
 
+                    <div className="mvxl mobile-display-none">
+                      <h5 className="mbm">Preferred contact method</h5>
+                      <div className="columns">
+                        <div className="column column-one-quarter mobile-column-one-half">
+                          <input onChange={this.setContactMethodEmail} type="radio" value="Email" name="METHOD" id="METHOD-0" checked={this.state.contactMethod === "Email"} /><label htmlFor="METHOD-0"> Email</label>
+                        </div>
+                        <div className="column column-one-quarter mobile-column-one-half prn">
+                          <input onChange={this.setContactMethodPhone} type="radio" value="Phone" name="METHOD" id="METHOD-1" checked={this.state.contactMethod === "Phone"} /><label htmlFor="METHOD-1"> Phone</label>
+                        </div>
+                        <div className="column column-one-half narrow-display-none"></div>
+                      </div>
+                    </div>
+
+                    <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+                      <input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_20ddfafccc" tabIndex={-1} value="" readOnly={true} />
+                    </div>
+
+                    <div id="errorMessages" className="mtm type-pink type-bold">{this.state.error}</div>
+
+                    <div className="mtxl">
+                      <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+                        className="button button-primary mrm mbm" onClick={this.validateAndSend}>Send contact details</button>
+                      <button type="button" className="button mbm" onClick={this.cancel}>Cancel</button>
+                    </div>
+
+                  </div>
                 </div>
               </div>
-            
+              <div className="column column-one-fifth narrow-display-none"></div>
             </div>
-            <div className="column column-one-fifth narrow-display-none"></div>
-          </div>
 
-        </form>
+          </form>
+        </div>
       </div>
     );
   }
