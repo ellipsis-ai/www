@@ -37,9 +37,9 @@ class Home extends React.Component<Props, State> {
           <div className="bg-blue-fade">
             <Header isHomeVisible={false} onToggleContactForm={this.toggleContactForm} />
 
-            <div id="hero" className="hero align-c ptxxxl narrow-ptxl mobile-ptn pbhuge narrow-pbxxxl type-white">
+            <div id="hero" className="hero align-c ptxxxl narrow-ptxl pbhuge narrow-pbxxxl mobile-ptn mobile-pbs type-white">
               <div className="container container-c">
-              
+
                 <div className="mbxxxxl mobile-pbn">
                   <ResponsiveContainer>
                     <h1 className="">The happiest way to roll out new internal workflows</h1>
@@ -65,7 +65,14 @@ class Home extends React.Component<Props, State> {
 
             <div id="benefits" className="">
               <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column column-one-half mobile-column-full screencast-fiix-report"></div>
+                <div className="flex-column column-one-half mobile-column-full">
+                  <div className="video-woman-clipboard-container">
+                    <video className="video-woman-clipboard" autoPlay={true} loop={true} muted={true} preload="metadata" playsInline={true}>
+                      <source src="/static/videos/adobe_stock_190510459_woman_clipboard.mov" type="video/mp4" />
+                    </video>
+                    <div className="video-woman-clipboard-overlay" />
+                  </div>
+                </div>
                 <div className="flex-column column-one-half mobile-column-full pthuge narrow-ptxxxl">
 
                   <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
@@ -103,7 +110,7 @@ class Home extends React.Component<Props, State> {
                           <div className="mobile-display-none">
                             <img src="/static/images/icons/save_time@2x.png" width="91" />
                           </div>
-            
+
                           <h2 className="mobile-mtn">Save time</h2>
                           <p className="type-l">
                             Empower your employees to focus on the things that matter. Close the gaps.
@@ -140,7 +147,7 @@ class Home extends React.Component<Props, State> {
                         <p className="type-l">
                           The less paperwork and process, the better. Create a beautiful, seamless
                           workplace for healthier, happier, people.
-                        </p>                      
+                        </p>
                       </div>
                     </div>
 
@@ -216,8 +223,8 @@ class Home extends React.Component<Props, State> {
                   <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="border-round" />
 
                   <blockquote className="type-l mtxl mbn mhn">
-                    <p><i>“What value does Ellipsis provide? We’ve used it to automate 5–6 end-of-day messages 
-                      and noticed the time it saves the team. I’d say that [these daily reports] only take 
+                    <p><i>“What value does Ellipsis provide? We’ve used it to automate 5–6 end-of-day messages
+                      and noticed the time it saves the team. I’d say that [these daily reports] only take
                       five minutes a day now instead of not having them at all.”</i></p>
 
                     <p>—Perry Skorcz, Head of Farm Operations at Plenty</p>

@@ -26,7 +26,7 @@
 @import "animation";
 
 .photo-happy-employees {
-  background-image: 
+  background-image:
     linear-gradient(@gray-light-translucent, @gray-light-translucent),
     url(/static/images/photos/plenty_team.jpg);
   background-size: cover;
@@ -50,4 +50,57 @@
   background-size: contain;
   background-position: center;
   min-height: 250px;
+}
+
+.photo-about-page {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(@blue-fade-light 0%, @blue-fade-light 1vw, fade(@blue-fade-light, 0%) 100%),
+    url(/static/images/photos/adobe_stock_185916703_preview.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  min-height: 20vw;
+}
+
+.video-woman-clipboard-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.video-woman-clipboard {
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 125%;
+}
+
+@media (max-width: @mobile-max-width) {
+  .video-woman-clipboard-container {
+    min-height: 33vw;
+  }
+
+  .video-woman-clipboard {
+    bottom: -50%;
+    height: 175%;
+  }
+}
+
+@media (min-width: @mobile-max-width + 1) and (max-width: @narrow-max-width) {
+  .video-woman-clipboard {
+    bottom: 0;
+    height: 100%;
+  }
+}
+
+.video-woman-clipboard-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: linear-gradient(@gray-light-translucent 0%, @gray-light-translucent 75%, @gray-light 100%);
 }

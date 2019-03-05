@@ -104,10 +104,16 @@
   background-position: 50% 50%;
 }
 
+@gray-fade: linear-gradient(180deg, hsl(231, 10%, 75%) 0%, hsl(231, 10%, 90%) 50%, @white 100%);
+
 .bg-gray-fade {
-  background: linear-gradient(180deg, hsl(231, 10%, 75%) 0%, hsl(231, 10%, 90%) 50%, @white 100%);
+  background: @gray-fade;
 }
 
+@blue-fade-dark: hsl(231, 13%, 25%);
+@blue-fade-light: hsl(231, 22%, 43%);
+@blue-fade: linear-gradient(180deg, @blue-fade-dark 0%, @blue-fade-light 100%);
+
 .bg-blue-fade {
-  background: linear-gradient(180deg, #373A48 0%, #565D86 100%);
+  background: @blue-fade;
 }

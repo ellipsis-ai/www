@@ -32,13 +32,12 @@ class About extends React.Component<Props, State> {
         <div className="page">
           <div className="bg-blue-fade">
             <Header isHomeVisible={true} onToggleContactForm={this.toggleContactForm} activePage={Page.About} />
+            <h1 className="align-c mtn type-white mbn pbxl">This is Ellipsis</h1>
           </div>
-
           <div className="bg-gray-fade">
-            <div className="container container-c ptxxxl pbxl narrow-pvxl">
+            <div className="container container-c ptxxl pbxl narrow-pvxl mobile-ptm">
 
-              <h1 className="align-c mtn ptxl">This is Ellipsis</h1>
-              <h3 className="align-c mtn mbxxl type-pink type-label">This is a transformation</h3>
+              <h3 className="align-c mbxxl type-pink type-label">This is a transformation</h3>
 
               <ResponsiveContainer>
                 <p className="type-xl">
