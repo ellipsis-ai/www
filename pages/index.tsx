@@ -65,13 +65,13 @@ class Home extends React.Component<Props, State> {
 
             <div id="benefits" className="">
               <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column column-one-half mobile-column-full">
-                  <div className="video-woman-clipboard-container">
+                <div className="flex-column column-one-half mobile-column-full screencast-fiix-report">
+                  {/* <div className="video-woman-clipboard-container">
                     <video className="video-woman-clipboard" autoPlay={true} loop={true} muted={true} preload="metadata" playsInline={true}>
                       <source src="/static/videos/adobe_stock_190510459_woman_clipboard.mov" type="video/mp4" />
                     </video>
                     <div className="video-woman-clipboard-overlay" />
-                  </div>
+                  </div> */}
                 </div>
                 <div className="flex-column column-one-half mobile-column-full pthuge narrow-ptxxxl">
 
