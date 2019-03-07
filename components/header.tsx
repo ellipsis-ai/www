@@ -60,12 +60,12 @@ class Header extends React.Component<Props, State> {
                 {this.props.isHomeVisible ? (
                   <span className="mrxxl align-button "><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></span>
                 ) : null}
-                <span className="mrxxl align-button "><Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link></span>
+                {/* <span className="mrxxl align-button "><Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link></span> */}
                 <span className="mrxxl align-button "><Link prefetch href="/about"><a className={this.linkClassFor(Page.About)}>About</a></Link></span>
-                <button type="button"
+                {/* <button type="button"
                   className="button-shrink button-inverted type-label type-bold"
                   onClick={this.props.onToggleContactForm}
-                >Schedule a demo</button>
+                >Schedule a demo</button> */}
               </div>
               <div className="narrow-display-only position-relative position-z-popup-trigger">
                 <button type="button" className="button-raw type-white" onClick={this.toggleMenu}><MenuIcon open={this.state.expandMenu} /></button>
@@ -88,7 +88,7 @@ class Header extends React.Component<Props, State> {
                 </div>
               </div>
             </div>
-          </div>          
+          </div>
         </div>
       </header>
     )

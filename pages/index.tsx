@@ -35,7 +35,7 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <EllipsisHead description="Ellipsis.ai helps enterprise companies automate their workflows across multiple tools,  integrated into Slack or Microsoft Teams." />
+        <EllipsisHead title={"Workflow management - enterprise automation"} description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster." />
 
         <div className="page">
           <div className="bg-blue-fade">
@@ -46,10 +46,10 @@ class Home extends React.Component<Props, State> {
 
                 <div className="mbxxxxl mobile-pbn">
                   <ResponsiveContainer>
-                    <h1 className="">Take the pain out of rolling out new internal&nbsp;workflows</h1>
+                    <h1 className="">Take away the pain from rolling out new&nbsp;workflows</h1>
 
                     <p className="type-l color-blue-light">
-                      Transform your enterprise workplace by automating &amp; centralizing workflows
+                      Transform your enterprise workplace by automating and centralizing workflows
                       in existing communication tools, whether it’s at your desk or&nbsp;on&nbsp;the&nbsp;go.
                     </p>
 
@@ -108,10 +108,11 @@ class Home extends React.Component<Props, State> {
 
                         <h2 className="mobile-mtn narrow-mtl">Get easy adoption of tough workflows</h2>
                         <p>
-                          Compliance doesn’t have to be painful. The difference between a complicated
-                          workflow and easy automation is the difference between tasks sitting on the
-                          backlog and the work just getting done. Ellipsis removes roadblocks and puts
-                          the workflows where people already are so they can get tasks done quickly and effortlessly.
+                          Compliance doesn’t have to be painful. Innovation doesn’t have to be painful.
+                          The difference between a complicated workflow and easy automation is the
+                          difference between tasks sitting on the backlog and the work just getting done.
+                          Ellipsis removes roadblocks and puts the workflows where people already are
+                          so they can get tasks done quickly and effortlessly.
                         </p>
                       </div>
                     </div>
@@ -151,13 +152,7 @@ class Home extends React.Component<Props, State> {
                 </div>
               </div>
               <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column column-one-half mobile-column-full bg-gray-light photo-happy-employees position-relative">
-                  <div className="position-absolute position-bottom-right mobile-position-bottom-left">
-                    <div className="mrhuge mlxxxxl narrow-mhxxl max-width-30 mobile-max-width-none type-tight">
-                      <span className="bg-white">Employees at Plenty use Ellipsis to deliver mission-critical reports every day to their colleagues.</span>
-                    </div>
-                  </div>
-                </div>
+                <div className="flex-column column-one-half mobile-column-full bg-gray-light photo-happy-employees" />
                 <div className="flex-column column-one-half mobile-column-full ptxxxxl narrow-ptxxl">
 
                   <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
@@ -170,9 +165,9 @@ class Home extends React.Component<Props, State> {
                           <img src="/static/images/icons/happiness@2x.png" width="98" className="narrow-display-none" />
                           <img src="/static/images/icons/happiness@2x.png" width="74" className="narrow-display-only" />
                         </div>
-                        <h2 className="mobile-mtn narrow-mtl">Be the workplace hero</h2>
-                        <p className="type-l">
-                          Take away people’s mundane work, and watch the smiles grow. Introduce your colleagues to a seamless workplace where people have the data and the reports they need at hand, and where everyone collaborates to build a culture of efficiency.
+                        <h2 className="mobile-mtn narrow-mtl">Your team will thank you</h2>
+                        <p>
+                          Take the pain away from doing the right thing, and watch the smiles grow. Introduce your colleagues to a seamless workplace where people have the data and the reports they need at hand, and where everyone collaborates to build a culture of efficiency.
                         </p>
                       </div>
                     </div>
@@ -188,7 +183,7 @@ class Home extends React.Component<Props, State> {
               <div className="container container-c">
 
                 <ResponsiveContainer>
-                  <h1 className="align-c">Workflow automation with Ellipsis: how it works</h1>
+                  <h1 className="align-c">Get 10x adoption of your workflows: how it works</h1>
                 </ResponsiveContainer>
 
                 <div className="columns">
@@ -227,7 +222,7 @@ class Home extends React.Component<Props, State> {
                   <button type="button"
                     className="button button-primary button-l type-label"
                     onClick={this.toggleContactForm}
-                  >Get more info</button>
+                  >Get a proof of concept</button>
                 </div>
               </div>
             </div>
