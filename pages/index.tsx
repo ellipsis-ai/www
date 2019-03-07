@@ -106,7 +106,7 @@ class Home extends React.Component<Props, State> {
                           <img src="/static/images/icons/getting_done@2x.png" width="75" className="narrow-display-only" />
                         </div>
 
-                        <h2 className="mobile-mtn narrow-mtl">Get easy adoption of pesky workflows</h2>
+                        <h2 className="mobile-mtn narrow-mtl">Get easy adoption of tough workflows</h2>
                         <p>
                           Compliance doesn’t have to be painful. The difference between a complicated
                           workflow and easy automation is the difference between tasks sitting on the
