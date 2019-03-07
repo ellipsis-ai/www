@@ -46,7 +46,7 @@ class Home extends React.Component<Props, State> {
 
                 <div className="mbxxxxl mobile-pbn">
                   <ResponsiveContainer>
-                    <h1 className="">Take away the pain from rolling out new&nbsp;workflows</h1>
+                    <h1 className="">Adopting new workflows doesn’t have to be slow and painful</h1>
 
                     <p className="type-l color-blue-light">
                       Transform your enterprise workplace by automating and centralizing workflows
