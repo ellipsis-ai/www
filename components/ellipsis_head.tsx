@@ -15,7 +15,12 @@ class EllipsisHead extends React.Component<Props> {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="description" content={this.props.description} />
-        <title>{this.props.title || ""}{this.props.title ? " · " : ""}Ellipsis.ai</title>
+        <title>
+          {this.props.title || ""}
+          {this.props.title ? " · " : ""}
+          Ellipsis.ai
+          {this.props.title ? "" : " · Workflow management and enterprise automation"}
+        </title>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i" rel="stylesheet" />
 
         {/* IE 10+ "Metro" Tiles - 144x144 pixels in size icon should be transparent */}

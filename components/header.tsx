@@ -18,7 +18,8 @@ interface Props {
 }
 
 interface State {
-  expandMenu: boolean
+  expandMenu: boolean,
+  showSolutions: boolean
 }
 
 class Header extends React.Component<Props, State> {
@@ -26,7 +27,8 @@ class Header extends React.Component<Props, State> {
     super(props);
     autobind(this);
     this.state = {
-      expandMenu: false
+      expandMenu: false,
+      showSolutions: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
   }
@@ -37,12 +39,29 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  linkClassFor(page: Page) {
-    if (this.props.activePage === page) {
-      return "link-light link-active";
-    } else {
-      return "link-light";
-    }
+  linkClassFor(page?: Page) {
+    return `link-light type-bold type-label ${page && this.props.activePage === page ? "link-active" : ""}`;
+  }
+
+  revealSolutions() {
+    this.setState({
+      showSolutions: true
+    })
+  }
+
+  hideSolutions() {
+    this.setState({
+      showSolutions: false
+    });
+  }
+
+  renderSolutions() {
+    return (
+      <div>
+        <div><Link href="/static/datasheets/Ellipsis Collibra Data Sheet - 20180723.pdf"><a className="link-light">Data governance</a></Link></div>
+        <div><Link href="/static/datasheets/Ellipsis Fiix Data Sheet - 20181105.pdf"><a className="link-light">Facility management &amp; CMMS</a></Link></div>
+      </div>
+    );
   }
 
   render() {
@@ -55,13 +74,19 @@ class Header extends React.Component<Props, State> {
                 <Link href="/"><a className="link-light"><EllipsisLogo height={36} /></a></Link>
               </div>
             </div>
-            <div className="column column-one-half align-r type-bold type-label">
+            <div className="column column-one-half align-r">
               <div className="narrow-display-none">
                 {this.props.isHomeVisible ? (
-                  <span className="mrxxl align-button "><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></span>
+                  <div className="mrxxl align-button "><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></div>
                 ) : null}
-                {/* <span className="mrxxl align-button "><Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link></span> */}
-                <span className="mrxxl align-button "><Link prefetch href="/about"><a className={this.linkClassFor(Page.About)}>About</a></Link></span>
+                <div className="mrxxl align-button position-relative" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
+                  <div><a className={this.linkClassFor()}>▼ Solutions</a></div>
+                  <div className={`position-absolute position-below-right width-20 align-r pbxl fade-in ${this.state.showSolutions ? "" : "display-none"}`}>
+                    {this.renderSolutions()}
+                  </div>
+                </div>
+                {/* <Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link> */}
+                <div className="mrxxl align-button "><Link prefetch href="/about"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
                 {/* <button type="button"
                   className="button-shrink button-inverted type-label type-bold"
                   onClick={this.props.onToggleContactForm}
@@ -74,18 +99,21 @@ class Header extends React.Component<Props, State> {
           </div>
           <div>
             <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-blue-fade">
-              <div className={`align-c type-l type-bold type-label ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
+              <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
                   <div className="mvxl"><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></div>
                 ) : null}
-                <div className="mvxl"><Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link></div>
+                <div className="mvxl">
+                  <div className="type-label type-white type-gray-light">Solutions</div>
+                  {this.renderSolutions()}
+                </div>
                 <div className="mvxl"><Link prefetch href="/about"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
-                <div className="bg-pink pvs">
+                {/* <div className="bg-pink pvs">
                   <button type="button"
                     className="button-shrink button-l button-primary type-label type-bold"
                     onClick={this.props.onToggleContactForm}
                   >Schedule a demo</button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
