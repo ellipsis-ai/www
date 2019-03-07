@@ -25,6 +25,19 @@
 @import "opacity";
 @import "animation";
 
+.photo-clipboard {
+  background-image: linear-gradient(@gray-light-translucent, @gray-light-translucent),
+    url(/static/images/photos/adobe_stock_split.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: @mobile-max-width) {
+  .photo-clipboard {
+    min-height: 40vw;
+  }
+}
+
 .photo-happy-employees {
   background-image:
     linear-gradient(@gray-light-translucent, @gray-light-translucent),
@@ -36,7 +49,7 @@
 
 .screencast-fiix-report {
   background-repeat: no-repeat;
-  background-image: linear-gradient(@gray-light, rgba(255, 255, 255, 0)),
+  background-image: linear-gradient(@gray-light-translucent, rgba(255, 255, 255, 0)),
     url(/static/images/screencasts/fiix-request-no-timestamps.gif);
   background-size: contain;
   background-position: center;

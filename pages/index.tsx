@@ -6,6 +6,10 @@ import ContactForm from '../components/contact_form';
 import autobind from '../lib/autobind';
 import ResponsiveContainer from '../components/responsive_container';
 import LogoStrip from '../components/logo_strip';
+import MsTeamsLogo from '../components/logos/ms_teams_logo';
+import SlackLogo from '../components/logos/slack_logo';
+import SMSChatBubble from '../components/logos/sms_chat_bubble';
+import EmailIcon from '../components/logos/email_icon';
 
 interface Props {
 
@@ -42,18 +46,34 @@ class Home extends React.Component<Props, State> {
 
                 <div className="mbxxxxl mobile-pbn">
                   <ResponsiveContainer>
-                    <h1 className="">The happiest way to roll out new internal workflows</h1>
+                    <h1 className="">Take the pain out of rolling out new internal&nbsp;workflows</h1>
 
-                    <p className="mbxxxxl mobile-mbxxl type-l color-gray-lightest">
-                      Transform your enterprise workplace by automating &amp; centralizing pesky
-                      workflows in existing chat tools in less than a week.
+                    <p className="type-l color-blue-light">
+                      Transform your enterprise workplace by automating &amp; centralizing workflows
+                      in existing communication tools, whether it’s at your desk or&nbsp;on&nbsp;the&nbsp;go.
                     </p>
+
+                    <div className="align-c mtxl mbxxxxl">
+                      <div className="display-inline-block align-m mrxl">
+                        <SlackLogo height={40} />
+                      </div>
+                      <div className="display-inline-block align-m mrs">
+                        <MsTeamsLogo height={32} />
+                      </div>
+                      <div className="display-inline-block align-m mlxl mrs">
+                        <SMSChatBubble height={32} />
+                      </div>
+                      <div className="display-inline-block align-m mlxl">
+                        <EmailIcon height={32} />
+                      </div>
+                    </div>
 
                     <button
                       type="button"
                       className="button button-l button-primary type-label"
                       onClick={this.toggleContactForm}
-                    >Get more info &amp; a proof-of-concept</button>
+                    >Get a proof of concept</button>
+
                   </ResponsiveContainer>
                 </div>
               </div>
@@ -65,7 +85,7 @@ class Home extends React.Component<Props, State> {
 
             <div id="benefits" className="">
               <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column column-one-half mobile-column-full screencast-fiix-report">
+                <div className="flex-column column-one-half mobile-column-full photo-clipboard">
                   {/* <div className="video-woman-clipboard-container">
                     <video className="video-woman-clipboard" autoPlay={true} loop={true} muted={true} preload="metadata" playsInline={true}>
                       <source src="/static/videos/adobe_stock_190510459_woman_clipboard.mov" type="video/mp4" />
@@ -73,7 +93,7 @@ class Home extends React.Component<Props, State> {
                     <div className="video-woman-clipboard-overlay" />
                   </div> */}
                 </div>
-                <div className="flex-column column-one-half mobile-column-full pthuge narrow-ptxxxl">
+                <div className="flex-column column-one-half mobile-column-full ptxxxxl narrow-ptxxl">
 
                   <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
                     <div className="columns columns-elastic">
@@ -81,14 +101,17 @@ class Home extends React.Component<Props, State> {
                         <img src="/static/images/icons/getting_done@2x.png" width="50" />
                       </div>
                       <div className="column column-expand">
-                        <div className="mobile-display-none">
-                          <img src="/static/images/icons/getting_done@2x.png" width="101" />
+                        <div className="mobile-display-none ptl narrow-ptn">
+                          <img src="/static/images/icons/getting_done@2x.png" width="101" className="narrow-display-none" />
+                          <img src="/static/images/icons/getting_done@2x.png" width="75" className="narrow-display-only" />
                         </div>
 
-                        <h2 className="mobile-mtn">Rest assured, it’s getting done</h2>
-                        <p className="type-l">
-                          The difference between a complicated workflow and easy automation is
-                          the difference between tasks sitting on a backlog and getting done.
+                        <h2 className="mobile-mtn narrow-mtl">Get easy adoption of pesky workflows</h2>
+                        <p>
+                          Compliance doesn’t have to be painful. The difference between a complicated
+                          workflow and easy automation is the difference between tasks sitting on the
+                          backlog and the work just getting done. Ellipsis removes roadblocks and puts
+                          the workflows where people already are so they can get work done quickly and effortlessly.
                         </p>
                       </div>
                     </div>
@@ -97,8 +120,8 @@ class Home extends React.Component<Props, State> {
                 </div>
               </div>
               <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column flex-column-right mobile-flex-column-left column-one-half mobile-column-full screencast-quick-approval"></div>
-                <div className="flex-column column-one-half mobile-column-full mobile-flex-column-right pthuge narrow-ptxxxl prn">
+                <div className="flex-column flex-column-right mobile-flex-column-left column-one-half mobile-column-full screencast-fiix-report"></div>
+                <div className="flex-column column-one-half mobile-column-full mobile-flex-column-right ptxxxxl narrow-ptxxl prn">
 
                   <div className="column-right">
                     <div className="max-width-30 plxxxxl prhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
@@ -108,13 +131,16 @@ class Home extends React.Component<Props, State> {
                         </div>
                         <div className="column column-expand">
                           <div className="mobile-display-none">
-                            <img src="/static/images/icons/save_time@2x.png" width="91" />
+                            <img src="/static/images/icons/save_time@2x.png" width="91" className="narrow-display-none" />
+                            <img src="/static/images/icons/save_time@2x.png" width="68" className="narrow-display-only" />
                           </div>
 
-                          <h2 className="mobile-mtn">Save time</h2>
-                          <p className="type-l">
-                            Empower your employees to focus on the things that matter. Close the gaps.
-                            Collaborate better. Everyone likes moving faster.
+                          <h2 className="mobile-mtn narrow-mtl">Make change happen in record time</h2>
+                          <p>
+                            With Ellipsis you can roll out a new workflow in days instead of months.
+                            And when your needs change, we’re right there with you, whether it’s phase 2,
+                            version 3, or step 45. Measure results and monitor compliance, while
+                            empowering your employees to focus on the things that matter.
                           </p>
 
                         </div>
@@ -132,7 +158,7 @@ class Home extends React.Component<Props, State> {
                     </div>
                   </div>
                 </div>
-                <div className="flex-column column-one-half mobile-column-full pthuge narrow-ptxxxl">
+                <div className="flex-column column-one-half mobile-column-full ptxxxxl narrow-ptxxl">
 
                   <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
                     <div className="columns columns-elastic">
@@ -141,12 +167,12 @@ class Home extends React.Component<Props, State> {
                       </div>
                       <div className="column column-expand">
                         <div className="mobile-display-none">
-                          <img src="/static/images/icons/happiness@2x.png" width="98" />
+                          <img src="/static/images/icons/happiness@2x.png" width="98" className="narrow-display-none" />
+                          <img src="/static/images/icons/happiness@2x.png" width="74" className="narrow-display-only" />
                         </div>
-                        <h2 className="mobile-mtn">Employee happiness</h2>
+                        <h2 className="mobile-mtn narrow-mtl">Be the workplace hero</h2>
                         <p className="type-l">
-                          The less paperwork and process, the better. Create a beautiful, seamless
-                          workplace for healthier, happier, people.
+                          Take away people’s mundane work, and watch the smiles grow. Introduce your colleagues to a seamless workplace where people have the data and the reports they need at hand, and where everyone collaborates to build a culture of efficiency.
                         </p>
                       </div>
                     </div>
@@ -162,7 +188,7 @@ class Home extends React.Component<Props, State> {
               <div className="container container-c">
 
                 <ResponsiveContainer>
-                  <h1 className="align-c">Get 10x adoption of your pesky workflows in less than a week</h1>
+                  <h1 className="align-c">Workflow automation with Ellipsis: how it works</h1>
                 </ResponsiveContainer>
 
                 <div className="columns">
@@ -201,7 +227,7 @@ class Home extends React.Component<Props, State> {
                   <button type="button"
                     className="button button-primary button-l type-label"
                     onClick={this.toggleContactForm}
-                  >Get a proof of concept</button>
+                  >Get more info</button>
                 </div>
               </div>
             </div>
