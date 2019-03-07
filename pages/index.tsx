@@ -111,7 +111,7 @@ class Home extends React.Component<Props, State> {
                           Compliance doesn’t have to be painful. The difference between a complicated
                           workflow and easy automation is the difference between tasks sitting on the
                           backlog and the work just getting done. Ellipsis removes roadblocks and puts
-                          the workflows where people already are so they can get work done quickly and effortlessly.
+                          the workflows where people already are so they can get tasks done quickly and effortlessly.
                         </p>
                       </div>
                     </div>
@@ -139,7 +139,7 @@ class Home extends React.Component<Props, State> {
                           <p>
                             With Ellipsis you can roll out a new workflow in days instead of months.
                             And when your needs change, we’re right there with you, whether it’s phase 2,
-                            version 3, or step 45. Measure results and monitor compliance, while
+                            version 3, or step 4. Measure results and monitor compliance, while
                             empowering your employees to focus on the things that matter.
                           </p>
 
