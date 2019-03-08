@@ -21,8 +21,10 @@ interface State {
   showSolutions: boolean
 }
 
+type Debounce<T extends Function> = T & ReturnType<typeof debounce>
+
 class Header extends React.Component<Props, State> {
-  hideSolutions: () => void
+  hideSolutions: Debounce<() => void>
 
   constructor(props: Props) {
     super(props);
@@ -49,7 +51,7 @@ class Header extends React.Component<Props, State> {
     this.hideSolutions.clear();
     this.setState({
       showSolutions: true
-    })
+    });
   }
 
   hideSolutionsNow(): void {
