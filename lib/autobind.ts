@@ -12,7 +12,7 @@ const blacklist = [
 
 function autobind(instance: { [prop: string]: any }) {
   Object.getOwnPropertyNames(Object.getPrototypeOf(instance)).forEach((propName) => {
-    if (typeof instance[propName] === "function" && !blacklist.includes(propName)) {
+    if (typeof instance[propName] === "function" && blacklist.indexOf(propName) === -1) {
       instance[propName] = instance[propName].bind(instance);
     }
   });
