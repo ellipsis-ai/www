@@ -7,7 +7,7 @@ interface Props {
 class MsTeamsLogo extends React.PureComponent<Props> {
   render() {
     return (
-      <svg x="0px" y="0px" viewBox="0 0 2381.4 2354.5" height={this.props.height}>
+      <svg x="0px" y="0px" viewBox="0 0 2381.4 2354.5" height={this.props.height} width={this.props.height * 2381.4/2354.5}>
         <title>Microsoft Teams</title>
         <path fill="currentColor" d="M2015.6,899.2c19.5,19.5,42.5,35,67.9,45.8c53,22.2,112.7,22.2,165.8,0c51.2-21.8,92-62.5,113.7-113.7
     c22.2-53,22.2-112.7,0-165.8c-21.8-51.2-62.5-92-113.7-113.7c-53-22.2-112.7-22.2-165.8,0c-51.2,21.8-92,62.5-113.7,113.7

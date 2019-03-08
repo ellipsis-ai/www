@@ -7,7 +7,7 @@ interface Props {
 class SMSChatBubble extends React.PureComponent<Props> {
   render() {
     return (
-      <svg height={this.props.height} viewBox="0 0 40 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <svg height={this.props.height} width={this.props.height * 40/43} viewBox="0 0 40 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <title>SMS</title>
         <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g id="speech_bubble" fill="currentColor">

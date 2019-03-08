@@ -7,7 +7,8 @@ interface Props {
 class TwitterLogo extends React.PureComponent<Props> {
   render() {
     return (
-      <svg height={this.props.height} id="Logo_FIXED" data-name="Logo — FIXED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <svg height={this.props.height} width={this.props.height}
+       id="Logo_FIXED" data-name="Logo — FIXED" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
         <defs>
           <style>{`
             .cls-1{fill: none;}.cls-2{fill: #1da1f2;}

@@ -7,7 +7,7 @@ interface Props {
 class EllipsisLogo extends React.PureComponent<Props> {
   render() {
     return (
-      <svg height={this.props.height} viewBox="0 0 397 112">
+      <svg height={this.props.height} width={this.props.height * 397/112} viewBox="0 0 397 112">
         <title>Ellipsis</title>
         <defs>
           <polygon id="path-1" points="32.577 0.538 32.577 45.7564742 0.13303262 45.7564742 0.13303262 0.538 32.577 0.538"></polygon>

@@ -1,3 +1,5 @@
+// Required for development version to load in IE:
+import 'core-js/fn/string/includes'
 import * as React from 'react'
 import Head from 'next/head'
 import '../less/main.less'
