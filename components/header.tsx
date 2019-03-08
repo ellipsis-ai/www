@@ -3,12 +3,11 @@ import Link from 'next/link'
 import EllipsisLogo from './ellipsis_logo';
 import MenuIcon from './menu_icon';
 import autobind from '../lib/autobind';
+import debounce from 'debounce'
 
 export enum Page {
   Home = "home",
-  About = "about",
-  Product = "product",
-  Contact = "contact"
+  About = "about"
 }
 
 interface Props {
@@ -23,6 +22,8 @@ interface State {
 }
 
 class Header extends React.Component<Props, State> {
+  hideSolutions: () => void
+
   constructor(props: Props) {
     super(props);
     autobind(this);
@@ -31,6 +32,7 @@ class Header extends React.Component<Props, State> {
       showSolutions: false
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.hideSolutions = debounce(this.hideSolutionsNow, 500);
   }
 
   toggleMenu() {
@@ -43,13 +45,14 @@ class Header extends React.Component<Props, State> {
     return `link-light type-bold type-label ${page && this.props.activePage === page ? "link-active" : ""}`;
   }
 
-  revealSolutions() {
+  revealSolutions(): void {
+    this.hideSolutions.clear();
     this.setState({
       showSolutions: true
     })
   }
 
-  hideSolutions() {
+  hideSolutionsNow(): void {
     this.setState({
       showSolutions: false
     });
@@ -58,8 +61,8 @@ class Header extends React.Component<Props, State> {
   renderSolutions() {
     return (
       <div>
-        <div><Link href="/static/datasheets/Ellipsis Collibra Data Sheet - 20180723.pdf"><a className="link-light">Data governance</a></Link></div>
-        <div><Link href="/static/datasheets/Ellipsis Fiix Data Sheet - 20181105.pdf"><a className="link-light">Facility management &amp; CMMS</a></Link></div>
+        <div><Link href="/static/datasheets/Ellipsis Collibra Data Sheet - 20180723.pdf"><a className="link-light" target="datasheet">Data governance</a></Link></div>
+        <div><Link href="/static/datasheets/Ellipsis Fiix Data Sheet - 20181105.pdf"><a className="link-light" target="datasheet">Facility management &amp; CMMS</a></Link></div>
       </div>
     );
   }
@@ -81,12 +84,14 @@ class Header extends React.Component<Props, State> {
                 ) : null}
                 <div className="mrxxl align-button position-relative" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
                   <div><a className={this.linkClassFor()}>▼ Solutions</a></div>
-                  <div className={`position-absolute position-below-right width-20 align-r pbxl fade-in ${this.state.showSolutions ? "" : "display-none"}`}>
+                  <div className={`position-absolute position-below-right width-20 align-r pbxl fade-in ${
+                    this.state.showSolutions ? "" : "display-none"
+                  }`}>
                     {this.renderSolutions()}
                   </div>
                 </div>
                 {/* <Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link> */}
-                <div className="mrxxl align-button "><Link prefetch href="/about"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
+                <div className="mrxxl align-button "><Link prefetch href="/about/"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
                 {/* <button type="button"
                   className="button-shrink button-inverted type-label type-bold"
                   onClick={this.props.onToggleContactForm}
@@ -107,7 +112,7 @@ class Header extends React.Component<Props, State> {
                   <div className="type-label type-white type-gray-light">Solutions</div>
                   {this.renderSolutions()}
                 </div>
-                <div className="mvxl"><Link prefetch href="/about"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
+                <div className="mvxl"><Link prefetch href="/about/"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
                 {/* <div className="bg-pink pvs">
                   <button type="button"
                     className="button-shrink button-l button-primary type-label type-bold"

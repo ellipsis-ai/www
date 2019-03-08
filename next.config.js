@@ -8,14 +8,16 @@ const copyFile = promisify(fs.copyFile)
 module.exports = withTypescript(
   withLess({
     exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
-      if (dev) {
-        return defaultPathMap;
-      }
+      // if (dev) {
+      //   return defaultPathMap;
+      // }
       // This will copy robots.txt from your project root into the out directory
-      await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'))
+      if (!dev) {
+        await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'))
+      }
       return {
         '/': { page: '/' },
-        '/about': { page: '/about' },
+        '/about/': { page: '/about' },
         '/error.html': { page: '/_error' }
       };
     }

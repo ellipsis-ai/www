@@ -35,7 +35,10 @@ class Home extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <EllipsisHead description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster." />
+        <EllipsisHead
+          description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster."
+          canonicalPath="/"
+        />
 
         <div className="page">
           <div className="bg-blue-fade">

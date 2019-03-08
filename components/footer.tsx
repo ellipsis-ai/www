@@ -15,18 +15,18 @@ class Footer extends React.Component {
           <div className="column align-c column-one-half mobile-column-full phxxl mts">
             <div className="mobile-display-none">
               <span className="align-button align-button-s">
-                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle">Privacy policy</a></Link>
+                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle" target="legal">Privacy policy</a></Link>
               </span>
             </div>
             <div className="mobile-display-only type-l">
               <div className="mbl">
-                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle">Privacy policy</a></Link>
+                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle" target="legal">Privacy policy</a></Link>
               </div>
             </div>
           </div>
           <div className="column column-one-quarter mobile-column-full mobile-mvl align-r mobile-align-c">
             <div className="">
-              <a href="https://twitter.com/EllipsisBot" title="@EllipsisBot on Twitter" className="align-button align-button-s">
+              <a href="https://twitter.com/EllipsisBot" target="twitter" title="@EllipsisBot on Twitter" className="align-button align-button-s">
                 <TwitterLogo height={"36"} />
               </a>
             </div>

@@ -28,7 +28,10 @@ class About extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <EllipsisHead title="About Ellipsis" description="Ellipsis is dedicated to helping companies roll out digital transformations by automating workflows in chat." />
+        <EllipsisHead
+          title="About Ellipsis" description="Ellipsis is dedicated to helping companies roll out digital transformations by automating workflows in chat."
+          canonicalPath={"/about/"}
+        />
         <div className="page">
           <div className="bg-blue-fade">
             <Header isHomeVisible={true} onToggleContactForm={this.toggleContactForm} activePage={Page.About} />

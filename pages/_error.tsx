@@ -27,7 +27,7 @@ class Error extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <EllipsisHead title="Page not found" description="" />
+        <EllipsisHead title="Page not found" description="" canonicalPath={null} />
         <div className="page">
           <div className="bg-blue-fade">
             <Header isHomeVisible={true} onToggleContactForm={this.toggleContactForm} />
