@@ -1,0 +1,52 @@
+@import (reference) "measurements";
+@import (reference) "colors";
+@import (reference) "type";
+
+@tab-border-color: @gray-medium;
+
+.tabs {
+  white-space: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.tab-row {
+  border-bottom: @border-width solid @tab-border-color;
+}
+
+.tab {
+  display: inline-block;
+  border-radius: @border-radius @border-radius 0 0;
+  margin: 0 @s -@border-width 0;
+}
+
+@media (max-width: @mobile-max-width) {
+  .tabs {
+    .type-s();
+  }
+
+  .tab {
+    padding: @xs @m;
+    margin-right: @xs;
+  }
+}
+
+.tab, .tab:hover, .tab:visited, .tab:active {
+  color: @black;
+  border-color: @tab-border-color;
+  text-decoration: none;
+}
+
+.tab:focus {
+  border-color: @gray-dark;
+}
+
+.tab:hover {
+  background-color: @almost-white;
+}
+
+.tab-active, .tab-active:hover {
+  background-color: @white;
+  border-bottom-color: @white !important;
+}

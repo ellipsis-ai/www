@@ -1,0 +1,164 @@
+@import (reference) "measurements.less";
+@import (reference) "colors.less";
+@import (reference) "fonts.less";
+
+p {
+  margin: 0 0 @m 0;
+}
+
+.light-antialiasing() {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.type-brand {
+  font-family: @grotaFonts;
+}
+
+b, .type-bold {
+  font-weight: 700;
+}
+
+.type-semibold {
+  font-weight: 600;
+}
+
+.type-regular {
+  font-weight: 400;
+}
+
+.type-light {
+  font-weight: 300;
+}
+
+.type-ml {
+  font-size: @type-button-l !important;
+  line-height: @line-height-l;
+}
+
+.type-l {
+  font-size: @type-l !important;
+  line-height: @line-height-l;
+}
+
+.type-xl {
+  font-size: @type-xl;
+  line-height: @line-height-xl;
+}
+
+.type-icon {
+  font-size: @type-icon !important;
+  line-height: inherit;
+}
+
+.type-m {
+  font-size: @type-m !important;
+  line-height: @line-height-m;
+}
+
+.type-s {
+  font-size: @type-s !important;
+  line-height: @line-height-s;
+}
+
+.type-xs {
+  font-size: @type-xs !important;
+  line-height: @line-height-xs;
+}
+
+.type-italic {
+  font-style: italic;
+}
+
+/* Warning: Monaco editor uses this class name, so we need to undo this in monaco.less */
+.type-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.type-black {
+  color: @black;
+}
+
+.type-weak {
+  color: @gray-dark !important;
+}
+
+.type-disabled {
+  color: @gray-medium !important;
+}
+
+.type-link {
+  color: @blue-medium-text !important;
+}
+
+.type-blue-faded {
+  color: @blue-faded-dark;
+}
+
+.type-pink-dark {
+  color: @pink-dark !important;
+}
+
+.type-pink {
+  color: @pink-medium !important;
+}
+
+.type-pink-light {
+  color: @pink-light !important;
+}
+
+.type-green {
+  color: @green-text !important;
+}
+
+.type-yellow {
+  color: @yellow-medium !important;
+}
+
+.type-white {
+  color: @white !important;
+}
+
+.type-gray-light {
+  color: @gray-light !important;
+}
+
+.type-monospace {
+  font-family: 'Source Code Pro', Menlo, Consolas, monospace;
+  font-size: 0.93em;
+}
+
+code, pre {
+  .type-monospace();
+}
+
+.type-strikethrough {
+  text-decoration: line-through;
+}
+
+.type-l.type-white {
+  .light-antialiasing();
+}
+
+.type-wrap {
+  white-space: normal;
+}
+
+.type-preserve-spaces {
+  white-space: pre-wrap;
+}
+
+.type-wrap-words {
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.type-tight {
+  line-height: normal;
+}
+
+pre {
+  margin: 0;
+}

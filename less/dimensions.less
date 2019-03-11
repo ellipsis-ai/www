@@ -1,0 +1,133 @@
+@import (reference) "measurements";
+
+/* Hard widths */
+
+@iconWidth: @xxl;
+
+.width, .height {
+  box-sizing: border-box;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.width-icon {
+  width: @iconWidth;
+}
+
+.height-big-icon {
+  height: 100px;
+}
+
+.height-full {
+  height: 100%;
+}
+
+.height-m {
+  height: @m;
+}
+
+.height-l {
+  height: @l;
+}
+
+.height-xl {
+  height: @xl;
+}
+
+.height-logo, .height-icon {
+  height: @iconWidth;
+}
+
+.height-icon {
+  line-height: @iconWidth;
+}
+
+.height-logo-s {
+  height: 24px;
+}
+
+.height-button-l {
+  @button-large-height: @xl + (@l * 2);
+  height: @button-large-height;
+  line-height: @button-large-height;
+}
+
+.min-width-border-radius {
+  min-width: @border-radius;
+}
+
+.width-2 {
+  width: 2em !important;
+}
+
+.width-5 {
+  width: 5em !important;
+}
+
+.height-5 {
+  height: 5em !important;
+}
+
+.width-10 {
+  width: 10em !important;
+}
+
+.width-15 {
+  width: 15em !important;
+}
+
+.min-width-10 {
+  min-width: 10em !important;
+}
+
+.width-20 {
+  width: 20em !important;
+}
+
+.min-width-20 {
+  min-width: 20em !important;
+}
+
+.max-width-20 {
+  max-width: 20em !important;
+}
+
+.width-30 {
+  width: 30em !important;
+}
+
+.min-width-30 {
+  min-width: 30em !important;
+}
+
+.max-width-30 {
+  max-width: 30em !important;
+}
+
+.width-40 {
+  width: 40em !important;
+}
+
+.min-width-40 {
+  min-width: 40em !important;
+}
+
+.max-width-80 {
+  max-width: 80em !important;
+}
+
+@media (max-width: @mobile-max-width) {
+  .mobile-width-full {
+    width: 100% !important;
+  }
+  .mobile-height-half {
+    height: 50%;
+  }
+
+  .mobile-max-width-none {
+    max-width: none !important;
+  }
+}
+

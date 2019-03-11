@@ -1,0 +1,119 @@
+@import "measurements";
+@import "colors";
+@import "fonts";
+@import "page";
+@import "lists";
+@import "links";
+@import "type";
+@import "whitespace";
+@import "bg";
+@import "borders";
+@import "boxes";
+@import "position";
+@import "alignment";
+@import "headings";
+@import "tables";
+@import "columns";
+@import "dimensions";
+@import "rules";
+@import "forms";
+@import "tabs";
+@import "buttons";
+@import "popups";
+@import "visibility";
+@import "display";
+@import "opacity";
+@import "animation";
+
+.photo-clipboard {
+  background-image: linear-gradient(rgba(255, 255, 255, 0), @gray-light-translucent),
+    url(/static/images/photos/adobe_stock_split.jpg);
+  background-size: cover;
+  background-position: 65% 50%;
+}
+
+@media (max-width: @mobile-max-width) {
+  .photo-clipboard {
+    min-height: 40vw;
+  }
+}
+
+.photo-happy-employees {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1), @gray-light-translucent),
+    url(/static/images/photos/plenty_team.jpg);
+  background-size: cover;
+  background-position: 44% 50%;
+  min-height: 200px;
+}
+
+.screencast-fiix-report {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(@gray-light-translucent, rgba(255, 255, 255, 0)),
+    url(/static/images/screencasts/fiix-request-no-timestamps.gif);
+  background-size: contain;
+  background-position: center;
+  min-height: 250px;
+}
+
+.screencast-quick-approval {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(@gray-light-translucent, rgba(255, 255, 255, 0)),
+    url(/static/images/screencasts/quick-approval.gif);
+  background-size: contain;
+  background-position: center;
+  min-height: 250px;
+}
+
+.photo-about-page {
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(@blue-fade-light 0%, @blue-fade-light 1vw, fade(@blue-fade-light, 0%) 100%),
+    url(/static/images/photos/adobe_stock_185916703_preview.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  min-height: 20vw;
+}
+
+.video-woman-clipboard-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.video-woman-clipboard {
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 125%;
+}
+
+@media (max-width: @mobile-max-width) {
+  .video-woman-clipboard-container {
+    min-height: 33vw;
+  }
+
+  .video-woman-clipboard {
+    bottom: -50%;
+    height: 175%;
+  }
+}
+
+@media (min-width: @mobile-max-width + 1) and (max-width: @narrow-max-width) {
+  .video-woman-clipboard {
+    bottom: 0;
+    height: 100%;
+  }
+}
+
+.video-woman-clipboard-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-image: linear-gradient(@gray-light-translucent 0%, @gray-light-translucent 75%, @gray-light 100%);
+}

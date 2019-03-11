@@ -1,0 +1,91 @@
+@import (reference) "measurements";
+
+.display-none {
+  display: none !important;
+}
+
+@media (min-width: (@narrow-max-width + 1)) {
+  .narrow-display-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: (@mobile-max-width + 1)) {
+  .mobile-display-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: @narrow-max-width) {
+  .narrow-display-none {
+    display: none !important;
+  }
+
+  .narrow-display-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: @mobile-max-width) {
+  .mobile-display-none {
+    display: none !important;
+  }
+
+  .mobile-display-inline-block {
+    display: inline-block !important;
+  }
+}
+
+.display-inline {
+  display: inline;
+}
+
+.display-inline-block {
+  display: inline-block;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-nowrap {
+  white-space: nowrap;
+}
+
+.display-ellipsis {
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media (max-width: @mobile-max-width) {
+  .mobile-display-no-ellipsis {
+    display: block;
+    white-space: normal;
+  }
+}
+
+.display-limit-width {
+  display: block;
+  width: 0;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.display-overflow-scroll {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.display-overflow-hidden {
+  display: block;
+  overflow: hidden;
+}
+
+.display-overflow-fade-bottom {
+  .display-overflow-hidden();
+  -webkit-mask-image: -webkit-gradient(linear, left 85%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 85%, rgba(0,0,0,0));
+}

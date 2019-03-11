@@ -1,0 +1,39 @@
+{
+  "name": "www",
+  "version": "0.0.1",
+  "description": "Ellipsis.ai marketing website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "type-check": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellipsis-ai/www.git"
+  },
+  "author": "Luke Andrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ellipsis-ai/www/issues"
+  },
+  "homepage": "https://github.com/ellipsis-ai/www#readme",
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
+    "debounce": "^1.2.0",
+    "less": "^3.9.0",
+    "next": "^8.0.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  },
+  "devDependencies": {
+    "@types/debounce": "^1.2.0",
+    "@types/next": "^8.0.1",
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "typescript": "^3.3.3"
+  }
+}

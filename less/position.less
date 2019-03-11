@@ -1,0 +1,191 @@
+@import (reference) "measurements";
+@import (reference) "type";
+@import (reference) "bg";
+@import (reference) "borders";
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.position-left {
+  left: 0;
+}
+
+.position-top-left {
+  top: 0;
+  left: 0;
+}
+
+.position-top-right {
+  top: 0;
+  right: 0;
+}
+
+.position-top-full {
+  top: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.position-below-left {
+  top: 100%;
+  left: 0;
+}
+
+.position-below-right {
+  top: 100%;
+  right: 0;
+}
+
+.position-fixed-full {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.position-fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.position-fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 100%;
+}
+
+.position-fixed-left {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.position-fixed-right {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.position-fixed-top-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.position-hanging-indent {
+  position: absolute;
+  left: -@xxxxl;
+  .bg-lightest();
+  color: @pink-medium;
+  .type-l();
+  padding-left: @s;
+  padding-right: @s;
+  .border-radius-right();
+}
+
+.position-frozen {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.position-z-above {
+  z-index: 1;
+}
+
+.position-z-behind-popup {
+  z-index: 9;
+}
+
+.position-z-popup {
+  z-index: 10;
+}
+
+.position-z-popup-trigger {
+  z-index: 11;
+}
+
+.position-z-behind-scrim {
+  z-index: 998;
+}
+
+.position-z-scrim {
+  z-index: 999;
+}
+
+.position-z-front {
+  z-index: 1000;
+}
+
+@media (max-width: @mobile-max-width) {
+  .mobile-position-fixed {
+    position: fixed;
+  }
+
+  .mobile-position-fixed-top-full {
+    .position-fixed-top;
+    .position-z-above;
+    box-sizing: border-box;
+    overflow: auto;
+    max-height: 100%;
+  }
+
+  .mobile-position-fixed-bottom-full {
+    .position-fixed-bottom;
+    .position-z-above;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .mobile-position-behind-scrim {
+    .position-z-behind-scrim;
+  }
+
+  .mobile-position-z-scrim {
+    .position-z-scrim;
+  }
+
+  .mobile-position-z-front {
+    .position-z-front;
+  }
+
+  .mobile-position-bottom-left {
+    .position-bottom-left;
+    right: auto;
+  }
+}
