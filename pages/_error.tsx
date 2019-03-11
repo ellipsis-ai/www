@@ -1,36 +1,19 @@
 import * as React from 'react'
-import autobind from '../lib/autobind';
-import EllipsisHead from '../components/ellipsis_head';
 import Header from '../components/header';
-import ContactForm from '../components/contact_form';
-import Footer from '../components/footer';
 import Link from 'next/link';
+import Page from '../components/page';
 
-interface Props { }
-interface State {
-  contactFormVisible: boolean
-}
-
-class Error extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    autobind(this);
-    this.state = {
-      contactFormVisible: false
-    };
-  }
-
-  toggleContactForm(): void {
-    this.setState({ contactFormVisible: !this.state.contactFormVisible });
-  }
-
+class Error extends React.Component {
   render() {
     return (
-      <div>
-        <EllipsisHead title="Page not found" description="" canonicalPath={null} />
+      <Page
+        title="Page not found"
+        description=""
+        canonicalPath={null}
+        onRender={(pageProps) => (
         <div className="page">
           <div className="bg-blue-fade">
-            <Header isHomeVisible={true} onToggleContactForm={this.toggleContactForm} />
+            <Header isHomeVisible={true} onToggleContactForm={pageProps.toggleContactForm} />
           </div>
           <div className="bg-white">
             <div className="container container-c pvxxl narrow-pvl mobile-pvn align-c height-page">
@@ -43,12 +26,8 @@ class Error extends React.Component<Props, State> {
 
             </div>
           </div>
-
-          <ContactForm onDone={this.toggleContactForm} isVisible={this.state.contactFormVisible} />
-          <Footer />
-
         </div>
-      </div>
+      )} />
     );
   }
 }

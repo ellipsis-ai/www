@@ -107,8 +107,8 @@ class ContactForm extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className={`fade-in ${this.props.isVisible ? "" : "display-none"}`}>
-        <div className="position-fixed-full bg-scrim position-z-scrim fade-in" />
+      <div className={`fade-in ${this.props.isVisible ? "" : "display-none"}`} aria-modal={true} aria-labelledby="contact-heading" role="dialog">
+        <div className="position-fixed-full bg-scrim position-z-scrim fade-in" tabIndex={0} />
         <div className="position-fixed-top position-top-full position-z-front">
           <form action={mailChimpActionUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
             <div className="columns">
@@ -117,7 +117,7 @@ class ContactForm extends React.Component<Props, State> {
                 <div className="mtxxl narrow-mtn pvm bg-white">
                   <div className="container container-c container-narrow phxxl mobile-phxl">
 
-                    <h2 className="mobile-mtm">Get more info &amp; a proof-of-concept</h2>
+                    <h2 className="mobile-mtm" id="contact-heading">Get more info &amp; a proof-of-concept</h2>
 
                     <p>Compliance work, daily reporting, service requests, data governance, and more — it doesn’t have to be painful.</p>
 

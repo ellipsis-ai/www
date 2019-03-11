@@ -5,14 +5,15 @@ import MenuIcon from './menu_icon';
 import autobind from '../lib/autobind';
 import debounce from 'debounce'
 
-export enum Page {
+export enum PageInfo {
   Home = "home",
-  About = "about"
+  About = "about",
+  Solutions = "solutions"
 }
 
 interface Props {
   isHomeVisible: boolean
-  activePage?: Page
+  activePage?: PageInfo
   onToggleContactForm: () => void
 }
 
@@ -43,7 +44,7 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  linkClassFor(page?: Page) {
+  linkClassFor(page?: PageInfo) {
     return `link-light type-bold type-label ${page && this.props.activePage === page ? "link-active" : ""}`;
   }
 
@@ -82,7 +83,7 @@ class Header extends React.Component<Props, State> {
             <div className="column column-one-half align-r">
               <div className="narrow-display-none">
                 {this.props.isHomeVisible ? (
-                  <div className="mrxxl align-button "><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></div>
+                  <div className="mrxxl align-button "><Link prefetch href="/"><a className={this.linkClassFor(PageInfo.Home)}>Home</a></Link></div>
                 ) : null}
                 <div className="mrxxl align-button position-relative" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
                   <div><a className={this.linkClassFor()}>▼ Solutions</a></div>
@@ -93,7 +94,7 @@ class Header extends React.Component<Props, State> {
                   </div>
                 </div>
                 {/* <Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link> */}
-                <div className="mrxxl align-button "><Link prefetch href="/about/"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
+                <div className="mrxxl align-button "><Link prefetch href="/about/"><a className={this.linkClassFor(PageInfo.About)}>About</a></Link></div>
                 {/* <button type="button"
                   className="button-shrink button-inverted type-label type-bold"
                   onClick={this.props.onToggleContactForm}
@@ -108,13 +109,13 @@ class Header extends React.Component<Props, State> {
             <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-blue-fade">
               <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
-                  <div className="mvxl"><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></div>
+                  <div className="mvxl"><Link prefetch href="/"><a className={this.linkClassFor(PageInfo.Home)}>Home</a></Link></div>
                 ) : null}
                 <div className="mvxl">
                   <div className="type-label type-white type-gray-light">Solutions</div>
                   {this.renderSolutions()}
                 </div>
-                <div className="mvxl"><Link prefetch href="/about/"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
+                <div className="mvxl"><Link prefetch href="/about/"><a className={this.linkClassFor(PageInfo.About)}>About</a></Link></div>
                 {/* <div className="bg-pink pvs">
                   <button type="button"
                     className="button-shrink button-l button-primary type-label type-bold"

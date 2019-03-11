@@ -1,48 +1,24 @@
 import * as React from 'react'
-import EllipsisHead from '../components/ellipsis_head';
 import Header from '../components/header';
-import Footer from '../components/footer';
-import ContactForm from '../components/contact_form';
-import autobind from '../lib/autobind';
 import ResponsiveContainer from '../components/responsive_container';
 import LogoStrip from '../components/logo_strip';
 import MsTeamsLogo from '../components/logos/ms_teams_logo';
 import SlackLogo from '../components/logos/slack_logo';
 import SMSChatBubble from '../components/logos/sms_chat_bubble';
 import EmailIcon from '../components/logos/email_icon';
+import Page from '../components/page';
+import ContactButton from '../components/contact_button';
 
-interface Props {
-
-}
-
-interface State {
-  contactFormVisible: boolean
-}
-
-class Home extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    autobind(this);
-    this.state = {
-      contactFormVisible: false
-    };
-  }
-
-  toggleContactForm(): void {
-    this.setState({ contactFormVisible: !this.state.contactFormVisible });
-  }
-
+class Home extends React.Component {
   render() {
     return (
-      <div>
-        <EllipsisHead
-          description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster."
-          canonicalPath="/"
-        />
-
+      <Page
+        description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster."
+        canonicalPath="/"
+        onRender={(pageProps) => (
         <div className="page">
           <div className="bg-blue-fade">
-            <Header isHomeVisible={false} onToggleContactForm={this.toggleContactForm} />
+            <Header isHomeVisible={false} onToggleContactForm={pageProps.toggleContactForm} />
 
             <div id="hero" className="hero align-c ptxxxl narrow-ptxl pbhuge narrow-pbxxxl mobile-ptn mobile-pbs type-white">
               <div className="container container-c">
@@ -71,11 +47,7 @@ class Home extends React.Component<Props, State> {
                       </div>
                     </div>
 
-                    <button
-                      type="button"
-                      className="button button-l button-primary type-label"
-                      onClick={this.toggleContactForm}
-                    >Get a proof of concept</button>
+                    <ContactButton onClick={pageProps.toggleContactForm} />
 
                   </ResponsiveContainer>
                 </div>
@@ -222,10 +194,7 @@ class Home extends React.Component<Props, State> {
                 </div>
 
                 <div className="align-c pvxxxxl narrow-pvxxl">
-                  <button type="button"
-                    className="button button-primary button-l type-label"
-                    onClick={this.toggleContactForm}
-                  >Get a proof of concept</button>
+                  <ContactButton onClick={pageProps.toggleContactForm} />
                 </div>
               </div>
             </div>
@@ -261,22 +230,14 @@ class Home extends React.Component<Props, State> {
               <h2>Ready to learn more? Reach out for your free proof-of-concept.</h2>
 
               <div className="ptxl">
-                <button type="button"
-                  className="button button-l button-primary type-label"
-                  onClick={this.toggleContactForm}
-                >Get a proof of concept</button>
+                <ContactButton onClick={pageProps.toggleContactForm} />
               </div>
             </div>
 
           </div>
 
-          <ContactForm onDone={this.toggleContactForm} isVisible={this.state.contactFormVisible} />
-
-          <Footer />
-
         </div>
-
-      </div>
+      )} />
     );
   }
 }
