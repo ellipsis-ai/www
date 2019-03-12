@@ -94,6 +94,12 @@
 
   .narrow-column-one-half {
     width: 50%;
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+    &:nth-child(odd) {
+      clear: left;
+    }
   }
 
   .narrow-column-five-twelfths {

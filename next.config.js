@@ -18,6 +18,7 @@ module.exports = withTypescript(
       return {
         '/': { page: '/' },
         '/about/': { page: '/about' },
+        '/data_governance/': { page: '/data_governance/index' },
         '/error.html': { page: '/_error' }
       };
     }
