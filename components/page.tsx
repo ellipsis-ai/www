@@ -21,6 +21,8 @@ interface State {
 }
 
 class Page extends React.Component<Props, State> {
+  pageContainer?: HTMLDivElement | null
+
   constructor(props: Props) {
     super(props);
     autobind(this);
@@ -30,7 +32,13 @@ class Page extends React.Component<Props, State> {
   }
 
   toggleContactForm(): void {
-    this.setState({ contactFormVisible: !this.state.contactFormVisible });
+    this.setState({ contactFormVisible: !this.state.contactFormVisible }, () => {
+      if (this.state.contactFormVisible) {
+        window.document.documentElement.className = "height-window display-overflow-hidden"
+      } else {
+        window.document.documentElement.className = ""
+      }
+    });
   }
 
   render() {
@@ -47,10 +55,7 @@ class Page extends React.Component<Props, State> {
           isVisible={this.state.contactFormVisible}
         />
 
-        <div
-          className={this.state.contactFormVisible ? "height-window display-overflow-hidden" : ""}
-          aria-hidden={this.state.contactFormVisible}
-        >
+        <div aria-hidden={this.state.contactFormVisible}>
           {this.props.onRender({
             toggleContactForm: this.toggleContactForm,
             contactFormVisible: this.state.contactFormVisible

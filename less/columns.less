@@ -207,8 +207,22 @@
 
 .container {
   max-width: @containerWidth;
-  padding-left: @xl;
-  padding-right: @xl;
+  padding-left: @xxl;
+  padding-right: @xxl;
+}
+
+@media (max-width: @narrow-max-width) {
+  .container {
+    padding-left: @xl;
+    padding-right: @xl;
+  }
+}
+
+@media (max-width: @mobile-max-width) {
+  .container {
+    padding-left: @l;
+    padding-right: @l;
+  }
 }
 
 .container-c {
@@ -349,11 +363,4 @@
 .flex-row-expand, .flex-row-cascade {
   flex-grow: 1;
   flex-basis: auto;
-}
-
-@media (max-width: @mobile-max-width) {
-  .container {
-    padding-left: @l;
-    padding-right: @l;
-  }
 }

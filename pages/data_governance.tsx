@@ -1,15 +1,17 @@
 import * as React from 'react'
 import Page from '../components/page';
-import Header, { PageInfo } from '../components/header';
+import Header, { NavSection, NavSubsection } from '../components/header';
 import ResponsiveContainer from '../components/responsive_container';
 import ContactButton from '../components/contact_button';
+import SlackLogo from '../components/logos/slack_logo';
+import MsTeamsLogo from '../components/logos/ms_teams_logo';
 
 class DataGovernance extends React.Component {
   render() {
     return (
       <Page
         title="Data governance assurance - Collibra integration"
-        description="Rollout new internal workflows by surfacing them in Slack or MSFT and automate your way to centralized quality data. Better workflows mean easier adoption and happier employees."
+        description="Rollout new internal workflows by surfacing them in Slack or Microsoft Teams and automate your way to centralized quality data. Better workflows mean easier adoption and happier employees."
         canonicalPath="/data_governance/"
         onRender={(pageProps) => (
           <div>
@@ -17,23 +19,24 @@ class DataGovernance extends React.Component {
               <Header
                 isHomeVisible={true}
                 onToggleContactForm={pageProps.toggleContactForm}
-                activePage={PageInfo.Solutions}
+                activeSection={NavSection.Solutions}
+                activeSubsection={NavSubsection.DataGovernance}
                 className="pbn"
               />
 
               <div className="container container-c ptl pbxl">
                 <div className="columns">
-                  <div className="column column-one-half">
+                  <div className="column column-one-half mobile-column-full mobile-align-c">
                     <h3 className="type-label type-white mtn">Data governance</h3>
                   </div>
-                  <div className="column column-one-half align-r">
+                  <div className="column column-one-half mobile-column-full align-r mobile-align-c">
                     <h3 className="type-white mtn">We integrate with Collibra.</h3>
                   </div>
                 </div>
               </div>
             </div>
             <div className="bg-white">
-              <div className="container container-c pvxxxxl narrow-pvxxl">
+              <div className="container container-c pvxxxl mobile-pvxl">
                 <div className="narrow-display-only">
                   <p className="type-xl mbxl">
                     Improve access to data and related discussions.
@@ -42,9 +45,14 @@ class DataGovernance extends React.Component {
                   </p>
                 </div>
                 <div className="flex-columns mobile-flex-no-columns">
-                  <div className="flex-column flex-column-right mobile-flex-column-left column-two-fifths narrow-column-one-half mobile-column-full align-c pts mobile-pbl">
-                    <div className="video-container">
-                      <video controls={true} preload="metadata" playsInline={true}>
+                  <div className="flex-column flex-column-right mobile-flex-column-left column-two-fifths narrow-column-one-half mobile-column-full align-c ptm mobile-pbl">
+                    <div className="video-container border border-thick">
+                      <video
+                        controls={true}
+                        preload="metadata"
+                        playsInline={true}
+                        poster="/static/images/video_posters/2019-01-30-ellipsis-collibra-automation-package.png"
+                      >
                         <source
                           src="https://s3.amazonaws.com/ellipsis-ai-video/2019-01-30+ellipsis+collibra+automation+package.mp4"
                           type="video/mp4"
@@ -65,6 +73,16 @@ class DataGovernance extends React.Component {
                       easier access to data solutions and ensure compliance… in 5 clicks.
                     </p>
 
+                    <div className="pts align-c">
+                      <img className="mrm mbxl align-m" src="/static/images/logos/collibra_1496x408.png" alt="Collibra" title="Collibra" width="125" />
+                      <span className="display-inline-block mhm mbxl align-m">
+                        <SlackLogo height={48} />
+                      </span>
+                      <span className="display-inline-block mlm mbxl align-m">
+                        <MsTeamsLogo height={40} />
+                      </span>
+                    </div>
+
                     <p>
                       We bring the power of Collibra and other data governance platforms into
                       your chat tool so your team can unify around accurate data that maintains
@@ -72,12 +90,9 @@ class DataGovernance extends React.Component {
                       and trust data quality.
                     </p>
 
-                    <div className="pvxxl align-c mobile-pbn narrow-display-none">
-                      <ContactButton onClick={pageProps.toggleContactForm} />
-                    </div>
                   </div>
                 </div>
-                <div className="pvxxl align-c mobile-pbn narrow-pbn narrow-display-only">
+                <div className="ptxxl mobile-pts align-c">
                   <ContactButton onClick={pageProps.toggleContactForm} />
                 </div>
               </div>
@@ -96,7 +111,7 @@ class DataGovernance extends React.Component {
                     </div>
                   </div>
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pls prs">
+                    <div className="pls prs narrow-pll narrow-prn mobile-phn">
 
                       <h3 className="mbxs">Trust data quality across business units</h3>
                       <p>
@@ -106,7 +121,7 @@ class DataGovernance extends React.Component {
                     </div>
                   </div>
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pls prs">
+                    <div className="pls prs narrow-pln narrow-prl">
 
                       <h3 className="mbxs">Foster adoption for a culture of compliance</h3>
                       <p>
@@ -117,9 +132,9 @@ class DataGovernance extends React.Component {
                     </div>
                   </div>
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pll">
+                    <div className="pll mobile-phn">
 
-                      <h3 className="mbxs">Surface &amp; create Collibra data in chat</h3>
+                      <h3 className="mbxs">Surface and create Collibra data in chat</h3>
                       <p>
                         Integrate Collibra with Slack or Microsoft Teams to quickly bring data
                         to chat or seamlessly save discussions to your database. Everyone
@@ -177,7 +192,7 @@ class DataGovernance extends React.Component {
               </div>
             </div>
 
-            <div className="bg-lightest pvxxxl">
+            <div className="bg-light pvxxxl">
               <div className="container container-c">
                 <ResponsiveContainer>
 
@@ -185,11 +200,11 @@ class DataGovernance extends React.Component {
 
                   <p className="type-l">
                     We understand that you’re working with incredibly sensitive information on a global scale.
-                    That’s why we go above and beyond best practices &amp; GDPR compliance.
+                    That’s why we go above and beyond best practices and GDPR compliance.
                   </p>
 
-                  <ul className="type-l">
-                    <li>Your security is our top priority. Questions? <button type="button" className="button-raw"><span className="link">Let’s chat.</span></button></li>
+                  <ul className="type-l list-space-l">
+                    <li>Your security is our top priority. Questions? <button type="button" className="button-raw" onClick={pageProps.toggleContactForm}><span className="link">Let’s chat.</span></button></li>
                     <li>We offer 99.9% availability and state-of-the-art infrastructure.</li>
                   </ul>
 
@@ -201,14 +216,20 @@ class DataGovernance extends React.Component {
               <div className="container container-c">
                 <ResponsiveContainer>
 
-                  <h2>Used by American Express to unify &amp; speed up teams</h2>
+                  <h2>Used by American Express to unify and speed up teams</h2>
 
-                  <ul>
+                  <p className="type-l type-italic">Example workflows:</p>
+
+                  <ul className="type-l list-space-l">
                     <li>Look up business terms from chat.</li>
                     <li>Define a new business term and get approval in chat, and save it to Collibra automatically.</li>
                     <li>Look up information in your data catalog in seconds.</li>
                     <li>Link chat conversations to issues in Collibra automatically. </li>
                   </ul>
+
+                  <div className="pvxxl align-c mobile-pbn">
+                    <ContactButton onClick={pageProps.toggleContactForm} />
+                  </div>
 
                 </ResponsiveContainer>
               </div>

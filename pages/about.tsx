@@ -1,5 +1,5 @@
 import * as React from "react"
-import Header, { PageInfo } from '../components/header'
+import Header, { NavSection } from '../components/header'
 import ResponsiveContainer from "../components/responsive_container";
 import LogoStrip from "../components/logo_strip";
 import Page from "../components/page";
@@ -14,7 +14,7 @@ class About extends React.Component {
         onRender={(pageProps) => (
         <div className="page">
           <div className="bg-blue-fade">
-            <Header isHomeVisible={true} onToggleContactForm={pageProps.toggleContactForm} activePage={PageInfo.About} />
+            <Header isHomeVisible={true} onToggleContactForm={pageProps.toggleContactForm} activeSection={NavSection.About} />
             <h1 className="align-c mtn type-white mbn pbxl">This is Ellipsis</h1>
           </div>
           <div className="bg-gray-fade">

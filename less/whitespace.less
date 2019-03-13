@@ -38,7 +38,8 @@ So for example:
   s @s,
   xs @xs,
   n 0,
-  neg1 -1px;
+  neg1 -1px,
+  negxs -@xs;
 
 .generate-all-sided(@rawprefix, @iterator: 1) when (@iterator <= length(@sizes)) {
   @size-name: extract(extract(@sizes, @iterator), 1);

@@ -34,10 +34,10 @@ class Home extends React.Component {
 
                     <div className="align-c mtxl mbxxxxl">
                       <div className="display-inline-block align-m mrxl">
-                        <SlackLogo height={40} />
+                        <SlackLogo height={40} monochrome={true} />
                       </div>
                       <div className="display-inline-block align-m mrs">
-                        <MsTeamsLogo height={32} />
+                        <MsTeamsLogo height={32} monochrome={true} />
                       </div>
                       <div className="display-inline-block align-m mlxl mrs">
                         <SMSChatBubble height={32} />

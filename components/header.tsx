@@ -5,15 +5,20 @@ import MenuIcon from './menu_icon';
 import autobind from '../lib/autobind';
 import debounce from 'debounce'
 
-export enum PageInfo {
+export enum NavSection {
   Home = "home",
   About = "about",
   Solutions = "solutions"
 }
 
+export enum NavSubsection {
+  DataGovernance = "data_governance"
+}
+
 interface Props {
   isHomeVisible: boolean
-  activePage?: PageInfo
+  activeSection?: NavSection
+  activeSubsection?: NavSubsection
   onToggleContactForm: () => void
   className?: string
 }
@@ -45,8 +50,8 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  linkClassFor(page?: PageInfo) {
-    return `link-light type-bold type-label ${page && this.props.activePage === page ? "link-active" : ""}`;
+  linkClassFor(page?: NavSection) {
+    return `display-block link-light type-bold type-label ${page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-pink" : "mbxs"}`;
   }
 
   revealSolutions(): void {
@@ -64,20 +69,22 @@ class Header extends React.Component<Props, State> {
 
   renderHomeLink() {
     return (
-      <Link prefetch href="/"><a className={this.linkClassFor(PageInfo.Home)}>Home</a></Link>
+      <Link prefetch href="/"><a className={this.linkClassFor(NavSection.Home)}>Home</a></Link>
     );
   }
 
   renderAboutLink() {
     return (
-      <Link prefetch href="/about/"><a className={this.linkClassFor(PageInfo.About)}>About</a></Link>
+      <Link prefetch href="/about/"><a className={this.linkClassFor(NavSection.About)}>About</a></Link>
     );
   }
 
   renderSolutions() {
     return (
       <div>
-        <div><Link href="/data_governance/"><a className="link-light">Data governance</a></Link></div>
+        <div><Link href="/data_governance/"><a className={`display-block link-light ${
+          this.props.activeSubsection === NavSubsection.DataGovernance ? "type-bold type-white" : ""
+        }`}>Data governance</a></Link></div>
         <div><Link href="/static/datasheets/Ellipsis Fiix Data Sheet - 20181105.pdf"><a className="link-light" target="datasheet">Facility management &amp; CMMS</a></Link></div>
       </div>
     );
@@ -98,12 +105,16 @@ class Header extends React.Component<Props, State> {
                 {this.props.isHomeVisible ? (
                   <div className="mrxxl align-button">{this.renderHomeLink()}</div>
                 ) : null}
-                <div className="mrxxl align-button position-relative" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
-                  <div><a className={this.linkClassFor(PageInfo.Solutions)}><span className="type-s">▼</span> Solutions</a></div>
-                  <div className={`position-absolute position-below-right width-15 align-r pvs phs fade-in bg-blue-fade-light { ${
-                    this.state.showSolutions ? "" : "display-none"
-                  }`}>
-                    {this.renderSolutions()}
+                <div className="mrxxl align-button" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
+                  <div className="position-relative">
+                    <a className={this.linkClassFor(NavSection.Solutions)}><span className="type-s">▼</span> Solutions</a>
+                    <div className={
+                      `position-absolute position-below-right width-15 align-r pvs phs fade-in bg-blue-fade-light ` +
+                      `popup-shadow border-emphasis-top border-emphasis-bottom border-pink mtnegxs ${
+                        this.state.showSolutions ? "" : "display-none"
+                      }`}>
+                      {this.renderSolutions()}
+                    </div>
                   </div>
                 </div>
                 <div className="align-button">{this.renderAboutLink()}</div>
