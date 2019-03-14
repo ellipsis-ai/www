@@ -38,7 +38,7 @@ class DataGovernance extends React.Component {
             <div className="bg-white">
               <div className="container container-c pvxxxl mobile-pvxl">
                 <div className="narrow-display-only">
-                  <p className="type-xl mbxl">
+                  <p className="type-xl mbxl mobile-mbn">
                     Improve access to data and related discussions.
                     Ensure GDPR compliance.
                     Painlessly roll out workflows that get adopted.
@@ -68,27 +68,25 @@ class DataGovernance extends React.Component {
                       Painlessly roll out workflows that get adopted.
                     </p>
 
-                    <p className="type-l">
-                      Bring Collibra to Microsoft Teams or Slack for
-                      easier access to data solutions and ensure compliance… in 5 clicks.
-                    </p>
+                    <div className="flex-columns narrow-flex-no-columns">
+                      <div className="flex-column">
+                        <p className="type-l">
+                          Bring Collibra to Microsoft Teams or Slack for
+                          easier access to data solutions and ensure compliance… in 5 clicks.
+                        </p>
 
-                    <div className="pts align-c">
-                      <img className="mrm mbxl align-m" src="/static/images/logos/collibra_1496x408.png" alt="Collibra" title="Collibra" width="125" />
-                      <span className="display-inline-block mhm mbxl align-m">
-                        <SlackLogo height={48} />
-                      </span>
-                      <span className="display-inline-block mlm mbxl align-m">
-                        <MsTeamsLogo height={40} />
-                      </span>
+                        <p>
+                          We bring the power of Collibra and other data governance platforms into
+                          your chat tool so your team can unify around accurate data that maintains
+                          compliance. A better user experience makes it easier to roll out new workflows
+                          and trust data quality.
+                        </p>
+
+                      </div>
+                      <div className="flex-column plxxl narrow-pln narrow-ptxl mobile-ptn narrow-align-c">
+                        <img src="/static/images/collibra_slack_msteams.png" height="200" alt="Ellipsis connects Collibra to Slack or Microsoft Teams" />
+                      </div>
                     </div>
-
-                    <p>
-                      We bring the power of Collibra and other data governance platforms into
-                      your chat tool so your team can unify around accurate data that maintains
-                      compliance. A better user experience makes it easier to roll out new workflows
-                      and trust data quality.
-                    </p>
 
                   </div>
                 </div>
@@ -214,24 +212,29 @@ class DataGovernance extends React.Component {
 
             <div className="bg-white pvxxxl">
               <div className="container container-c">
-                <ResponsiveContainer>
 
-                  <h2>Used by American Express to unify and speed up teams</h2>
+                <h2 className="align-c">Used by American Express to unify and speed&nbsp;up&nbsp;teams</h2>
 
-                  <p className="type-l type-italic">Example workflows:</p>
-
-                  <ul className="type-l list-space-l">
-                    <li>Look up business terms from chat.</li>
-                    <li>Define a new business term and get approval in chat, and save it to Collibra automatically.</li>
-                    <li>Look up information in your data catalog in seconds.</li>
-                    <li>Link chat conversations to issues in Collibra automatically. </li>
-                  </ul>
-
-                  <div className="pvxxl align-c mobile-pbn">
-                    <ContactButton onClick={pageProps.toggleContactForm} />
+                <h3 className="align-c mbxl">Example workflows</h3>
+                <div className="columns type-l">
+                  <div className="column column-one-quarter narrow-column-one-half paxl">
+                    Search and update business terms.
                   </div>
+                  <div className="column column-one-quarter narrow-column-one-half paxl">
+                    Notify stewards and run approval workflows directly in chat.
+                  </div>
+                  <div className="column column-one-quarter narrow-column-one-half paxl">
+                    Link and archive conversations about data quality issues in Collibra.
+                  </div>
+                  <div className="column column-one-quarter narrow-column-one-half paxl">
+                    Search report catalogs and return reports.
+                  </div>
+                </div>
 
-                </ResponsiveContainer>
+                <div className="ptxxxxl align-c">
+                  <ContactButton onClick={pageProps.toggleContactForm} />
+                </div>
+
               </div>
             </div>
           </div>

@@ -307,6 +307,20 @@
   order: 3;
 }
 
+@media (max-width: @narrow-max-width) {
+  .narrow-flex-no-columns {
+    flex-flow: column;
+  }
+
+  .narrow-flex-column-left {
+    order: 1;
+  }
+
+  .narrow-flex-column-right {
+    order: 3;
+  }
+}
+
 @media (max-width: @mobile-max-width) {
   .mobile-flex-no-columns {
     flex-flow: column;
