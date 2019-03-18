@@ -48,7 +48,7 @@ class EllipsisHead extends React.Component<Props> {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments); }
           gtag('js', new Date());
-          gtag('config', 'UA-86412831-1');
+          gtag('config', 'UA-86412831-1', { anonymize_ip: true });
           `
         }}></script>
       </Head>
