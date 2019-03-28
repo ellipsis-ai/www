@@ -1,7 +1,6 @@
 import * as React from 'react'
 import autobind from '../lib/autobind';
 import FormInput from './form_input';
-import { timingSafeEqual } from 'crypto';
 
 interface Props {
   onDone: () => void
