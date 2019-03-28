@@ -3,8 +3,6 @@ import Page from '../components/page';
 import Header, { NavSection, NavSubsection } from '../components/header';
 import ResponsiveContainer from '../components/responsive_container';
 import ContactButton from '../components/contact_button';
-import SlackLogo from '../components/logos/slack_logo';
-import MsTeamsLogo from '../components/logos/ms_teams_logo';
 
 class DataGovernance extends React.Component {
   render() {
