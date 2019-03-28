@@ -194,6 +194,9 @@ class Cmms extends React.Component {
 
                   <p className="type-l">
                     <b>“We didn’t understand everything Ellipsis could do, and when we did, we were blown away.”</b>
+                  </p>
+
+                  <p className="type-l">
                     We strive to make Ellipsis look simple, but our tool is incredibly complex under the hood.
                     Enjoy a seamless interface specific to your workflows, without building multiple endpoints
                     and branching logic.
