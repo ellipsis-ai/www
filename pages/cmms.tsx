@@ -33,7 +33,7 @@ class Cmms extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bg-white">
+            <div className="bg-white border-emphasis-top border-fiix">
               <div className="container container-c pvxxxl mobile-pvxl">
                 <div className="narrow-display-only">
                   <p className="type-xl mbxl mobile-mbn">
