@@ -4,13 +4,13 @@ import Header, { NavSection, NavSubsection } from '../components/header';
 import ResponsiveContainer from '../components/responsive_container';
 import ContactButton from '../components/contact_button';
 
-class DataGovernance extends React.Component {
+class Cmms extends React.Component {
   render() {
     return (
       <Page
-        title="Data governance assurance - Collibra integration"
-        description="Rollout new internal workflows by surfacing them in Slack or Microsoft Teams and automate your way to centralized quality data. Better workflows mean easier adoption and happier employees."
-        canonicalPath="/data_governance/"
+        title="Facility management — CMMS - workflow automation — Fiix"
+        description="RolRollout and guarantee workflows by automating them through Slack or Microsoft Teams. Increase the likelihood facility reports are completed on time and accurately so you can find lost revenue."
+        canonicalPath="/cmms/"
         onRender={(pageProps) => (
           <div>
             <div className="bg-blue-fade">
@@ -18,17 +18,17 @@ class DataGovernance extends React.Component {
                 isHomeVisible={true}
                 onToggleContactForm={pageProps.toggleContactForm}
                 activeSection={NavSection.Solutions}
-                activeSubsection={NavSubsection.DataGovernance}
+                activeSubsection={NavSubsection.Cmms}
                 className="pbn"
               />
 
               <div className="container container-c ptl pbxl">
                 <div className="columns">
                   <div className="column column-one-half mobile-column-full mobile-align-c">
-                    <h3 className="type-label type-white mtn">Data governance</h3>
+                    <h3 className="type-label type-white mtn">Facilities Management &amp; CMMS</h3>
                   </div>
                   <div className="column column-one-half mobile-column-full align-r mobile-align-c">
-                    <h3 className="type-white mtn">We integrate with Collibra.</h3>
+                    <h3 className="type-white mtn">We integrate with Fiix.</h3>
                   </div>
                 </div>
               </div>
@@ -37,9 +37,9 @@ class DataGovernance extends React.Component {
               <div className="container container-c pvxxxl mobile-pvxl">
                 <div className="narrow-display-only">
                   <p className="type-xl mbxl mobile-mbn">
-                    Improve access to data and related discussions.
-                    Ensure GDPR compliance.
-                    Painlessly roll out workflows that get adopted.
+                    Make reporting more enjoyable.
+                    Get accurate data.
+                    Find lost money.
                   </p>
                 </div>
                 <div className="flex-columns mobile-flex-no-columns">
@@ -49,10 +49,10 @@ class DataGovernance extends React.Component {
                         controls={true}
                         preload="metadata"
                         playsInline={true}
-                        poster="/static/images/video_posters/2019-01-30-ellipsis-collibra-automation-package.png"
+                        poster="/static/images/video_posters/2019-03-19-ellipsis-fiix-automation-package.png"
                       >
                         <source
-                          src="https://s3.amazonaws.com/ellipsis-ai-video/2019-01-30+ellipsis+collibra+automation+package.mp4"
+                          src="https://s3.amazonaws.com/ellipsis-ai-video/2019-03-19+ellipsis+fiix+automation+package.mp4"
                           type="video/mp4"
                         />
                       </video>
@@ -61,28 +61,27 @@ class DataGovernance extends React.Component {
                   <div className="flex-column mobile-flex-column-right column-three-fifths narrow-column-one-half mobile-column-full prxxxxl mobile-prn">
 
                     <p className="type-xl narrow-display-none">
-                      Improve access to data and related discussions.
-                      Ensure GDPR compliance.
-                      Painlessly roll out workflows that get adopted.
+                      Make reporting more enjoyable.
+                      Get accurate data.
+                      Find lost money.
                     </p>
 
                     <div className="flex-columns narrow-flex-no-columns">
                       <div className="flex-column">
                         <p className="type-l">
-                          Bring Collibra to Microsoft Teams or Slack for
-                          easier access to data solutions and ensure compliance… in 5 clicks.
+                          Bring Fiix to Microsoft Teams or Slack for easy, complete reports… in 5 clicks.
                         </p>
 
                         <p>
-                          We bring the power of Collibra and other data governance platforms into
-                          your chat tool so your team can unify around accurate data that maintains
-                          compliance. A better user experience makes it easier to roll out new workflows
-                          and trust data quality.
+                          We bring the power of your CMMS (like Fiix) into your team’s chat tool so
+                          completing issues, tickets, work orders, and more feels painless. Easier
+                          reporting gets done, which means accurate data for you and the ability to
+                          find and maximize revenue while staying compliant.
                         </p>
 
                       </div>
                       <div className="flex-column plxxl narrow-pln narrow-ptxl mobile-ptn narrow-align-c">
-                        <img src="/static/images/collibra_slack_msteams.png" height="200" alt="Ellipsis connects Collibra to Slack or Microsoft Teams" />
+                        <img src="/static/images/fiix_slack_msteams.png" height="200" alt="Ellipsis connects Fiix to Slack or Microsoft Teams" />
                       </div>
                     </div>
 
@@ -99,30 +98,30 @@ class DataGovernance extends React.Component {
                 <div className="columns">
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
                     <div className="prl">
-                      <h3 className="mbxs">Roll out new workflows easily</h3>
+                      <h3 className="mbxs">Integrate Fiix with your chat tool</h3>
                       <p>
-                        Spur adoption with a native integration that doesn’t require training,
-                        new software, or complex interfaces for rapid and happy adoption.
+                        Bring Fiix into Slack or Microsoft Teams, so it’s accessible, familiar, and fast
+                        for any employee to use. Ellipsis also runs on mobile so reports can be created
+                        in real time, anywhere.
                       </p>
                     </div>
                   </div>
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
                     <div className="pls prs narrow-pll narrow-prn mobile-phn">
 
-                      <h3 className="mbxs">Trust data quality across business units</h3>
+                      <h3 className="mbxs">Get accurate reports</h3>
                       <p>
-                        Guide employees through a conversational interface that ensures pristine
-                        and trustworthy data lineage and quality.
+                        Guide employees through a conversational interface that creates pristine and complete reports. Set up reminders that detect incomplete documentation.
                       </p>
                     </div>
                   </div>
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
                     <div className="pls prs narrow-pln narrow-prl">
 
-                      <h3 className="mbxs">Foster adoption for a culture of compliance</h3>
+                      <h3 className="mbxs">Find lost data</h3>
                       <p>
-                        Promote a culture of compliance with seamless automations that work out
-                        loud in group chat to foster social awareness and collective understanding.
+                        Surface areas of Fiix that are hard to find and expose lost data and communication
+                        breakdowns to find lost revenue. We integrate with more than you chat tool.
                       </p>
 
                     </div>
@@ -130,11 +129,10 @@ class DataGovernance extends React.Component {
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
                     <div className="pll mobile-phn">
 
-                      <h3 className="mbxs">Surface and create Collibra data in chat</h3>
+                      <h3 className="mbxs">Roll out new workflows</h3>
                       <p>
-                        Integrate Collibra with Slack or Microsoft Teams to quickly bring data
-                        to chat or seamlessly save discussions to your database. Everyone
-                        enjoys moving faster.
+                        Enjoyable automation means workflows get done. We integrate with your native tools,
+                        so you don’t have to train employees on new software, which boosts adoption rates.
                       </p>
 
                     </div>
@@ -168,8 +166,8 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
                       <h2>Step 2</h2>
-                      <p className="type-l">Benefit from white-glove implementation. We’re ready to discuss
-                      security questions so you can fast-track the approval process. </p>
+                      <p className="type-l">Set up won’t be a heavy lift for your IT team. All we need
+                      is your Fiix subdomain and token from your technical teams.</p>
                     </div>
                   </div>
 
@@ -192,11 +190,13 @@ class DataGovernance extends React.Component {
               <div className="container container-c">
                 <ResponsiveContainer>
 
-                  <h2 className="align-c">Get approved at all levels</h2>
+                  <h2 className="align-c">IT teams approve</h2>
 
                   <p className="type-l">
-                    We understand that you’re working with incredibly sensitive information on a global scale.
-                    That’s why we go above and beyond best practices and GDPR compliance.
+                    <b>“We didn’t understand everything Ellipsis could do, and when we did, we were blown away.”</b>
+                    We strive to make Ellipsis look simple, but our tool is incredibly complex under the hood.
+                    Enjoy a seamless interface specific to your workflows, without building multiple endpoints
+                    and branching logic.
                   </p>
 
                   <ul className="type-l list-space-l">
@@ -211,7 +211,7 @@ class DataGovernance extends React.Component {
             <div className="bg-white pvxxxl">
               <div className="container container-c">
 
-                <h2 className="align-c">Used by American Express to unify and speed&nbsp;up&nbsp;teams</h2>
+                <h2 className="align-c">Used by Plenty to guarantee workflows and save&nbsp;time</h2>
 
                 <h3 className="align-c mbxl">Example workflows</h3>
 
@@ -219,25 +219,25 @@ class DataGovernance extends React.Component {
                   <div className="flex-columns mobile-flex-no-columns">
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
                       <div className="height pal align-l mhs mbl height-full border">
-                        Search and update business terms.
+                        Guide employees through safety reports
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
                       <div className="height pal align-l mhs mbl height-full border">
-                        Notify stewards and run approval workflows directly in chat.
+                        Automate work orders
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
                       <div className="height pal align-l mhs mbl height-full border">
-                        Link and archive conversations about data quality issues in Collibra.
+                        Facilitate a report on safety issues
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
                       <div className="height pal align-l mhs mbl height-full border">
-                        Search report catalogs and return reports.
+                        Save time spent on admin work
                     </div>
                     </div>
                   </div>
@@ -256,4 +256,4 @@ class DataGovernance extends React.Component {
   }
 }
 
-export default DataGovernance
+export default Cmms

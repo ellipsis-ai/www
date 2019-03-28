@@ -19,6 +19,7 @@ module.exports = withTypescript(
         '/': { page: '/' },
         '/about/': { page: '/about' },
         '/data_governance/': { page: '/data_governance' },
+        '/cmms/': { page: '/cmms' },
         '/error.html': { page: '/_error' }
       };
     }

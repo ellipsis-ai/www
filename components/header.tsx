@@ -12,7 +12,8 @@ export enum NavSection {
 }
 
 export enum NavSubsection {
-  DataGovernance = "data_governance"
+  DataGovernance = "data_governance",
+  Cmms = "cmms"
 }
 
 interface Props {
@@ -82,10 +83,12 @@ class Header extends React.Component<Props, State> {
   renderSolutions() {
     return (
       <div>
-        <div><Link href="/data_governance/"><a className={`display-block link-light ${
+        <div><Link prefetch href="/data_governance/"><a className={`display-block link-light ${
           this.props.activeSubsection === NavSubsection.DataGovernance ? "type-bold type-white" : ""
         }`}>Data governance</a></Link></div>
-        <div><Link href="/static/datasheets/Ellipsis Fiix Data Sheet - 20181105.pdf"><a className="link-light" target="datasheet">Facility management &amp; CMMS</a></Link></div>
+        <div><Link prefetch href="/cmms/"><a className={`display-block link-light ${
+          this.props.activeSubsection === NavSubsection.Cmms ? "type-bold type-white" : ""
+        }`}>Facility management &amp; CMMS</a></Link></div>
       </div>
     );
   }
