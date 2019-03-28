@@ -28,6 +28,7 @@ const descriptions: FormFieldValues = {
 
 class ContactForm extends React.Component<Props, State> {
   focusableField: FormInput | null | undefined;
+  container: HTMLDivElement | null | undefined;
 
   constructor(props: Props) {
     super(props);
@@ -43,6 +44,34 @@ class ContactForm extends React.Component<Props, State> {
       about: "",
       error: ""
     };
+  }
+
+  componentDidMount() {
+    window.addEventListener('keyup', this.keyHandler);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keyup', this.keyHandler);
+  }
+
+  keyHandler(event: KeyboardEvent) {
+    if (event.key === "Escape" && this.props.isVisible) {
+      this.cancel();
+    }
+    if (event.key === "Tab" && this.container) {
+      const focused = window.document.querySelector("*:focus");
+      const focusableElements = this.container.querySelectorAll<HTMLElement>("input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled])");
+      if (focused && this.container && !this.container.contains(focused) && this.focusableField) {
+        const first = focusableElements[0];
+        const last = focusableElements[focusableElements.length - 1];
+        if (event.shiftKey && last) {
+          console.log(last);
+          last.focus();
+        } else if (!event.shiftKey && first) {
+          first.focus();
+        }
+      }
+    }
   }
 
   componentWillReceiveProps(newProps: Props) {
@@ -105,19 +134,26 @@ class ContactForm extends React.Component<Props, State> {
     })
   }
 
+  dontCancel(event: React.MouseEvent): void {
+    event.stopPropagation();
+  }
+
   render() {
     return (
-      <div className={`fade-in ${this.props.isVisible ? "" : "display-none"}`}>
-        <div className="position-fixed-full bg-scrim position-z-scrim fade-in" />
-        <div className="position-fixed-top position-top-full position-z-front">
+      <div ref={(el) => this.container = el} className={`fade-in ${this.props.isVisible ? "" : "display-none"}`} aria-modal={true} aria-labelledby="contact-heading" role="dialog">
+        <div className="position-fixed-full bg-scrim position-z-scrim fade-in" onClick={this.cancel} />
+        <div className="position-fixed-top position-top-full position-z-front" onClick={this.cancel}>
           <form action={mailChimpActionUrl} method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
             <div className="columns">
               <div className="column column-one-fifth narrow-display-none"></div>
-              <div className="column column-three-fifths narrow-column-full">
-                <div className="mtxxl narrow-mtn pvm bg-white">
+              <div className="column column-three-fifths narrow-column-full" onClick={this.dontCancel}>
+                <div className="mtxxl narrow-mtn pvm bg-white position-relative">
                   <div className="container container-c container-narrow phxxl mobile-phxl">
 
-                    <h2 className="mobile-mtm">Get more info &amp; a proof-of-concept</h2>
+                    <div className="position-absolute position-top-right">
+                      <button type="button" className="button-subtle button-shrink" onClick={this.cancel}><span className="type-xl">×</span></button>
+                    </div>
+                    <h2 className="mobile-mtm" id="contact-heading">Get more info &amp; a proof-of-concept</h2>
 
                     <p>Compliance work, daily reporting, service requests, data governance, and more — it doesn’t have to be painful.</p>
 

@@ -5,15 +5,23 @@ import MenuIcon from './menu_icon';
 import autobind from '../lib/autobind';
 import debounce from 'debounce'
 
-export enum Page {
+export enum NavSection {
   Home = "home",
-  About = "about"
+  About = "about",
+  Solutions = "solutions"
+}
+
+export enum NavSubsection {
+  DataGovernance = "data_governance",
+  Cmms = "cmms"
 }
 
 interface Props {
   isHomeVisible: boolean
-  activePage?: Page
+  activeSection?: NavSection
+  activeSubsection?: NavSubsection
   onToggleContactForm: () => void
+  className?: string
 }
 
 interface State {
@@ -43,8 +51,8 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  linkClassFor(page?: Page) {
-    return `link-light type-bold type-label ${page && this.props.activePage === page ? "link-active" : ""}`;
+  linkClassFor(page?: NavSection) {
+    return `display-block link-light type-bold type-label ${page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-pink" : "mbxs"}`;
   }
 
   revealSolutions(): void {
@@ -60,19 +68,35 @@ class Header extends React.Component<Props, State> {
     });
   }
 
+  renderHomeLink() {
+    return (
+      <Link prefetch href="/"><a className={this.linkClassFor(NavSection.Home)}>Home</a></Link>
+    );
+  }
+
+  renderAboutLink() {
+    return (
+      <Link prefetch href="/about/"><a className={this.linkClassFor(NavSection.About)}>About</a></Link>
+    );
+  }
+
   renderSolutions() {
     return (
       <div>
-        <div><Link href="/static/datasheets/Ellipsis Collibra Data Sheet - 20180723.pdf"><a className="link-light" target="datasheet">Data governance</a></Link></div>
-        <div><Link href="/static/datasheets/Ellipsis Fiix Data Sheet - 20181105.pdf"><a className="link-light" target="datasheet">Facility management &amp; CMMS</a></Link></div>
+        <div><Link prefetch href="/data_governance/"><a className={`display-block link-light ${
+          this.props.activeSubsection === NavSubsection.DataGovernance ? "type-bold type-white" : ""
+        }`}>Data governance</a></Link></div>
+        <div><Link prefetch href="/cmms/"><a className={`display-block link-light ${
+          this.props.activeSubsection === NavSubsection.Cmms ? "type-bold type-white" : ""
+        }`}>Facility management &amp; CMMS</a></Link></div>
       </div>
     );
   }
 
   render() {
     return (
-      <header className="nav">
-        <div className="container container-c pvxxl mobile-pvl position-relative">
+      <header className={`nav pvxxl mobile-pvl ${this.props.className || ""}`}>
+        <div className="container container-c position-relative">
           <div className="columns pts">
             <div className="column column-one-half type-white">
               <div className="position-relative position-z-popup-trigger">
@@ -82,22 +106,21 @@ class Header extends React.Component<Props, State> {
             <div className="column column-one-half align-r">
               <div className="narrow-display-none">
                 {this.props.isHomeVisible ? (
-                  <div className="mrxxl align-button "><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></div>
+                  <div className="mrxxl align-button">{this.renderHomeLink()}</div>
                 ) : null}
-                <div className="mrxxl align-button position-relative" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
-                  <div><a className={this.linkClassFor()}>▼ Solutions</a></div>
-                  <div className={`position-absolute position-below-right width-20 align-r pbxl fade-in ${
-                    this.state.showSolutions ? "" : "display-none"
-                  }`}>
-                    {this.renderSolutions()}
+                <div className="mrxxl align-button" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
+                  <div className="position-relative">
+                    <a className={this.linkClassFor(NavSection.Solutions)}><span className="type-s">▼</span> Solutions</a>
+                    <div className={
+                      `position-absolute position-below-right width-15 align-r pvs phs fade-in bg-blue-fade-light ` +
+                      `popup-shadow border-emphasis-top border-emphasis-bottom border-pink mtnegxs ${
+                        this.state.showSolutions ? "" : "display-none"
+                      }`}>
+                      {this.renderSolutions()}
+                    </div>
                   </div>
                 </div>
-                {/* <Link prefetch href="/product"><a className={this.linkClassFor(Page.Product)}>Product</a></Link> */}
-                <div className="mrxxl align-button "><Link prefetch href="/about/"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
-                {/* <button type="button"
-                  className="button-shrink button-inverted type-label type-bold"
-                  onClick={this.props.onToggleContactForm}
-                >Schedule a demo</button> */}
+                <div className="align-button">{this.renderAboutLink()}</div>
               </div>
               <div className="narrow-display-only position-relative position-z-popup-trigger">
                 <button type="button" className="button-raw type-white" onClick={this.toggleMenu}><MenuIcon open={this.state.expandMenu} /></button>
@@ -108,19 +131,13 @@ class Header extends React.Component<Props, State> {
             <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-blue-fade">
               <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
-                  <div className="mvxl"><Link prefetch href="/"><a className={this.linkClassFor(Page.Home)}>Home</a></Link></div>
+                  <div className="mvxl">{this.renderHomeLink()}</div>
                 ) : null}
                 <div className="mvxl">
                   <div className="type-label type-white type-gray-light">Solutions</div>
                   {this.renderSolutions()}
                 </div>
-                <div className="mvxl"><Link prefetch href="/about/"><a className={this.linkClassFor(Page.About)}>About</a></Link></div>
-                {/* <div className="bg-pink pvs">
-                  <button type="button"
-                    className="button-shrink button-l button-primary type-label type-bold"
-                    onClick={this.props.onToggleContactForm}
-                  >Schedule a demo</button>
-                </div> */}
+                <div className="mvxl">{this.renderAboutLink()}</div>
               </div>
             </div>
           </div>
