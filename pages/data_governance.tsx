@@ -216,20 +216,34 @@ class DataGovernance extends React.Component {
                 <h2 className="align-c">Used by American Express to unify and speed&nbsp;up&nbsp;teams</h2>
 
                 <h3 className="align-c mbxl">Example workflows</h3>
-                <div className="columns type-l">
-                  <div className="column column-one-quarter narrow-column-one-half paxl">
-                    Search and update business terms.
+
+                <ResponsiveContainer>
+                  <div className="flex-columns mobile-flex-no-columns">
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border">
+                        Search and update business terms.
+                      </div>
+                    </div>
+
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border">
+                        Notify stewards and run approval workflows directly in chat.
+                      </div>
+                    </div>
+
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border">
+                        Link and archive conversations about data quality issues in Collibra.
+                      </div>
+                    </div>
+
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border">
+                        Search report catalogs and return reports.
+                    </div>
+                    </div>
                   </div>
-                  <div className="column column-one-quarter narrow-column-one-half paxl">
-                    Notify stewards and run approval workflows directly in chat.
-                  </div>
-                  <div className="column column-one-quarter narrow-column-one-half paxl">
-                    Link and archive conversations about data quality issues in Collibra.
-                  </div>
-                  <div className="column column-one-quarter narrow-column-one-half paxl">
-                    Search report catalogs and return reports.
-                  </div>
-                </div>
+                </ResponsiveContainer>
 
                 <div className="ptxxxxl align-c">
                   <ContactButton onClick={pageProps.toggleContactForm} />
