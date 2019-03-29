@@ -1,40 +1,20 @@
 import * as React from "react"
-import EllipsisHead from "../components/ellipsis_head"
-import Header, { Page } from '../components/header'
-import Footer from "../components/footer";
-import autobind from "../lib/autobind";
+import Header, { NavSection } from '../components/header'
 import ResponsiveContainer from "../components/responsive_container";
 import LogoStrip from "../components/logo_strip";
-import ContactForm from "../components/contact_form";
+import Page from "../components/page";
 
-interface Props { }
-interface State {
-  contactFormVisible: boolean
-}
-
-class About extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    autobind(this);
-    this.state = {
-      contactFormVisible: false
-    };
-  }
-
-  toggleContactForm(): void {
-    this.setState({ contactFormVisible: !this.state.contactFormVisible });
-  }
-
+class About extends React.Component {
   render() {
     return (
-      <div>
-        <EllipsisHead
-          title="About Ellipsis" description="Ellipsis is dedicated to helping companies roll out digital transformations by automating workflows in chat."
-          canonicalPath={"/about/"}
-        />
+      <Page
+        title="About Ellipsis"
+        description="Ellipsis is dedicated to helping companies roll out digital transformations by automating workflows in chat."
+        canonicalPath={"/about/"}
+        onRender={(pageProps) => (
         <div className="page">
           <div className="bg-blue-fade">
-            <Header isHomeVisible={true} onToggleContactForm={this.toggleContactForm} activePage={Page.About} />
+            <Header isHomeVisible={true} onToggleContactForm={pageProps.toggleContactForm} activeSection={NavSection.About} />
             <h1 className="align-c mtn type-white mbn pbxl">This is Ellipsis</h1>
           </div>
           <div className="bg-gray-fade">
@@ -128,12 +108,8 @@ class About extends React.Component<Props, State> {
               </div>
             </div>
           </div>
-
-          <ContactForm onDone={this.toggleContactForm} isVisible={this.state.contactFormVisible} />
-          <Footer />
-
         </div>
-      </div>
+      )} />
     );
   }
 }
