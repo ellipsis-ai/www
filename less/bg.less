@@ -104,10 +104,18 @@
   background-position: 50% 50%;
 }
 
-@gray-fade: linear-gradient(180deg, hsl(231, 10%, 75%) 0%, hsl(231, 10%, 90%) 50%, @white 100%);
+@gray-fade1: hsl(231, 10%, 75%);
+@gray-fade2: hsl(231, 10%, 90%);
+
+@gray-fade: linear-gradient(180deg, @gray-fade1 0%, @gray-fade2 50%, @white 100%);
+@gray-fade-reverse: linear-gradient(180deg, @white 0%, @gray-fade2 50%, @gray-fade1 100%);
 
 .bg-gray-fade {
   background: @gray-fade;
+}
+
+.bg-gray-fade-reverse {
+  background: @gray-fade-reverse;
 }
 
 @blue-fade: linear-gradient(180deg, @blue-faded-darkest 0%, @blue-faded-dark 100%);

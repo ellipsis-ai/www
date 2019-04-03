@@ -3,6 +3,7 @@ import autobind from '../lib/autobind';
 
 interface Props {
   onClick: () => void
+  label?: React.ReactNode
 }
 
 class ContactButton extends React.PureComponent<Props> {
@@ -17,7 +18,7 @@ class ContactButton extends React.PureComponent<Props> {
         type="button"
         className="button button-l button-primary type-label"
         onClick={this.props.onClick}
-      >Get a proof of concept</button>
+      >{this.props.label || "Get a proof of concept"}</button>
     );
   }
 }

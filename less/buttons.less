@@ -1,10 +1,12 @@
-@import (reference) "measurements";
-@import (reference) "colors";
-@import (reference) "type";
+@import (reference) "measurements.less";
+@import (reference) "colors.less";
+@import (reference) "type.less";
+@import (reference) "links.less";
 
 @button-height: @s * 2 + @xl;
 @button-small-height: @xs * 2 + @l;
 @button-large-height: @l * 2 + @xl;
+@button-mobile-large-height: @m * 2 + @xl;
 
 button, a.button {
   text-align: center;
@@ -180,6 +182,12 @@ button.button-l, a.button-l, .checkbox-button-l {
   padding-left: 36px;
   padding-right: 36px;
   min-width: @m * 20;
+}
+
+@media (max-width: @mobile-max-width) {
+  button.button-l, a.button-l, .checkbox-button-l {
+    min-height: @button-mobile-large-height;
+  }
 }
 
 .checkbox-button-l {
@@ -494,6 +502,10 @@ button.button-dropdown-trigger-menu-open:focus {
   border-color: @border-color !important;
 }
 
+button.button-raw-light-blue {
+  color: @link-light-blue;
+}
+
 button.button-raw:hover,
 button.button-block:hover .link {
   text-decoration: underline;
@@ -527,6 +539,11 @@ button.button-block:active {
 button.button-raw:active,
 button.button-block:active .link {
   color: @blue-dark;
+}
+
+button.button-raw-light-blue:hover,
+button.button-raw-light-blue:active {
+  color: @link-light-blue-hover;
 }
 
 button.button-none,
