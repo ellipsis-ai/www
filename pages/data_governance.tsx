@@ -3,6 +3,10 @@ import Page from '../components/page';
 import Header, { NavSection, NavSubsection } from '../components/header';
 import ResponsiveContainer from '../components/responsive_container';
 import ContactButton from '../components/contact_button';
+import SearchIcon from '../components/icons/search';
+import NotificationIcon from '../components/icons/notification';
+import PinIcon from '../components/icons/pin';
+import DrawerIcon from '../components/icons/drawer';
 
 class DataGovernance extends React.Component {
   render() {
@@ -33,23 +37,39 @@ class DataGovernance extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bg-white border-emphasis-top border-collibra">
-              <div className="container container-c pvxxxl mobile-pvxl">
-                <div className="narrow-display-only">
-                  <p className="type-xl mbxl mobile-mbn">
-                    Improve access to data and related discussions.
-                    Ensure GDPR compliance.
-                    Painlessly roll out workflows that get adopted.
-                  </p>
-                </div>
-                <div className="flex-columns mobile-flex-no-columns">
-                  <div className="flex-column flex-column-right mobile-flex-column-left column-two-fifths narrow-column-one-half mobile-column-full align-c ptm mobile-pbl">
+            <div className="bg-gray-fade border-emphasis-top border-collibra">
+              <div className="container container-c">
+                <ResponsiveContainer>
+                  <h1 className="align-c mtxxxl mbxxl mobile-mvxl">Get 10x adoption of data governance workflows across your company</h1>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div className="bg-white">
+              <div className="container container-c">
+                <div className="flex-columns flex-columns-align-c mobile-flex-no-columns">
+                  <div className="flex-column flex-column-right mobile-flex-column-left column-five-twelfths mobile-column-full plxl prxxxxl narrow-phxl">
+                    <p className="type-l narrow-display-none">
+                      We seamlessly integrate your data governance platform with chat apps like Slack and
+                      Microsoft Teams so your team members can easily get the data they need when they need
+                      it, and your company can ensure necessary compliance.
+                    </p>
+                    <p className="narrow-display-only mobile-phxl">
+                      We seamlessly integrate your data governance platform with chat apps like Slack and
+                      Microsoft Teams so your team members can easily get the data they need when they need
+                      it, and your company can ensure necessary compliance.
+                    </p>
+                    <div className="mtxxl mobile-mvl mobile-align-c">
+                      <ContactButton onClick={pageProps.toggleContactForm} label="Request a demo" />
+                    </div>
+                  </div>
+                  <div className="flex-column flex-column-left column-seven-twelfths mobile-column-full phxxxxl narrow-phxl">
                     <div className="video-container border border-thick">
                       <video
                         controls={true}
                         preload="metadata"
                         playsInline={true}
-                        poster="/static/images/video_posters/2019-01-30-ellipsis-collibra-automation-package.png"
+                        poster="/static/images/video_posters/2019-01-30-ellipsis-collibra-automation-package-v2.png"
                       >
                         <source
                           src="https://s3.amazonaws.com/ellipsis-ai-video/2019-01-30+ellipsis+collibra+automation+package.mp4"
@@ -58,96 +78,61 @@ class DataGovernance extends React.Component {
                       </video>
                     </div>
                   </div>
-                  <div className="flex-column mobile-flex-column-right column-three-fifths narrow-column-one-half mobile-column-full prxxxxl mobile-prn">
 
-                    <p className="type-xl narrow-display-none">
-                      Improve access to data and related discussions.
-                      Ensure GDPR compliance.
-                      Painlessly roll out workflows that get adopted.
-                    </p>
-
-                    <div className="flex-columns narrow-flex-no-columns">
-                      <div className="flex-column">
-                        <p className="type-l">
-                          Bring Collibra to Microsoft Teams or Slack for
-                          easier access to data solutions and ensure compliance… in 5 clicks.
-                        </p>
-
+                </div>
+              </div>
+            </div>
+            <div className="bg-white">
+              <div className="container container-c pvxxxl">
+                <ResponsiveContainer>
+                  <div className="columns">
+                    <div className="column column-one-half mobile-column-full">
+                      <div className="prl mobile-phn">
+                        <h3 className="mbxs">Roll out data governance workflows&nbsp;fast</h3>
                         <p>
-                          We bring the power of Collibra and other data governance platforms into
-                          your chat tool so your team can unify around accurate data that maintains
-                          compliance. A better user experience makes it easier to roll out new workflows
-                          and trust data quality.
+                          Launch your new data governance workflows in Slack or Microsoft Teams in days, measure adoption, and get user feedback, then rinse and repeat.
                         </p>
-
-                      </div>
-                      <div className="flex-column plxxl narrow-pln narrow-ptxl mobile-ptn narrow-align-c">
-                        <img src="/static/images/collibra_slack_msteams.png" height="200" alt="Ellipsis connects Collibra to Slack or Microsoft Teams" />
                       </div>
                     </div>
+                    <div className="column column-one-half mobile-column-full">
+                      <div className="pll mobile-phn">
 
+                        <h3 className="mbxs">Give people the data they need when they need&nbsp;it</h3>
+                        <p>
+                          Make business terms, data catalogs, and reports accessible directly from Slack or Microsoft Teams. Employees can ask in plain English for the data they need when they need it. No training required.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="column column-one-half mobile-column-full">
+                      <div className="prl mobile-phn">
+
+                        <h3 className="mbxs">Ensure data quality across business&nbsp;units</h3>
+                        <p>
+                          Help people report data quality issues and inconsistencies with a simple conversational interface everyone will love.
+                        </p>
+
+                      </div>
+                    </div>
+                    <div className="column column-one-half mobile-column-full">
+                      <div className="pll mobile-phn">
+
+                        <h3 className="mbxs">It’s all about collaboration</h3>
+                        <p>
+                          Data governance platforms are powerful but your team is already collaborating in Slack and Microsoft Teams. Ellipsis can make it all happen seamlessly while tracking and recording conversations about data for compliance.
+                        </p>
+
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="ptxxl mobile-pts align-c">
-                  <ContactButton onClick={pageProps.toggleContactForm} />
-                </div>
+                </ResponsiveContainer>
               </div>
             </div>
 
             <div className="bg-gray-fade">
-              <div className="container container-c pvxl">
-                <div className="columns">
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="prl">
-                      <h3 className="mbxs">Roll out new workflows easily</h3>
-                      <p>
-                        Spur adoption with a native integration that doesn’t require training,
-                        new software, or complex interfaces for rapid and happy adoption.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pls prs narrow-pll narrow-prn mobile-phn">
-
-                      <h3 className="mbxs">Trust data quality across business units</h3>
-                      <p>
-                        Guide employees through a conversational interface that ensures pristine
-                        and trustworthy data lineage and quality.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pls prs narrow-pln narrow-prl">
-
-                      <h3 className="mbxs">Foster adoption for a culture of compliance</h3>
-                      <p>
-                        Promote a culture of compliance with seamless automations that work out
-                        loud in group chat to foster social awareness and collective understanding.
-                      </p>
-
-                    </div>
-                  </div>
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pll mobile-phn">
-
-                      <h3 className="mbxs">Surface and create Collibra data in chat</h3>
-                      <p>
-                        Integrate Collibra with Slack or Microsoft Teams to quickly bring data
-                        to chat or seamlessly save discussions to your database. Everyone
-                        enjoys moving faster.
-                      </p>
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white">
               <div className="container container-c pbxxxl">
 
                 <ResponsiveContainer>
-                  <h1 className="align-c">Free to test. Easy to implement.</h1>
+                  <h1 className="align-c">How it works</h1>
                 </ResponsiveContainer>
 
                 <div className="columns">
@@ -157,8 +142,7 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
                       <h2>Step 1</h2>
-                      <p className="type-l">Share an idealized workflow, and 7 days later we’ll deliver a
-                      custom proof-of-concept. </p>
+                      <p className="type-l">We get to know your workflow requirements and discuss how Ellipsis can help.</p>
                     </div>
                   </div>
 
@@ -168,8 +152,7 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
                       <h2>Step 2</h2>
-                      <p className="type-l">Benefit from white-glove implementation. We’re ready to discuss
-                      security questions so you can fast-track the approval process. </p>
+                      <p className="type-l">We tailor our existing workflow packages or we build a customized one just for your needs.</p>
                     </div>
                   </div>
 
@@ -179,12 +162,23 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>
                       <h2>Step 3</h2>
-                      <p className="type-l">Deployment is as brief as clicking a button within your dashboard.
-                      With 1-click deploy, your technical teams won’t have to build any new infrastructure.
-                      </p>
+                      <p className="type-l">We help roll out the new workflows to your organization and measure adoption.</p>
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-blue-fade type-white pvxxxl">
+              <div className="container container-c">
+                <ResponsiveContainer>
+                  <h2 className="align-c">Supported data governance software</h2>
+                  <p className="align-c type-l">
+                    <a href="https://marketplace.collibra.com/listings/ellipsis-collibra-bot/" target="collibra" className="link-light-blue type-bold">Collibra Data Governance Centre</a><br />
+                    Alation Data Catalog <i className="type-gray-light">(coming soon)</i><br />
+                    Informatica DG <i className="type-gray-light">(coming soon)</i><br />
+                  </p>
+                </ResponsiveContainer>
               </div>
             </div>
 
@@ -192,17 +186,32 @@ class DataGovernance extends React.Component {
               <div className="container container-c">
                 <ResponsiveContainer>
 
-                  <h2 className="align-c">Get approved at all levels</h2>
+                  <h2 className="align-c">Security and compliance</h2>
 
-                  <p className="type-l">
-                    We understand that you’re working with incredibly sensitive information on a global scale.
-                    That’s why we go above and beyond best practices and GDPR compliance.
-                  </p>
-
-                  <ul className="type-l list-space-l">
-                    <li>Your security is our top priority. Questions? <button type="button" className="button-raw" onClick={pageProps.toggleContactForm}><span className="link">Let’s chat.</span></button></li>
-                    <li>We offer 99.9% availability and state-of-the-art infrastructure.</li>
-                  </ul>
+                  <div className="columns columns-elastic">
+                    <div className="column-group">
+                      <div className="column-row">
+                        <div className="column column-shrink">
+                          <div className="type-xl type-green">✓</div>
+                        </div>
+                        <div className="column column-expand pts">
+                          <p className="type-l">
+                            Ellipsis uses industry-standard technologies and services to secure data from unauthorized access, disclosure, inappropriate use, and loss of&nbsp;access.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="column-row">
+                        <div className="column column-shrink">
+                          <div className="type-xl type-green">✓</div>
+                        </div>
+                        <div className="column column-expand pts">
+                          <p className="type-l">
+                            We ensure that the security policies of all our subprocessors are documented and up-to-date with industry compliance standards where&nbsp;required.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                 </ResponsiveContainer>
               </div>
@@ -218,33 +227,37 @@ class DataGovernance extends React.Component {
                 <ResponsiveContainer>
                   <div className="flex-columns mobile-flex-no-columns">
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><SearchIcon height={24} /></div>
                         Search and update business terms.
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><NotificationIcon height={24} /></div>
                         Notify stewards and run approval workflows directly in chat.
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><PinIcon height={24} /></div>
                         Link and archive conversations about data quality issues in Collibra.
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><DrawerIcon height={24} /></div>
                         Search report catalogs and return reports.
-                    </div>
+                      </div>
                     </div>
                   </div>
                 </ResponsiveContainer>
 
                 <div className="ptxxxxl align-c">
-                  <ContactButton onClick={pageProps.toggleContactForm} />
+                  <ContactButton onClick={pageProps.toggleContactForm} label="Request a demo" />
                 </div>
 
               </div>

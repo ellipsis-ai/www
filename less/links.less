@@ -1,6 +1,9 @@
-@import (reference) "colors";
-@import (reference) "measurements";
-@import (reference) "type";
+@import (reference) "colors.less";
+@import (reference) "measurements.less";
+@import (reference) "type.less";
+
+@link-light-blue: @blue-light-alt;
+@link-light-blue-hover: @blue-light;
 
 a {
   cursor: pointer;
@@ -76,13 +79,13 @@ a.link-block {
 .link-light-blue,
 .link-light-blue:link,
 .link-light-blue:visited {
-  color: @blue-light-alt;
+  color: @link-light-blue;
   .light-antialiasing();
 }
 
 @media (hover) {
   .link-light-blue:hover {
-    color: @blue-light;
+    color: @link-light-blue-hover;
     text-decoration: none;
   }
 }
