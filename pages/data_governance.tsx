@@ -3,6 +3,10 @@ import Page from '../components/page';
 import Header, { NavSection, NavSubsection } from '../components/header';
 import ResponsiveContainer from '../components/responsive_container';
 import ContactButton from '../components/contact_button';
+import SearchIcon from '../components/icons/search';
+import NotificationIcon from '../components/icons/notification';
+import PinIcon from '../components/icons/pin';
+import DrawerIcon from '../components/icons/drawer';
 
 class DataGovernance extends React.Component {
   render() {
@@ -138,8 +142,7 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
                       <h2>Step 1</h2>
-                      <p className="type-l">Share an idealized workflow, and 7 days later we’ll deliver a
-                      custom proof-of-concept. </p>
+                      <p className="type-l">We get to know your workflow requirements and discuss how Ellipsis can help.</p>
                     </div>
                   </div>
 
@@ -149,8 +152,7 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
                       <h2>Step 2</h2>
-                      <p className="type-l">Benefit from white-glove implementation. We’re ready to discuss
-                      security questions so you can fast-track the approval process. </p>
+                      <p className="type-l">We tailor our existing workflow packages or we build a customized one just for your needs.</p>
                     </div>
                   </div>
 
@@ -160,9 +162,7 @@ class DataGovernance extends React.Component {
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>
                       <h2>Step 3</h2>
-                      <p className="type-l">Deployment is as brief as clicking a button within your dashboard.
-                      With 1-click deploy, your technical teams won’t have to build any new infrastructure.
-                      </p>
+                      <p className="type-l">We help roll out the new workflows to your organization and measure adoption.</p>
                     </div>
                   </div>
                 </div>
@@ -182,15 +182,36 @@ class DataGovernance extends React.Component {
               </div>
             </div>
 
-            <div className="bg-gray-fade-reverse pvxxxl">
+            <div className="bg-light pvxxxl">
               <div className="container container-c">
                 <ResponsiveContainer>
 
                   <h2 className="align-c">Security and compliance</h2>
 
-                  <p className="type-l">
-                    Ellipsis uses industry-standard technologies and services to secure data from unauthorized access, disclosure, inappropriate use, and loss of access. We ensure that the security policies of all our subprocessors are documented and up-to-date with industry compliance standards where required.
-                  </p>
+                  <div className="columns columns-elastic">
+                    <div className="column-group">
+                      <div className="column-row">
+                        <div className="column column-shrink">
+                          <div className="type-xl type-green">✓</div>
+                        </div>
+                        <div className="column column-expand pts">
+                          <p className="type-l">
+                            Ellipsis uses industry-standard technologies and services to secure data from unauthorized access, disclosure, inappropriate use, and loss of&nbsp;access.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="column-row">
+                        <div className="column column-shrink">
+                          <div className="type-xl type-green">✓</div>
+                        </div>
+                        <div className="column column-expand pts">
+                          <p className="type-l">
+                            We ensure that the security policies of all our subprocessors are documented and up-to-date with industry compliance standards where&nbsp;required.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                 </ResponsiveContainer>
               </div>
@@ -206,27 +227,31 @@ class DataGovernance extends React.Component {
                 <ResponsiveContainer>
                   <div className="flex-columns mobile-flex-no-columns">
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><SearchIcon height={24} /></div>
                         Search and update business terms.
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><NotificationIcon height={24} /></div>
                         Notify stewards and run approval workflows directly in chat.
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><PinIcon height={24} /></div>
                         Link and archive conversations about data quality issues in Collibra.
                       </div>
                     </div>
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
-                      <div className="height pal align-l mhs mbl height-full border">
+                      <div className="height pal align-l mhs mbl height-full border bg-blue-lightest">
+                        <div className="color-blue-medium"><DrawerIcon height={24} /></div>
                         Search report catalogs and return reports.
-                    </div>
+                      </div>
                     </div>
                   </div>
                 </ResponsiveContainer>
