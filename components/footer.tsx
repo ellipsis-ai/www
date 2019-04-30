@@ -26,7 +26,7 @@ class Footer extends React.Component {
           </div>
           <div className="column column-one-quarter mobile-column-full mobile-mvl align-r mobile-align-c">
             <div className="">
-              <a href="https://twitter.com/EllipsisBot" target="twitter" title="@EllipsisBot on Twitter" className="align-button align-button-s">
+              <a href="https://twitter.com/EllipsisCo" target="twitter" title="@EllipsisCo on Twitter" className="align-button align-button-s">
                 <TwitterLogo height={"36"} />
               </a>
             </div>
