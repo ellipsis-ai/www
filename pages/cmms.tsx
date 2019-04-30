@@ -36,11 +36,11 @@ class Cmms extends React.Component {
             <div className="bg-white border-emphasis-top border-fiix">
               <div className="container container-c pvxxxl mobile-pvxl">
                 <div className="narrow-display-only">
-                  <p className="type-xl mbxl mobile-mbn">
+                  <h4 className="mbxl mobile-mbn">
                     Make reporting more enjoyable.
                     Get accurate data.
                     Find lost money.
-                  </p>
+                  </h4>
                 </div>
                 <div className="flex-columns mobile-flex-no-columns">
                   <div className="flex-column flex-column-right mobile-flex-column-left column-two-fifths narrow-column-one-half mobile-column-full align-c ptm mobile-pbl">

@@ -40,7 +40,7 @@ class DataGovernance extends React.Component {
             <div className="bg-gray-fade border-emphasis-top border-collibra">
               <div className="container container-c">
                 <ResponsiveContainer>
-                  <h1 className="align-c mtxxxl mbxxl mobile-mvxl">Get 10x adoption of data governance workflows across your company</h1>
+                  <h2 className="align-c mtxxxl mbxxl mobile-mvxl">Get 10x adoption of data governance workflows across your company</h2>
                 </ResponsiveContainer>
               </div>
             </div>
@@ -88,7 +88,7 @@ class DataGovernance extends React.Component {
                   <div className="columns">
                     <div className="column column-one-half mobile-column-full">
                       <div className="prl mobile-phn">
-                        <h3 className="mbxs">Roll out data governance workflows&nbsp;fast</h3>
+                        <h4 className="mbxs">Roll out data governance workflows&nbsp;fast</h4>
                         <p>
                           Launch your new data governance workflows in Slack or Microsoft Teams in days, measure adoption, and get user feedback, then rinse and repeat.
                         </p>
@@ -97,7 +97,7 @@ class DataGovernance extends React.Component {
                     <div className="column column-one-half mobile-column-full">
                       <div className="pll mobile-phn">
 
-                        <h3 className="mbxs">Give people the data they need when they need&nbsp;it</h3>
+                        <h4 className="mbxs">Give people the data they need when they need&nbsp;it</h4>
                         <p>
                           Make business terms, data catalogs, and reports accessible directly from Slack or Microsoft Teams. Employees can ask in plain English for the data they need when they need it. No training required.
                         </p>
@@ -106,7 +106,7 @@ class DataGovernance extends React.Component {
                     <div className="column column-one-half mobile-column-full">
                       <div className="prl mobile-phn">
 
-                        <h3 className="mbxs">Ensure data quality across business&nbsp;units</h3>
+                        <h4 className="mbxs">Ensure data quality across business&nbsp;units</h4>
                         <p>
                           Help people report data quality issues and inconsistencies with a simple conversational interface everyone will love.
                         </p>
@@ -116,7 +116,7 @@ class DataGovernance extends React.Component {
                     <div className="column column-one-half mobile-column-full">
                       <div className="pll mobile-phn">
 
-                        <h3 className="mbxs">It’s all about collaboration</h3>
+                        <h4 className="mbxs">It’s all about collaboration</h4>
                         <p>
                           Data governance platforms are powerful but your team is already collaborating in Slack and Microsoft Teams. Ellipsis can make it all happen seamlessly while tracking and recording conversations about data for compliance.
                         </p>
@@ -132,7 +132,7 @@ class DataGovernance extends React.Component {
               <div className="container container-c pbxxxl">
 
                 <ResponsiveContainer>
-                  <h1 className="align-c">How it works</h1>
+                  <h2 className="align-c">How it works</h2>
                 </ResponsiveContainer>
 
                 <div className="columns">
@@ -141,7 +141,7 @@ class DataGovernance extends React.Component {
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
-                      <h2>Step 1</h2>
+                      <h3>Step 1</h3>
                       <p className="type-l">We get to know your workflow requirements and discuss how Ellipsis can help.</p>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ class DataGovernance extends React.Component {
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
-                      <h2>Step 2</h2>
+                      <h3>Step 2</h3>
                       <p className="type-l">We tailor our existing workflow packages or we build a customized one just for your needs.</p>
                     </div>
                   </div>
@@ -161,7 +161,7 @@ class DataGovernance extends React.Component {
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>
-                      <h2>Step 3</h2>
+                      <h3>Step 3</h3>
                       <p className="type-l">We help roll out the new workflows to your organization and measure adoption.</p>
                     </div>
                   </div>
@@ -172,7 +172,7 @@ class DataGovernance extends React.Component {
             <div className="bg-blue-fade type-white pvxxxl">
               <div className="container container-c">
                 <ResponsiveContainer>
-                  <h2 className="align-c">Supported data governance software</h2>
+                  <h3 className="align-c">Supported data governance software</h3>
                   <p className="align-c type-l">
                     <a href="https://marketplace.collibra.com/listings/ellipsis-collibra-bot/" target="collibra" className="link-light-blue type-bold">Collibra Data Governance Centre</a><br />
                     Alation Data Catalog <i className="type-gray-light">(coming soon)</i><br />
@@ -186,7 +186,7 @@ class DataGovernance extends React.Component {
               <div className="container container-c">
                 <ResponsiveContainer>
 
-                  <h2 className="align-c">Security and compliance</h2>
+                  <h3 className="align-c">Security and compliance</h3>
 
                   <div className="columns columns-elastic">
                     <div className="column-group">
@@ -220,9 +220,9 @@ class DataGovernance extends React.Component {
             <div className="bg-white pvxxxl">
               <div className="container container-c">
 
-                <h2 className="align-c">Used by American Express to unify and speed&nbsp;up&nbsp;teams</h2>
+                <h3 className="align-c">Used by American Express to unify and speed&nbsp;up&nbsp;teams</h3>
 
-                <h3 className="align-c mbxl">Example workflows</h3>
+                <h4 className="align-c mbxl">Example workflows</h4>
 
                 <ResponsiveContainer>
                   <div className="flex-columns mobile-flex-no-columns">

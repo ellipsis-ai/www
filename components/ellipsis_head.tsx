@@ -27,7 +27,7 @@ class EllipsisHead extends React.Component<Props> {
         {this.props.canonicalPath ? (
           <link rel="canonical" href={`https://www.ellipsis.ai${this.props.canonicalPath}`} />
         ) : null}
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.typekit.net/ocm5muu.css" />
 
         {/* IE 10+ "Metro" Tiles - 144x144 pixels in size icon should be transparent */}
         <meta name="msapplication-TileColor" content="#FFFFFF" />

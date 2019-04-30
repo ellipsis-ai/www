@@ -20,19 +20,19 @@ class Home extends React.Component {
           <div className="bg-blue-fade">
             <Header isHomeVisible={false} onToggleContactForm={pageProps.toggleContactForm} />
 
-            <div id="hero" className="hero align-c ptxxxl narrow-ptxl pbhuge narrow-pbxxxl mobile-ptn mobile-pbs type-white">
+            <div id="hero" className="hero align-c ptxxl narrow-ptxl pbxxxl narrow-pbxxl mobile-ptn mobile-pbs type-white">
               <div className="container container-c">
 
                 <div className="mbxxxxl mobile-pbn">
                   <ResponsiveContainer>
                     <h1 className="">The smartest way to roll out new workflows at your company</h1>
 
-                    <p className="type-l color-blue-light">
+                    <p className="mvxl type-xl color-blue-light">
                       Transform your enterprise workplace by automating and centralizing workflows
                       in existing communication tools, whether it’s at your desk or&nbsp;on&nbsp;the&nbsp;go.
                     </p>
 
-                    <div className="align-c mtxl mbxxxxl">
+                    <div className="align-c mtxxl mbxxxl">
                       <div className="display-inline-block align-m mrxl">
                         <SlackLogo height={40} monochrome={true} />
                       </div>
@@ -81,7 +81,7 @@ class Home extends React.Component {
                           <img src="/static/images/icons/getting_done@2x.png" width="75" className="narrow-display-only" />
                         </div>
 
-                        <h2 className="mobile-mtn narrow-mtl">Get easy adoption of tough workflows</h2>
+                        <h3 className="mobile-mtn narrow-mtl">Get easy adoption of tough workflows</h3>
                         <p>
                           Compliance doesn’t have to be painful. Innovation doesn’t have to be painful.
                           The difference between a complicated workflow and easy automation is the
@@ -111,7 +111,7 @@ class Home extends React.Component {
                             <img src="/static/images/icons/save_time@2x.png" width="68" className="narrow-display-only" />
                           </div>
 
-                          <h2 className="mobile-mtn narrow-mtl">Make change happen in record time</h2>
+                          <h3 className="mobile-mtn narrow-mtl">Make change happen in record time</h3>
                           <p>
                             With Ellipsis you can roll out a new workflow in days instead of months.
                             And when your needs change, we’re right there with you, whether it’s phase 2,
@@ -140,7 +140,7 @@ class Home extends React.Component {
                           <img src="/static/images/icons/happiness@2x.png" width="98" className="narrow-display-none" />
                           <img src="/static/images/icons/happiness@2x.png" width="74" className="narrow-display-only" />
                         </div>
-                        <h2 className="mobile-mtn narrow-mtl">Your team will thank you</h2>
+                        <h3 className="mobile-mtn narrow-mtl">Your team will thank you</h3>
                         <p>
                           Take the pain away from doing the right thing, and watch the smiles grow. Introduce your colleagues to a seamless workplace where people have the data and the reports they need at hand, and where everyone collaborates to build a culture of efficiency.
                         </p>
@@ -158,7 +158,7 @@ class Home extends React.Component {
               <div className="container container-c">
 
                 <ResponsiveContainer>
-                  <h1 className="align-c">Get 10x adoption of your workflows: how it works</h1>
+                  <h2 className="align-c">Get 10x adoption of your workflows: how it works</h2>
                 </ResponsiveContainer>
 
                 <div className="columns">
@@ -167,7 +167,7 @@ class Home extends React.Component {
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
-                      <h2>Step 1</h2>
+                      <h3>Step 1</h3>
                       <p className="type-l">We get to know your workflow requirements and discuss how Ellipsis can help.</p>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ class Home extends React.Component {
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
-                      <h2>Step 2</h2>
+                      <h3>Step 2</h3>
                       <p className="type-l">We tailor our existing workflow packages or we build a customized one just for your needs.</p>
                     </div>
                   </div>
@@ -187,7 +187,7 @@ class Home extends React.Component {
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>
-                      <h2>Step 3</h2>
+                      <h3>Step 3</h3>
                       <p className="type-l">We help roll out the new workflows to your organization and measure adoption.</p>
                     </div>
                   </div>
@@ -227,7 +227,7 @@ class Home extends React.Component {
             </div>
 
             <div id="last-chance" className="pvxxxxl narrow-pvl narrow-phxxl align-c">
-              <h2>Ready to learn more? Reach out for your free proof-of-concept.</h2>
+              <h3>Ready to learn more? Reach out for your free proof-of-concept.</h3>
 
               <div className="ptxl">
                 <ContactButton onClick={pageProps.toggleContactForm} />
