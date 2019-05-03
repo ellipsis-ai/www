@@ -97,13 +97,13 @@ class Header extends React.Component<Props, State> {
     return (
       <header className={`nav pvxxl mobile-pvl ${this.props.className || ""}`}>
         <div className="container container-c position-relative">
-          <div className="columns pts">
+          <div className="columns">
             <div className="column column-one-half type-white">
               <div className="position-relative position-z-popup-trigger">
-                <Link href="/"><a className="link-light"><EllipsisLogo height={36} /></a></Link>
+                <Link href="/"><a className="link-light"><EllipsisLogo height={72} /></a></Link>
               </div>
             </div>
-            <div className="column column-one-half align-r">
+            <div className="column column-one-half align-r ptm">
               <div className="narrow-display-none">
                 {this.props.isHomeVisible ? (
                   <div className="mrxxl align-button">{this.renderHomeLink()}</div>

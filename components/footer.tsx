@@ -10,7 +10,7 @@ class Footer extends React.Component {
       <footer className="nav container container-c pvxxxl">
         <div className="columns">
           <div className="column column-one-quarter mobile-column-full mobile-align-c mobile-pbl">
-            <Link href="/"><a className="link-subtle"><EllipsisLogo height={36} /></a></Link>
+            <Link href="/"><a className="link-subtle"><EllipsisLogo height={56} /></a></Link>
           </div>
           <div className="column align-c column-one-half mobile-column-full phxxl mts">
             <div className="mobile-display-none">
