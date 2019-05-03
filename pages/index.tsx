@@ -17,22 +17,22 @@ class Home extends React.Component {
         canonicalPath="/"
         onRender={(pageProps) => (
         <div className="page">
-          <div className="bg-blue-fade">
+          <div className="bg-eggplant bg-pattern-dot-teal">
             <Header isHomeVisible={false} onToggleContactForm={pageProps.toggleContactForm} />
 
-            <div id="hero" className="hero align-c ptxxl narrow-ptxl pbxxxl narrow-pbxxl mobile-ptn mobile-pbs type-white">
+            <div id="hero" className="hero align-c pbm mobile-ptn mobile-pbs type-white">
               <div className="container container-c">
 
                 <div className="mbxxxxl mobile-pbn">
-                  <ResponsiveContainer>
-                    <h1 className="">The smartest way to roll out new workflows at your company</h1>
+                  <ResponsiveContainer className="bg-eggplant ptxs narrow-phn pbxxl">
+                    <h1 className="mtl">The smartest way to roll out new workflows at your company</h1>
 
-                    <p className="mvxl type-xl color-blue-light">
+                    <p className="mvxl type-xl color-teal">
                       Transform your enterprise workplace by automating and centralizing workflows
                       in existing communication tools, whether it’s at your desk or&nbsp;on&nbsp;the&nbsp;go.
                     </p>
 
-                    <div className="align-c mtxxl mbxxxl">
+                    <div className="align-c mvxxl">
                       <div className="display-inline-block align-m mrxl">
                         <SlackLogo height={40} monochrome={true} />
                       </div>
@@ -153,17 +153,17 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div id="how" className="pvxxxxl narrow-ptl narrow-pbxxl mobile-pvl bg-lightest">
+            <div id="how" className="pvxxl narrow-ptl narrow-pbxxl mobile-pvl bg-mist bg-pattern-x-teal">
 
               <div className="container container-c">
 
                 <ResponsiveContainer>
-                  <h2 className="align-c">Get 10x adoption of your workflows: how it works</h2>
+                  <h2 className="align-c bg-mist">Get 10x adoption of your workflows: how it works</h2>
                 </ResponsiveContainer>
 
                 <div className="columns">
-                  <div className="column column-one-third mobile-column-full ptxxxxl narrow-ptxxxl mobile-ptxxl align-c">
-                    <div className="phxxxl narrow-phl">
+                  <div className="column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
+                    <div className="phxl mhxl narrow-phl bg-mist pvxl">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
@@ -172,8 +172,8 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <div className="column column-one-third mobile-column-full ptxxxxl narrow-ptxxxl mobile-ptxxl align-c">
-                    <div className="phxxxl narrow-phl">
+                  <div className="column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
+                    <div className="phxl mhxl narrow-phl bg-mist pvxl">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
@@ -182,8 +182,8 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <div className="column column-one-third mobile-column-full ptxxxxl narrow-ptxxxl mobile-ptxxl align-c">
-                    <div className="phxxxl narrow-phl">
+                  <div className="column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
+                    <div className="phxl mhxl narrow-phl bg-mist pvxl">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>
@@ -193,7 +193,7 @@ class Home extends React.Component {
                   </div>
                 </div>
 
-                <div className="align-c pvxxxxl narrow-pvxxl">
+                <div className="align-c mvxxl narrow-mvl pvxxl narrow-pvl bg-mist">
                   <ContactButton onClick={pageProps.toggleContactForm} />
                 </div>
               </div>
@@ -207,15 +207,16 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div id="customer-stories" className="pvxxxxl narrow-ptl mobile-pbxxl mobile-phxxl align-c bg-lightest">
-              <h2 className="">Hear our customer stories</h2>
+            <div id="customer-stories" className="ptxxxxl narrow-ptl mobile-phxxl align-c bg-teal bg-pattern-x-mist">
+              <h2 className="bg-teal pvl mvn">Hear our customer stories</h2>
 
               <ResponsiveContainer>
-                <div className="ptxxxl mobile-ptl">
+                <div className="">
+                  <div>
+                    <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="phl bg-teal align-b" />
+                  </div>
 
-                  <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="border-round" />
-
-                  <blockquote className="type-l mtxl mbn mhn">
+                  <blockquote className="type-l man bg-mist pal">
                     <p><i>“What value does Ellipsis provide? We’ve used it to automate 5–6 end-of-day messages
                       and noticed the time it saves the team. I’d say that [these daily reports] only take
                       five minutes a day now instead of not having them at all.”</i></p>

@@ -95,20 +95,25 @@ class Header extends React.Component<Props, State> {
 
   render() {
     return (
-      <header className={`nav pvxxl mobile-pvl ${this.props.className || ""}`}>
+      <header className={`nav pbxxl mobile-pbn ${this.props.className || ""}`}>
         <div className="container container-c position-relative">
           <div className="columns">
             <div className="column column-one-half type-white">
               <div className="position-relative position-z-popup-trigger">
-                <Link href="/"><a className="link-light"><EllipsisLogo height={72} /></a></Link>
+                <div className="display-inline-block bg-cobalt ptm pbxs phs mobile-display-none">
+                  <Link href="/"><a className="link-light"><EllipsisLogo height={72} /></a></Link>
+                </div>
+                <div className="display-inline-block bg-cobalt pts phxs mobile-display-only">
+                  <Link href="/"><a className="link-light"><EllipsisLogo height={56} /></a></Link>
+                </div>
               </div>
             </div>
-            <div className="column column-one-half align-r ptm">
+            <div className="column column-one-half align-r ptxl">
               <div className="narrow-display-none">
                 {this.props.isHomeVisible ? (
-                  <div className="mrxxl align-button">{this.renderHomeLink()}</div>
+                  <div className="phl bg-eggplant align-button">{this.renderHomeLink()}</div>
                 ) : null}
-                <div className="mrxxl align-button" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
+                <div className="phl bg-eggplant align-button" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
                   <div className="position-relative">
                     <a className={this.linkClassFor(NavSection.Solutions)}><span className="type-s">▼</span> Solutions</a>
                     <div className={
@@ -120,7 +125,7 @@ class Header extends React.Component<Props, State> {
                     </div>
                   </div>
                 </div>
-                <div className="align-button">{this.renderAboutLink()}</div>
+                <div className="phl bg-eggplant align-button">{this.renderAboutLink()}</div>
               </div>
               <div className="narrow-display-only position-relative position-z-popup-trigger">
                 <button type="button" className="button-raw type-white" onClick={this.toggleMenu}><MenuIcon open={this.state.expandMenu} /></button>

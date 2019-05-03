@@ -127,3 +127,46 @@
 .bg-blue-fade {
   background: @blue-fade;
 }
+
+.bg-eggplant {
+  background-color: @eggplant;
+}
+
+.bg-cobalt {
+  background-color: @cobalt;
+}
+
+.bg-mist {
+  background-color: @mist;
+}
+
+.bg-teal {
+  background-color: @teal;
+}
+
+.generate-bg-pattern-type(@color, @type) {
+  .bg-pattern-@{type}-@{color} {
+    background-image: url("/static/images/patterns/pattern-@{type}-@{color}.png");
+    background-size: 32px 32px;
+    background-position: 0 0;
+  }
+
+  @media (max-width: @mobile-max-width) {
+    .bg-pattern-@{type}-@{color} {
+      background-size: 24px 24px;
+    }
+  }
+}
+
+.generate-bg-pattern(@color) {
+  .generate-bg-pattern-type(@color, dot);
+  .generate-bg-pattern-type(@color, grid);
+  .generate-bg-pattern-type(@color, x);
+}
+
+.generate-bg-pattern(mist);
+.generate-bg-pattern(teal);
+.generate-bg-pattern(cobalt);
+.generate-bg-pattern(eggplant);
+.generate-bg-pattern(coral);
+
