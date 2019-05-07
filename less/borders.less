@@ -91,6 +91,10 @@
   border-color: @border-color-light;
 }
 
+.border-cobalt {
+  border-color: @cobalt;
+}
+
 .border-blue-light {
   border-color: @blue-light;
 }
@@ -137,6 +141,22 @@
 
 .border-radius {
   border-radius: @border-radius;
+}
+
+@chat-bubble-radius: 3rem;
+
+.border-chat-bubble {
+  border-top-left-radius: @chat-bubble-radius;
+  border-top-right-radius: @chat-bubble-radius;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: @chat-bubble-radius;
+}
+
+.border-chat-bubble-inverted {
+  border-top-left-radius: 0;
+  border-top-right-radius: @chat-bubble-radius;
+  border-bottom-left-radius: @chat-bubble-radius;
+  border-bottom-right-radius: @chat-bubble-radius;
 }
 
 .border-round {

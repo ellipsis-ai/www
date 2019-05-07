@@ -100,11 +100,11 @@ class Header extends React.Component<Props, State> {
           <div className="columns">
             <div className="column column-one-half type-white">
               <div className="position-relative position-z-popup-trigger">
-                <div className="display-inline-block bg-cobalt ptm pbxs phs mobile-display-none">
-                  <Link href="/"><a className="link-light"><EllipsisLogo height={72} /></a></Link>
+                <div className="display-inline-block bg-cobalt ptl pbs phm mobile-display-none">
+                  <Link href="/"><a className="link-light"><EllipsisLogo height={64} /></a></Link>
                 </div>
-                <div className="display-inline-block bg-cobalt pts phxs mobile-display-only">
-                  <Link href="/"><a className="link-light"><EllipsisLogo height={56} /></a></Link>
+                <div className="display-inline-block bg-cobalt ptm pbxs phs mobile-display-only">
+                  <Link href="/"><a className="link-light"><EllipsisLogo height={50} /></a></Link>
                 </div>
               </div>
             </div>

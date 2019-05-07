@@ -10,7 +10,7 @@ class ResponsiveContainer extends React.PureComponent<Props> {
     return (
       <div className="columns">
         <div className="column column-one-eighth wide-column-one-fifth narrow-display-none phn" />
-        <div className={`column column-three-quarters wide-column-three-fifths narrow-column-full phxxl ${this.props.className || ""}`}>
+        <div className={`column column-three-quarters wide-column-three-fifths narrow-column-full phn ${this.props.className || ""}`}>
           {this.props.children}
         </div>
         <div className="column column-one-eighth wide-column-one-fifth narrow-display-none phn" />
