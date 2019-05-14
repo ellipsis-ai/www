@@ -13,9 +13,9 @@ class Home extends React.Component {
   render() {
     return (
       <Page
-        description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster."
-        canonicalPath="/"
-        onRender={(pageProps) => (
+      description="Transform your enterprise workplace by automating and centralizing workflows in existing chat tools. We make it easy to roll out new processes so you can rest assured key reports get done. Better workflows make teams happier and faster."
+      canonicalPath="/"
+      onRender={(pageProps) => (
         <div className="page">
           <div className="bg-eggplant bg-pattern-dot-cobalt">
             <Header isHomeVisible={false} onToggleContactForm={pageProps.toggleContactForm} />
@@ -23,7 +23,7 @@ class Home extends React.Component {
             <div id="hero" className="hero align-c pbm mobile-ptn mobile-pbs type-white">
               <div className="container container-c">
 
-                <div className="mbxxxxl mobile-pbn bg-eggplant pvxxl phxxl ">
+                <div className="mbxxl bg-eggplant pvxxl phxxl mobile-pbl">
                   <ResponsiveContainer className="">
                     <h1 className="mtn">The smartest way to roll out new workflows at your company</h1>
 
@@ -161,9 +161,9 @@ class Home extends React.Component {
                   <h2 className="align-c bg-mist">Get 10x adoption of your workflows: how it works</h2>
                 </ResponsiveContainer>
 
-                <div className="columns">
-                  <div className="column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
-                    <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl">
+                <div className="flex-columns mobile-flex-no-columns">
+                  <div className="flex-column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
+                    <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl height height-full">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
@@ -172,8 +172,8 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <div className="column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
-                    <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl">
+                  <div className="flex-column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
+                      <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl height height-full">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
@@ -182,8 +182,8 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-                  <div className="column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
-                    <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl">
+                  <div className="flex-column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
+                      <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl height height-full">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>

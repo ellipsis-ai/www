@@ -153,7 +153,7 @@ class ContactForm extends React.Component<Props, State> {
                     <div className="position-absolute position-top-right">
                       <button type="button" className="button-subtle button-shrink" onClick={this.cancel}><span className="type-xl">×</span></button>
                     </div>
-                    <h2 className="mobile-mtm" id="contact-heading">Get more info &amp; a proof-of-concept</h2>
+                    <h3 className="mobile-mtm" id="contact-heading">Get more info &amp; a proof-of-concept</h3>
 
                     <p>Compliance work, daily reporting, service requests, data governance, and more — it doesn’t have to be painful.</p>
 
@@ -161,39 +161,39 @@ class ContactForm extends React.Component<Props, State> {
 
                     <div className="columns mvxl mobile-mvn">
                       <div className="column column-one-third narrow-column-one-half">
-                        <h5><label htmlFor="FNAME">First name </label></h5>
+                        <div className="type-label"><label htmlFor="FNAME">First name </label></div>
                         <FormInput ref={(el) => this.focusableField = el} onChange={this.setFirstName} autoFocus={true} value={this.state.firstName} name="FNAME" className="form-input form-input-borderless" id="FNAME" />
                       </div>
                       <div className="column column-two-thirds narrow-column-one-half">
-                        <h5><label htmlFor="LNAME">Last name </label></h5>
+                        <div className="type-label"><label htmlFor="LNAME">Last name </label></div>
                         <FormInput onChange={this.setLastName} value={this.state.lastName} name="LNAME" className="form-input form-input-borderless" id="LNAME" />
                       </div>
                     </div>
 
                     <div className="columns mvxl mobile-mvn">
                       <div className="column column-one-half">
-                        <h5><label htmlFor="COMPANY">Company name </label></h5>
+                        <div className="type-label"><label htmlFor="COMPANY">Company name </label></div>
                         <FormInput onChange={this.setCompanyName} value={this.state.companyName} name="COMPANY" className="form-input form-input-borderless" id="COMPANY" />
                       </div>
                       <div className="column column-one-half">
-                        <h5><label htmlFor="TITLE">Job title <span className="type-regular type-disabled">(Optional)</span></label></h5>
+                        <div className="type-label"><label htmlFor="TITLE">Job title <span className="type-regular type-disabled">(Optional)</span></label></div>
                         <FormInput onChange={this.setTitle} value={this.state.jobTitle} name="TITLE" className="form-input form-input-borderless" id="TITLE" />
                       </div>
                     </div>
 
                     <div className="columns mvxl mobile-mvn">
                       <div className="column column-one-half mobile-column-full narrow-mbl mobile-mbn">
-                        <h5><label htmlFor="EMAIL">Email address</label></h5>
+                        <div className="type-label"><label htmlFor="EMAIL">Email address</label></div>
                         <FormInput onChange={this.setEmail} type="email" value={this.state.email} name="EMAIL" className="form-input form-input-borderless" id="EMAIL" />
                       </div>
                       <div className="column column-one-half mobile-display-none narrow-mbl mobile-mbn">
-                        <h5><label htmlFor="PHONE">Phone number <span className="type-regular type-disabled">(Optional)</span></label></h5>
+                        <div className="type-label"><label htmlFor="PHONE">Phone number <span className="type-regular type-disabled">(Optional)</span></label></div>
                         <FormInput onChange={this.setPhone} type="tel" name="PHONE" className="form-input form-input-borderless" value={this.state.phone} id="PHONE" />
                       </div>
                     </div>
 
                     <div className="mvxl mobile-display-none">
-                      <h5 className="mbm">Preferred contact method</h5>
+                      <div className="mbm type-label">Preferred contact method</div>
                       <div className="columns">
                         <div className="column column-one-quarter mobile-column-one-half">
                           <input onChange={this.setContactMethodEmail} type="radio" value="Email" name="METHOD" id="METHOD-0" checked={this.state.contactMethod === "Email"} /><label htmlFor="METHOD-0"> Email</label>

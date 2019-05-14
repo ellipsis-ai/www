@@ -19,12 +19,12 @@ a.button,
 .checkbox-button {
   font-size: @type-m;
   line-height: @xl;
-  padding: (@s - @border-width-thick + 1) (@l - @border-width-thick) (@s - @border-width-thick - 1);
+  padding: (@s - @border-width-thick - 1) (@l - @border-width-thick) (@s - @border-width-thick + 1);
   min-height: @button-height;
   box-sizing: border-box;
   border-width: @border-width-thick;
   border-style: solid;
-  border-color: @pink-medium;
+  border-color: @cobalt;
   background-color: transparent;
   color: @black;
   min-width: @s * 20;
@@ -364,7 +364,7 @@ button.button-tab-subtle {
 button:focus,
 a.button:focus {
   outline: none;
-  border-color: @pink-darkest;
+  border-color: @cobalt-dark;
 }
 
 button.button-l:focus,
@@ -522,12 +522,12 @@ button.button-block:focus .link {
 }
 
 button.button-nav:hover {
-  color: @pink-medium;
+  color: @cobalt;
 }
 
 button:active {
   background-color: @black-translucent;
-  border-color: @pink-dark;
+  border-color: @cobalt-dark;
 }
 
 button.button-raw:active,
@@ -586,20 +586,20 @@ a.button-primary,
 
 button.button-primary:hover,
 a.button-primary:hover {
-  background-color: lighten(@cobalt, 10%);
-  border-color: lighten(@cobalt, 10%);
+  background-color: @cobalt-light;
+  border-color: @cobalt-light;
 }
 
 button.button-primary:focus,
 a.button-primary:focus {
   background-color: @cobalt;
-  border-color: darken(@cobalt, 15%);
+  border-color: @cobalt-dark;
 }
 
 button.button-primary:active,
 a.button-primary:active {
-  background-color: darken(@cobalt, 15%);
-  border-color: darken(@cobalt, 15%);
+  background-color: @cobalt-dark;
+  border-color: @cobalt-dark;
   color: @white;
 }
 
