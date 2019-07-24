@@ -15,12 +15,12 @@ class Footer extends React.Component {
           <div className="column align-c column-one-half mobile-column-full phxxl mts">
             <div className="mobile-display-none">
               <span className="align-button align-button-s">
-                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle" target="legal">Privacy policy</a></Link>
+                <a href="https://bot.ellipsis.ai/legal/privacy_policy" className="link-subtle" target="legal">Privacy policy</a>
               </span>
             </div>
             <div className="mobile-display-only type-l">
               <div className="mbl">
-                <Link href="https://bot.ellipsis.ai/legal/privacy_policy"><a className="link-subtle" target="legal">Privacy policy</a></Link>
+                <a href="https://bot.ellipsis.ai/legal/privacy_policy" className="link-subtle" target="legal">Privacy policy</a>
               </div>
             </div>
           </div>

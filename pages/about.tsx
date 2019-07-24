@@ -53,7 +53,7 @@ class About extends React.Component {
 
                 <p className="type-l">
                   <span>Happy workflows get done. </span>
-                  <button type="button" className="button-raw" onClick={this.toggleContactForm}><span className="link">Reach out now</span></button>
+                  <button type="button" className="button-raw" onClick={pageProps.toggleContactForm}><span className="link">Reach out now</span></button>
                   <span> for a custom proof-of-concept and enterprise-level automation fit to your custom needs.</span>
                 </p>
 
@@ -98,9 +98,9 @@ class About extends React.Component {
                 <div className="column column-one-quarter align-c">
                   <h4 className="mbn">Toronto</h4>
                   <p>
-                    229 Niagara Street<br />
+                    662 King St. West, Suite #1<br />
                     Toronto, Ontario<br />
-                    M6J 2L5<br />
+                    M5V 1M7<br />
                     Canada<br />
                   </p>
                 </div>
