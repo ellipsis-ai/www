@@ -9,7 +9,7 @@ class Cmms extends React.Component {
     return (
       <Page
         title="Facility management — CMMS - workflow automation — Fiix"
-        description="RolRollout and guarantee workflows by automating them through Slack or Microsoft Teams. Increase the likelihood facility reports are completed on time and accurately so you can find lost revenue."
+        description="Rollout and guarantee workflows by automating them through Slack or Microsoft Teams. Increase the likelihood facility reports are completed on time and accurately so you can find lost revenue."
         canonicalPath="/cmms/"
         onRender={(pageProps) => (
           <div>
@@ -33,17 +33,38 @@ class Cmms extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bg-white border-emphasis-top border-fiix">
-              <div className="container container-c pvxxxl mobile-pvxl">
-                <div className="narrow-display-only">
-                  <p className="type-xl mbxl mobile-mbn">
-                    Make reporting more enjoyable.
-                    Get accurate data.
-                    Find lost money.
-                  </p>
-                </div>
-                <div className="flex-columns mobile-flex-no-columns">
-                  <div className="flex-column flex-column-right mobile-flex-column-left column-two-fifths narrow-column-one-half mobile-column-full align-c ptm mobile-pbl">
+            <div className="bg-gray-fade border-emphasis-top border-fiix">
+              <div className="container container-c">
+                <ResponsiveContainer>
+                  <h1 className="align-c mtxxxl mbxxl mobile-mvxl">Make your work orders a breeze. Save time and money.</h1>
+                </ResponsiveContainer>
+              </div>
+            </div>
+            <div className="bg-white">
+              <div className="container container-c">
+                <div className="flex-columns flex-columns-align-c mobile-flex-no-columns">
+                  <div className="flex-column flex-column-right mobile-flex-column-left column-five-twelfths mobile-column-full plxl prxxxxl narrow-phxl">
+
+                    <p className="type-l">
+                      Bring Fiix to Microsoft Teams or Slack for easy, complete reports… in 5 clicks.
+                    </p>
+
+                    <p>
+                      We bring the power of your CMMS (like Fiix) into your team’s chat tool so
+                      filing and completing work orders feels painless. Easier
+                      reporting gets done, which means accurate data for you and the ability to
+                      find and maximize revenue while staying compliant.
+                    </p>
+
+                    <div className="mvxxl mobile-mvl mobile-align-c">
+                      <ContactButton onClick={pageProps.toggleContactForm} label="Request a demo" />
+                    </div>
+
+                    <p><a href="https://www.fiixsoftware.com/integrations/" target="fiix">▸ Read about Fiix integrations on fiixsoftware.com</a></p>
+
+                  </div>
+                  <div className="flex-column flex-column-left column-seven-twelfths mobile-column-full phxxxxl narrow-phxl">
+
                     <div className="video-container border border-thick">
                       <video
                         controls={true}
@@ -58,43 +79,12 @@ class Cmms extends React.Component {
                       </video>
                     </div>
                   </div>
-                  <div className="flex-column mobile-flex-column-right column-three-fifths narrow-column-one-half mobile-column-full prxxxxl mobile-prn">
-
-                    <p className="type-xl narrow-display-none">
-                      Make reporting more enjoyable.
-                      Get accurate data.
-                      Find lost money.
-                    </p>
-
-                    <div className="flex-columns narrow-flex-no-columns">
-                      <div className="flex-column">
-                        <p className="type-l">
-                          Bring Fiix to Microsoft Teams or Slack for easy, complete reports… in 5 clicks.
-                        </p>
-
-                        <p>
-                          We bring the power of your CMMS (like Fiix) into your team’s chat tool so
-                          completing issues, tickets, work orders, and more feels painless. Easier
-                          reporting gets done, which means accurate data for you and the ability to
-                          find and maximize revenue while staying compliant.
-                        </p>
-
-                      </div>
-                      <div className="flex-column plxxl narrow-pln narrow-ptxl mobile-ptn narrow-align-c">
-                        <img src="/static/images/fiix_slack_msteams.png" height="200" alt="Ellipsis connects Fiix to Slack or Microsoft Teams" />
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div className="ptxxl mobile-pts align-c">
-                  <ContactButton onClick={pageProps.toggleContactForm} />
                 </div>
               </div>
             </div>
 
-            <div className="bg-gray-fade">
-              <div className="container container-c pvxl">
+            <div className="bg-white">
+              <div className="container container-c ptxxxl">
                 <div className="columns">
                   <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
                     <div className="prl">
@@ -111,7 +101,8 @@ class Cmms extends React.Component {
 
                       <h3 className="mbxs">Get accurate reports</h3>
                       <p>
-                        Guide employees through a conversational interface that creates pristine and complete reports. Set up reminders that detect incomplete documentation.
+                        Guide employees through a conversational interface that creates pristine and complete reports.
+                        Set up reminders that detect incomplete documentation.
                       </p>
                     </div>
                   </div>
@@ -141,7 +132,7 @@ class Cmms extends React.Component {
               </div>
             </div>
 
-            <div className="bg-white">
+            <div className="bg-gray-fade">
               <div className="container container-c pbxxxl">
 
                 <ResponsiveContainer>
@@ -228,7 +219,7 @@ class Cmms extends React.Component {
 
                     <div className="flex-column column-one-quarter mobile-column-full align-t">
                       <div className="height pal align-l mhs mbl height-full border">
-                        Automate work orders
+                        Automate and simplify work order completion
                       </div>
                     </div>
 
@@ -247,7 +238,7 @@ class Cmms extends React.Component {
                 </ResponsiveContainer>
 
                 <div className="ptxxxxl align-c">
-                  <ContactButton onClick={pageProps.toggleContactForm} />
+                  <ContactButton onClick={pageProps.toggleContactForm} label="Request a demo" />
                 </div>
 
               </div>
