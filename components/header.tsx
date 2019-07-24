@@ -52,7 +52,7 @@ class Header extends React.Component<Props, State> {
   }
 
   linkClassFor(page?: NavSection) {
-    return `display-block link-light type-bold type-label ${page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-pink" : "mbxs"}`;
+    return `display-block link-light type-bold type-label ${page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-coral" : "mbxs"}`;
   }
 
   revealSolutions(): void {
@@ -117,8 +117,8 @@ class Header extends React.Component<Props, State> {
                   <div className="position-relative">
                     <a className={this.linkClassFor(NavSection.Solutions)}><span className="type-s">▼</span> Solutions</a>
                     <div className={
-                      `position-absolute position-below-right width-15 align-r pvs phs fade-in bg-blue-fade-light ` +
-                      `popup-shadow border-emphasis-top border-emphasis-bottom border-pink mtnegxs ${
+                      `position-absolute position-below-right width-15 align-r pts pbm phs fade-in bg-cobalt ` +
+                      `popup-shadow border-emphasis-top border-coral mtnegxs ${
                         this.state.showSolutions ? "" : "display-none"
                       }`}>
                       {this.renderSolutions()}
@@ -133,7 +133,7 @@ class Header extends React.Component<Props, State> {
             </div>
           </div>
           <div>
-            <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-blue-fade">
+            <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-cobalt">
               <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
                   <div className="mvxl">{this.renderHomeLink()}</div>
