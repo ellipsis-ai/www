@@ -25,13 +25,13 @@
     "@zeit/next-typescript": "^1.1.1",
     "debounce": "^1.2.0",
     "less": "^3.9.0",
-    "next": "^8.0.1",
+    "next": "^8.1.0",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
   },
   "devDependencies": {
     "@types/debounce": "^1.2.0",
-    "@types/next": "^8.0.1",
+    "@types/next": "^8.0.6",
     "@types/react": "^16.8.4",
     "@types/react-dom": "^16.8.2",
     "typescript": "^3.3.3"
