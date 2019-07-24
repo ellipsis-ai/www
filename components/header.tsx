@@ -52,7 +52,9 @@ class Header extends React.Component<Props, State> {
   }
 
   linkClassFor(page?: NavSection) {
-    return `display-block link-light type-bold type-label ${page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-coral" : "mbxs"}`;
+    return `display-block link-light type-bold type-label height-xl ${
+      page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-coral" : "pbxs"
+    }`;
   }
 
   revealSolutions(): void {
@@ -119,7 +121,7 @@ class Header extends React.Component<Props, State> {
                     <div className={
                       `position-absolute position-below-right width-15 align-r pts pbm phs fade-in bg-cobalt ` +
                       `popup-shadow border-emphasis-top border-coral mtnegxs ${
-                        this.state.showSolutions ? "" : "display-none"
+                        this.state.showSolutions ? "slide-down" : "display-none"
                       }`}>
                       {this.renderSolutions()}
                     </div>
@@ -134,7 +136,7 @@ class Header extends React.Component<Props, State> {
           </div>
           <div>
             <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-cobalt">
-              <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
+              <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl slide-down" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
                   <div className="mvxl">{this.renderHomeLink()}</div>
                 ) : null}

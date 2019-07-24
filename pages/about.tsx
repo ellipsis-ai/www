@@ -13,14 +13,16 @@ class About extends React.Component {
         canonicalPath={"/about/"}
         onRender={(pageProps) => (
         <div className="page">
-          <div className="bg-blue-fade">
-            <Header isHomeVisible={true} onToggleContactForm={pageProps.toggleContactForm} activeSection={NavSection.About} />
-            <h1 className="align-c mtn type-white mbn pbxl">This is Ellipsis</h1>
+            <div className="bg-eggplant bg-pattern-dot-cobalt">
+            <Header isHomeVisible={true} onToggleContactForm={pageProps.toggleContactForm} activeSection={NavSection.About} className="pbn" />
+            <div className="container container-c bg-eggplant">
+              <h1 className="align-c mvn type-white pts pbm">This is Ellipsis</h1>
+            </div>
           </div>
-          <div className="bg-gray-fade">
-            <div className="container container-c ptxxl pbxl narrow-pvxl mobile-ptm">
+          <div className="bg-mist bg-pattern-x-teal">
+            <div className="container container-c bg-mist pvxxl narrow-pvxl mobile-ptm">
 
-              <h3 className="align-c mbxxl type-pink type-label">This is a transformation</h3>
+              <h3 className="align-c mbxxl color-coral type-label">This is a transformation</h3>
 
               <ResponsiveContainer>
                 <p className="type-xl">
@@ -61,16 +63,16 @@ class About extends React.Component {
             </div>
           </div>
 
-          <div className="bg-white">
-            <div className="container container-c pvxxl narrow-pvl mobile-pvn align-c">
+          <div className="bg-white bg-pattern-dot-cobalt">
+            <div className="container container-c pvxl narrow-pvl mobile-pvn align-c bg-white">
               <h3 className="mtn ptxl">Our customers</h3>
 
               <LogoStrip />
             </div>
           </div>
 
-          <div className="bg-light">
-            <div className="container container-c pvxxl narrow-pvl mobile-pvn align-c">
+          <div className="bg-mist bg-pattern-x-coral">
+            <div className="container container-c ptxxl pbxl narrow-pvl mobile-pvn align-c bg-mist">
               <h3 className="mtn ptxl">Our investors</h3>
 
               <div>
@@ -80,8 +82,8 @@ class About extends React.Component {
             </div>
           </div>
 
-          <div className="bg-white">
-            <div className="container container-c pvxxl narrow-pvl mobile-pvn">
+          <div className="bg-cobalt bg-pattern-dot-teal type-white">
+            <div className="container container-c pvxl narrow-pvl mobile-pvn bg-cobalt">
               <h3 className="align-c">Contact</h3>
 
               <div className="columns">

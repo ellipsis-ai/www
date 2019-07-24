@@ -155,7 +155,7 @@ class Home extends React.Component {
 
             <div id="how" className="pvxxl narrow-ptl narrow-pbxxl mobile-pvl bg-mist bg-pattern-x-teal">
 
-              <div className="container container-c">
+              <div className="container container-c bg-mist">
 
                 <ResponsiveContainer>
                   <h2 className="align-c bg-mist">Get 10x adoption of your workflows: how it works</h2>
@@ -192,8 +192,11 @@ class Home extends React.Component {
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="align-c mvxxl narrow-mvl pvxxl narrow-pvl bg-mist">
+              <div className="container container-c">
+
+                <div className="align-c mtxxl narrow-mvl pvxxl narrow-pvl">
                   <ContactButton onClick={pageProps.toggleContactForm} />
                 </div>
               </div>

@@ -238,7 +238,7 @@
   }
 }
 
-@containerWidth: 80rem;
+@containerWidth: @xxl * 38;
 
 .container {
   max-width: @containerWidth;
@@ -253,9 +253,60 @@
   }
 }
 
-.container-c {
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: @containerWidth + @xxl * 4 + 16) {
+  .container-c {
+    margin-left: @xxl;
+    margin-right: @xxl;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 6 + 16) {
+  .container-c {
+    margin-left: @xxl * 2;
+    margin-right: @xxl * 2;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 8 + 16) {
+  .container-c {
+    margin-left: @xxl * 3;
+    margin-right: @xxl * 3;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 10 + 16) {
+  .container-c {
+    margin-left: @xxl * 4;
+    margin-right: @xxl * 4;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 14 + 16) {
+  .container-c {
+    margin-left: @xxl * 6;
+    margin-right: @xxl * 6;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 18 + 16) {
+  .container-c {
+    margin-left: @xxl * 8;
+    margin-right: @xxl * 8;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 26 + 16) {
+  .container-c {
+    margin-left: @xxl * 12;
+    margin-right: @xxl * 12;
+  }
+}
+
+@media (min-width: @containerWidth + @xxl * 34 + 16) {
+  .container-c {
+    margin-left: @xxl * 16;
+    margin-right: @xxl * 16;
+  }
 }
 
 .container-wide {
