@@ -7,8 +7,8 @@ class Footer extends React.Component {
   render() {
     const year = (new Date()).getFullYear();
     return (
-      <footer className="nav bg-white bg-pattern-x-mist pbxxxl">
-        <div className="container container-c bg-white ptxxl">
+      <footer className="nav bg-white bg-pattern-dot-mist pbxxxl">
+        <div className="container container-c bg-white ptxxl pbs">
           <div className="columns">
             <div className="column column-one-quarter mobile-column-full mobile-align-c mobile-pbl">
               <Link href="/"><a className="link-subtle"><EllipsisLogo height={56} /></a></Link>

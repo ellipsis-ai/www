@@ -77,7 +77,7 @@ class DataGovernance extends React.Component {
 
                   <div className="flex-columns mobile-flex-no-columns">
                     <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhl narrow-phl mobile-mhn bg-white pvl height height-full">
+                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
                         <h4 className="mtn mbxs">Roll out data governance workflows&nbsp;fast</h4>
                         <p>
                           Launch your new data governance workflows in Slack or Microsoft Teams in days, measure adoption, and get user feedback, then rinse and repeat.
@@ -85,7 +85,7 @@ class DataGovernance extends React.Component {
                       </div>
                     </div>
                     <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhl narrow-phl mobile-mhn bg-white pvl height height-full">
+                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
 
                         <h4 className="mtn mbxs">Give people the data they need when they need&nbsp;it</h4>
                         <p>
@@ -95,9 +95,9 @@ class DataGovernance extends React.Component {
                     </div>
                   </div>
 
-                  <div className="flex-columns mobile-flex-no-columns">
+                  <div className="mtxxl flex-columns mobile-flex-no-columns">
                     <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhl narrow-phl mobile-mhn bg-white pvl height height-full">
+                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
 
                         <h4 className="mtn mbxs">Ensure data quality across business&nbsp;units</h4>
                         <p>
@@ -107,7 +107,7 @@ class DataGovernance extends React.Component {
                       </div>
                     </div>
                     <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhl narrow-phl mobile-mhn bg-white pvl height height-full">
+                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
 
                         <h4 className="mtn mbxs">It’s all about collaboration</h4>
                         <p>
