@@ -65,7 +65,7 @@ class Cmms extends React.Component {
                   </div>
                   <div className="flex-column flex-column-left column-seven-twelfths mobile-column-full phxxxxl narrow-phxl">
 
-                    <div className="video-container border border-thick">
+                    <div className="video-container border border-thick" id="video">
                       <video
                         controls={true}
                         preload="metadata"
