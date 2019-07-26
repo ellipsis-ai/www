@@ -213,21 +213,23 @@ class Home extends React.Component {
             <div id="customer-stories" className="ptxxxxl narrow-ptl align-c bg-teal bg-pattern-dot-mist">
               <h2 className="bg-teal pvl mvn">Hear our customer stories</h2>
 
-              <ResponsiveContainer>
-                <div className="">
-                  <div>
-                    <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="phl bg-teal align-b" />
+              <div>
+                <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="phl bg-teal align-b" />
+              </div>
+
+              <div className="container container-c bg-mist">
+                <ResponsiveContainer>
+                  <div className="">
+                    <blockquote className="type-l man ptxl pbl">
+                      <p><i>“What value does Ellipsis provide? We’ve used it to automate 5–6 end-of-day messages
+                        and noticed the time it saves the team. I’d say that [these daily reports] only take
+                        five minutes a day now instead of not having them at all.”</i></p>
+
+                      <p>—Perry Skorcz, Head of Farm Operations at Plenty</p>
+                    </blockquote>
                   </div>
-
-                  <blockquote className="type-l man bg-mist pal">
-                    <p><i>“What value does Ellipsis provide? We’ve used it to automate 5–6 end-of-day messages
-                      and noticed the time it saves the team. I’d say that [these daily reports] only take
-                      five minutes a day now instead of not having them at all.”</i></p>
-
-                    <p>—Perry Skorcz, Head of Farm Operations at Plenty</p>
-                  </blockquote>
-                </div>
-              </ResponsiveContainer>
+                </ResponsiveContainer>
+              </div>
             </div>
 
             <div id="last-chance" className="ptxxxl pbl narrow-ptl narrow-phxxl align-c">

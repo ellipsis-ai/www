@@ -209,7 +209,7 @@ class ContactForm extends React.Component<Props, State> {
                       <input type="text" name="b_7e90c1fb7ff3d6aab44c1c25e_20ddfafccc" tabIndex={-1} value="" readOnly={true} />
                     </div>
 
-                    <div id="errorMessages" className="mtm type-pink type-bold">{this.state.error}</div>
+                    <div id="errorMessages" className="mtm color-coral type-bold">{this.state.error}</div>
 
                     <div className="mtxl">
                       <button type="submit" name="subscribe" id="mc-embedded-subscribe"
