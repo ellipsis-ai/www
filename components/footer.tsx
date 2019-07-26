@@ -7,7 +7,7 @@ class Footer extends React.Component {
   render() {
     const year = (new Date()).getFullYear();
     return (
-      <footer className="nav bg-white bg-pattern-dot-mist pbxxxl">
+      <footer className="nav bg-white bg-pattern-dot-mist pbxxxl border-emphasis-top border-mist">
         <div className="container container-c bg-white ptxxl pbs">
           <div className="columns">
             <div className="column column-one-quarter mobile-column-full mobile-align-c mobile-pbl">

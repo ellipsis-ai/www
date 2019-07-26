@@ -217,7 +217,7 @@ class Home extends React.Component {
                 <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="phl bg-teal align-b" />
               </div>
 
-              <div className="container container-c bg-mist">
+              <div className="container container-c bg-teal">
                 <ResponsiveContainer>
                   <div className="">
                     <blockquote className="type-l man ptxl pbl">

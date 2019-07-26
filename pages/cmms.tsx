@@ -8,6 +8,9 @@ import SearchIcon from '../components/icons/search';
 import DrawerIcon from '../components/icons/drawer';
 import PinIcon from '../components/icons/pin';
 import NotificationIcon from '../components/icons/notification';
+import InboxIcon from '../components/icons/inbox_icon';
+import LineGraphPresentationIcon from '../components/icons/line_graph_presentation';
+import StampIcon from '../components/icons/stamp_icon';
 
 class Cmms extends React.Component {
   render() {
@@ -77,12 +80,12 @@ class Cmms extends React.Component {
               </div>
             </div>
 
-            <div className="bg-white bg-pattern-dot-teal">
-              <div className="container container-c pvxxl bg-white">
+            <div className="bg-white bg-pattern-dot-teal ptxl pbxxxl">
+              <div className="container container-c pbm bg-white">
                 <div className="columns">
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="prl">
-                      <h4 className="mbxs">Integrate Fiix with your chat tool</h4>
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
+                      <h4 className="mtn mbxs">Integrate Fiix with your chat tool</h4>
                       <p>
                         Bring Fiix into Slack or Microsoft Teams, so it’s accessible, familiar, and fast
                         for any employee to use. Ellipsis also runs on mobile so reports can be created
@@ -90,20 +93,22 @@ class Cmms extends React.Component {
                       </p>
                     </div>
                   </div>
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pls prs narrow-pll narrow-prn mobile-phn">
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
 
-                      <h4 className="mbxs">Get accurate reports</h4>
+                      <h4 className="mtn mbxs">Get accurate reports</h4>
                       <p>
                         Guide employees through a conversational interface that creates pristine and complete reports.
                         Set up reminders that detect incomplete documentation.
                       </p>
                     </div>
                   </div>
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pls prs narrow-pln narrow-prl">
+                </div>
+                <div className="columns">
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
 
-                      <h4 className="mbxs">Find lost data</h4>
+                      <h4 className="mtn mbxs">Find lost data</h4>
                       <p>
                         Surface areas of Fiix that are hard to find and expose lost data and communication
                         breakdowns to find lost revenue. We integrate with more than you chat tool.
@@ -111,10 +116,10 @@ class Cmms extends React.Component {
 
                     </div>
                   </div>
-                  <div className="column column-one-quarter narrow-column-one-half mobile-column-full">
-                    <div className="pll mobile-phn">
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
 
-                      <h4 className="mbxs">Roll out new workflows</h4>
+                      <h4 className="mtn mbxs">Roll out new workflows</h4>
                       <p>
                         Enjoyable automation means workflows get done. We integrate with your native tools,
                         so you don’t have to train employees on new software, which boosts adoption rates.
@@ -205,30 +210,30 @@ class Cmms extends React.Component {
 
                 <ResponsiveContainer>
                   <div className="flex-columns mobile-flex-no-columns">
-                    <div className="flex-column column-one-quarter mobile-column-full align-t prn">
-                      <div className="phxl mhm narrow-phl mobile-mhn bg-white pvxl height height-full">
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border bg-white">
                         <div className="color-cobalt"><DrawerIcon height={24} /></div>
-                        Guide employees through safety reports
+                        Help employees file safety reports precisely and quickly
                       </div>
                     </div>
 
-                    <div className="flex-column column-one-quarter mobile-column-full align-t prn">
-                      <div className="phxl mhm narrow-phl mobile-mhn bg-white pvxl height height-full">
-                        <div className="color-cobalt"><PinIcon height={24} /></div>
-                        Automate and simplify work order completion
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border bg-white">
+                        <div className="color-cobalt"><InboxIcon height={24} /></div>
+                        Automate and simplify work order completion logging
                       </div>
                     </div>
 
-                    <div className="flex-column column-one-quarter mobile-column-full align-t prn">
-                      <div className="phxl mhm narrow-phl mobile-mhn bg-white pvxl height height-full">
-                        <div className="color-cobalt"><SearchIcon height={24} /></div>
-                        Facilitate a report on safety issues
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border bg-white">
+                        <div className="color-cobalt"><LineGraphPresentationIcon height={24} /></div>
+                        Facilitate reports on maintenance workflows
                       </div>
                     </div>
 
-                    <div className="flex-column column-one-quarter mobile-column-full align-t prn">
-                      <div className="phxl mhm narrow-phl mobile-mhn bg-white pvxl height height-full">
-                        <div className="color-cobalt"><NotificationIcon height={24} /></div>
+                    <div className="flex-column column-one-quarter mobile-column-full align-t">
+                      <div className="height pal align-l mhs mbl height-full border bg-white">
+                        <div className="color-cobalt"><StampIcon height={24} /></div>
                         Save time spent on admin work
                       </div>
                     </div>
@@ -238,7 +243,7 @@ class Cmms extends React.Component {
               </div>
               <div className="container container-c">
 
-                <div className="ptxl align-c">
+                <div className="mtxs ptxl align-c">
                   <ContactButton onClick={pageProps.toggleContactForm} label="Request a demo" />
                 </div>
 

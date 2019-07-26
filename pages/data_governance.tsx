@@ -71,53 +71,50 @@ class DataGovernance extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="bg-white bg-pattern-dot-teal">
-              <div className="container container-c pbxl">
-                <ResponsiveContainer>
+            <div className="bg-white bg-pattern-dot-teal ptxl pbxxxl">
+              <div className="container container-c pbm bg-white">
 
-                  <div className="flex-columns mobile-flex-no-columns">
-                    <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
-                        <h4 className="mtn mbxs">Roll out data governance workflows&nbsp;fast</h4>
-                        <p>
-                          Launch your new data governance workflows in Slack or Microsoft Teams in days, measure adoption, and get user feedback, then rinse and repeat.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
-
-                        <h4 className="mtn mbxs">Give people the data they need when they need&nbsp;it</h4>
-                        <p>
-                          Make business terms, data catalogs, and reports accessible directly from Slack or Microsoft Teams. Employees can ask in plain English for the data they need when they need it. No training required.
-                        </p>
-                      </div>
+                <div className="columns">
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
+                      <h4 className="mtn mbxs">Roll out data governance workflows&nbsp;fast</h4>
+                      <p>
+                        Launch your new data governance workflows in Slack or Microsoft Teams in days, measure adoption, and get user feedback, then rinse and repeat.
+                      </p>
                     </div>
                   </div>
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
 
-                  <div className="mtxxl flex-columns mobile-flex-no-columns">
-                    <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
-
-                        <h4 className="mtn mbxs">Ensure data quality across business&nbsp;units</h4>
-                        <p>
-                          Help people report data quality issues and inconsistencies with a simple conversational interface everyone will love.
-                        </p>
-
-                      </div>
-                    </div>
-                    <div className="flex-column column-one-half mobile-column-full ptxxl narrow-ptxl mobile-ptl phn">
-                      <div className="phxxl mhxl narrow-phl mobile-mhn bg-white ptm height height-full">
-
-                        <h4 className="mtn mbxs">It’s all about collaboration</h4>
-                        <p>
-                          Data governance platforms are powerful but your team is already collaborating in Slack and Microsoft Teams. Ellipsis can make it all happen seamlessly while tracking and recording conversations about data for compliance.
-                        </p>
-
-                      </div>
+                      <h4 className="mtn mbxs">Give people the data they need when they need&nbsp;it</h4>
+                      <p>
+                        Make business terms, data catalogs, and reports accessible directly from Slack or Microsoft Teams. Employees can ask in plain English for the data they need when they need it. No training required.
+                      </p>
                     </div>
                   </div>
-                </ResponsiveContainer>
+                </div>
+                <div className="columns">
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
+
+                      <h4 className="mtn mbxs">Ensure data quality across business&nbsp;units</h4>
+                      <p>
+                        Help people report data quality issues and inconsistencies with a simple conversational interface everyone will love.
+                      </p>
+
+                    </div>
+                  </div>
+                  <div className="column column-one-half mobile-column-full ptxl mobile-ptl phn">
+                    <div className="phxxl narrow-phl mobile-mhn ptl height height-full">
+
+                      <h4 className="mtn mbxs">It’s all about collaboration</h4>
+                      <p>
+                        Data governance platforms are powerful but your team is already collaborating in Slack and Microsoft Teams. Ellipsis can make it all happen seamlessly while tracking and recording conversations about data for compliance.
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -252,7 +249,7 @@ class DataGovernance extends React.Component {
               </div>
               <div className="container container-c">
 
-                <div className="ptxl align-c">
+                <div className="mtxs ptxl align-c">
                   <ContactButton onClick={pageProps.toggleContactForm} label="Request a demo" />
                 </div>
 
