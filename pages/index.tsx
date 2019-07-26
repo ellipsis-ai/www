@@ -210,7 +210,7 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div id="customer-stories" className="ptxxxxl narrow-ptl align-c bg-teal bg-pattern-dot-mist">
+            <div id="customer-stories" className="ptxxxxl narrow-ptxl pbs narrow-pbm align-c bg-teal bg-pattern-dot-mist">
               <h2 className="bg-teal pvl mvn">Hear our customer stories</h2>
 
               <div>
@@ -232,11 +232,12 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div id="last-chance" className="ptxxxl pbl narrow-ptl narrow-phxxl align-c">
-              <h3>Ready to learn more? Reach out for your free proof-of-concept.</h3>
-
-              <div className="ptxl">
-                <ContactButton onClick={pageProps.toggleContactForm} />
+            <div id="last-chance" className="bg-mist bg-pattern-x-white pvxl narrow-phxxl align-c">
+              <div className="container container-c bg-mist ptl pbs">
+                <h3 className="mvn">Ready to learn more? Reach out for your free proof-of-concept.</h3>
+                <div className="pvxl">
+                  <ContactButton onClick={pageProps.toggleContactForm} />
+                </div>
               </div>
             </div>
 
