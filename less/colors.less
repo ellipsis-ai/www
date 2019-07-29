@@ -1,3 +1,28 @@
+// NEW COLORS
+
+@eggplant: hsl(253, 77%, 12%);
+.color-eggplant { color: @eggplant; }
+
+@cobalt: hsl(237, 53%, 44%);
+.color-cobalt { color: @cobalt; }
+@cobalt-light: lighten(@cobalt, 10%);
+@cobalt-dark: darken(@cobalt, 15%);
+
+@coral: hsl(6, 86%, 70%);
+.color-coral { color: @coral; }
+
+@teal: hsl(179, 85%, 45%);
+.color-teal { color: @teal; }
+
+@storm: hsl(203, 12%, 30%);
+.color-storm { color: @storm; }
+
+@steel: hsl(207, 8%, 53%);
+.color-steel { color: @steel; }
+
+@mist: hsl(204, 12%, 92%);
+.color-mist { color: @mist; }
+
 @black: hsl(231, 15%, 15%);
 .color-black { color: @black; }
 
@@ -13,7 +38,7 @@
 @gray-medium-translucent: hsla(231, 9%, 65%, 0.5);
 .color-gray-medium-translucent { color: @gray-medium-translucent; }
 
-@gray-light-translucent: hsla(231, 11%, 81%, 0.5);
+@gray-light-translucent: fade(darken(@mist, 10%), 50%);
 .color-gray-light-translucent { color: @gray-light-translucent; }
 
 @gray-lightest-translucent: hsla(231, 10%, 93%, 0.95);
@@ -153,7 +178,7 @@
 
 @border-color: @gray-light;
 @border-color-light: @gray-light-translucent;
-@border-color-focus: @pink-medium;
+@border-color-focus: @coral;
 @border-color-dropdown: @gray-medium;
 
 @slack-green: hsl(156, 62%, 43%);

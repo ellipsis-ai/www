@@ -51,8 +51,12 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  linkClassFor(page?: NavSection) {
-    return `display-block link-light type-bold type-label ${page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-pink" : "mbxs"}`;
+  linkClassFor(page?: NavSection, isPopupMenu?: boolean) {
+    const activeClass = isPopupMenu ? "color-coral" : "type-white border-emphasis-bottom border-coral";
+    const inactiveClass = isPopupMenu ? "" : "pbxs";
+    return `display-block link-light type-bold type-label height-xl ${
+      page && this.props.activeSection === page ? activeClass : inactiveClass
+    }`;
   }
 
   revealSolutions(): void {
@@ -68,15 +72,15 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  renderHomeLink() {
+  renderHomeLink(isPopupMenu?: boolean) {
     return (
-      <Link prefetch href="/"><a className={this.linkClassFor(NavSection.Home)}>Home</a></Link>
+      <Link prefetch href="/"><a className={this.linkClassFor(NavSection.Home, isPopupMenu)}>Home</a></Link>
     );
   }
 
-  renderAboutLink() {
+  renderAboutLink(isPopupMenu?: boolean) {
     return (
-      <Link prefetch href="/about/"><a className={this.linkClassFor(NavSection.About)}>About</a></Link>
+      <Link prefetch href="/about/"><a className={this.linkClassFor(NavSection.About, isPopupMenu)}>About</a></Link>
     );
   }
 
@@ -95,32 +99,37 @@ class Header extends React.Component<Props, State> {
 
   render() {
     return (
-      <header className={`nav pvxxl mobile-pvl ${this.props.className || ""}`}>
+      <header className={`nav pbxxl mobile-pbn ${this.props.className || ""}`}>
         <div className="container container-c position-relative">
-          <div className="columns pts">
+          <div className="columns">
             <div className="column column-one-half type-white">
               <div className="position-relative position-z-popup-trigger">
-                <Link href="/"><a className="link-light"><EllipsisLogo height={36} /></a></Link>
+                <div className="display-inline-block bg-cobalt ptl pbs phm mobile-display-none">
+                  <Link href="/"><a className="link-light"><EllipsisLogo height={64} /></a></Link>
+                </div>
+                <div className="display-inline-block bg-cobalt ptm pbxs phs mobile-display-only">
+                  <Link href="/"><a className="link-light"><EllipsisLogo height={50} /></a></Link>
+                </div>
               </div>
             </div>
-            <div className="column column-one-half align-r">
+            <div className="column column-one-half align-r ptxl">
               <div className="narrow-display-none">
                 {this.props.isHomeVisible ? (
-                  <div className="mrxxl align-button">{this.renderHomeLink()}</div>
+                  <div className="phl bg-eggplant align-button">{this.renderHomeLink()}</div>
                 ) : null}
-                <div className="mrxxl align-button" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
+                <div className="phl bg-eggplant align-button" onMouseOver={this.revealSolutions} onMouseOut={this.hideSolutions}>
                   <div className="position-relative">
                     <a className={this.linkClassFor(NavSection.Solutions)}><span className="type-s">▼</span> Solutions</a>
                     <div className={
-                      `position-absolute position-below-right width-15 align-r pvs phs fade-in bg-blue-fade-light ` +
-                      `popup-shadow border-emphasis-top border-emphasis-bottom border-pink mtnegxs ${
-                        this.state.showSolutions ? "" : "display-none"
+                      `position-absolute position-below-right width-15 align-r pts pbm phs fade-in bg-cobalt ` +
+                      `popup-shadow border-emphasis-top border-coral mtnegxs ${
+                        this.state.showSolutions ? "slide-down" : "display-none"
                       }`}>
                       {this.renderSolutions()}
                     </div>
                   </div>
                 </div>
-                <div className="align-button">{this.renderAboutLink()}</div>
+                <div className="phl bg-eggplant align-button">{this.renderAboutLink()}</div>
               </div>
               <div className="narrow-display-only position-relative position-z-popup-trigger">
                 <button type="button" className="button-raw type-white" onClick={this.toggleMenu}><MenuIcon open={this.state.expandMenu} /></button>
@@ -128,16 +137,16 @@ class Header extends React.Component<Props, State> {
             </div>
           </div>
           <div>
-            <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-blue-fade">
-              <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl" : "display-none"}`}>
+            <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-cobalt">
+              <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl slide-down" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
-                  <div className="mvxl">{this.renderHomeLink()}</div>
+                  <div className="mvxl">{this.renderHomeLink(true)}</div>
                 ) : null}
                 <div className="mvxl">
                   <div className="type-label type-white type-gray-light">Solutions</div>
                   {this.renderSolutions()}
                 </div>
-                <div className="mvxl">{this.renderAboutLink()}</div>
+                <div className="mvxl">{this.renderAboutLink(true)}</div>
               </div>
             </div>
           </div>

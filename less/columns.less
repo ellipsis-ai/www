@@ -1,5 +1,5 @@
-@import (reference) "measurements";
-@import (reference) "whitespace";
+@import (reference) "measurements.less";
+@import (reference) "whitespace.less";
 
 .columns::after {
   content: ' ';
@@ -46,6 +46,10 @@
   padding-right: 0;
 }
 
+.column-one-eighth {
+  width: 12.5%;
+}
+
 .column-one-fifth {
   width: 20%;
 }
@@ -89,6 +93,24 @@
 .column-full {
   width: 100%;
   padding-right: 0;
+}
+
+@media (min-width: @wide-min-width) {
+  .wide-column-one-fifth {
+    width: 20%;
+  }
+
+  .wide-column-one-half {
+    width: 50%;
+  }
+
+  .wide-column-three-fifths {
+    width: 60%;
+  }
+
+  .wide-column-three-quarters {
+    width: 75%;
+  }
 }
 
 @media (max-width: @narrow-max-width) {
@@ -216,7 +238,9 @@
   }
 }
 
-@containerWidth: 80rem;
+@containerWidth: @xxl * 38;
+@scrollbarWidth: 0;
+@requiredWidth: @containerWidth + @scrollbarWidth;
 
 .container {
   max-width: @containerWidth;
@@ -224,23 +248,67 @@
   padding-right: @xxl;
 }
 
-@media (max-width: @narrow-max-width) {
+@media (max-width: @mobile-max-width) {
   .container {
     padding-left: @xl;
     padding-right: @xl;
   }
 }
 
-@media (max-width: @mobile-max-width) {
-  .container {
-    padding-left: @l;
-    padding-right: @l;
+@media (min-width: @requiredWidth + @xxl * 3) {
+  .container-c {
+    margin-left: @xxl;
+    margin-right: @xxl;
   }
 }
 
-.container-c {
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: @requiredWidth + @xxl * 5) {
+  .container-c {
+    margin-left: @xxl * 2;
+    margin-right: @xxl;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 7) {
+  .container-c {
+    margin-left: @xxl * 3;
+    margin-right: @xxl * 2;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 9) {
+  .container-c {
+    margin-left: @xxl * 4;
+    margin-right: @xxl * 3;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 13) {
+  .container-c {
+    margin-left: @xxl * 6;
+    margin-right: @xxl * 5;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 17) {
+  .container-c {
+    margin-left: @xxl * 8;
+    margin-right: @xxl * 7;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 25) {
+  .container-c {
+    margin-left: @xxl * 12;
+    margin-right: @xxl * 11;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 33) {
+  .container-c {
+    margin-left: @xxl * 16;
+    margin-right: @xxl * 15;
+  }
 }
 
 .container-wide {

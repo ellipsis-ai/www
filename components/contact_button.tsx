@@ -18,7 +18,7 @@ class ContactButton extends React.PureComponent<Props> {
         type="button"
         className="button button-l button-primary type-label"
         onClick={this.props.onClick}
-      >{this.props.label || "Get a proof of concept"}</button>
+      >{this.props.label || "Request a demo"}</button>
     );
   }
 }

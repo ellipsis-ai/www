@@ -112,6 +112,12 @@ So for example:
 .generate-two-sided(-);
 .generate-one-sided(-);
 
+@media (min-width: @wide-min-width) {
+  .generate-all-sided(wide-);
+  .generate-two-sided(wide-);
+  .generate-one-sided(wide-);
+}
+
 @media (max-width: @narrow-max-width) {
   .generate-all-sided(narrow-);
   .generate-two-sided(narrow-);

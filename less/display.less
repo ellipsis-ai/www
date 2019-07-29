@@ -1,7 +1,13 @@
-@import (reference) "measurements";
+@import (reference) "measurements.less";
 
 .display-none {
   display: none !important;
+}
+
+@media (max-width: @wide-min-width - 1) {
+  .wide-display-only {
+    display: none !important;
+  }
 }
 
 @media (min-width: (@narrow-max-width + 1)) {
