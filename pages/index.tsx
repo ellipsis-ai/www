@@ -213,8 +213,8 @@ class Home extends React.Component {
             <div id="customer-stories" className="ptxxxxl narrow-ptxl pbs narrow-pbm align-c bg-teal bg-pattern-dot-mist">
               <h2 className="bg-teal pvl mvn">Hear our customer stories</h2>
 
-              <div>
-                <img src="/static/images/headshots/perry_skorcz.jpg" width="100" className="phl bg-teal align-b" />
+              <div className="container container-c">
+                <img src="/static/images/headshots/perry_skorcz-192x192.jpg" width="96" className="bg-teal align-b mtxs narrow-mtm mobile-mtn phxxxl" />
               </div>
 
               <div className="container container-c bg-teal">
