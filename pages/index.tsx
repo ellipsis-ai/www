@@ -59,7 +59,7 @@ class Home extends React.Component {
           <div className="">
 
             <div id="benefits" className="">
-              <div className="flex-columns mobile-flex-no-columns">
+              <div className="flex-columns mobile-flex-no-columns bg-mist bg-pattern-dot-white">
                 <div className="flex-column column-one-half mobile-column-full photo-clipboard">
                   {/* <div className="video-woman-clipboard-container">
                     <video className="video-woman-clipboard" autoPlay={true} loop={true} muted={true} preload="metadata" playsInline={true}>
@@ -68,9 +68,9 @@ class Home extends React.Component {
                     <div className="video-woman-clipboard-overlay" />
                   </div> */}
                 </div>
-                <div className="flex-column column-one-half mobile-column-full ptxxxxl narrow-ptxxl">
+                <div className="flex-column column-one-half mobile-column-full">
 
-                  <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
+                  <div className="max-width-30 plhuge ptxxxxl narrow-ptxxl bg-mist prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
                     <div className="columns columns-elastic">
                       <div className="column column-shrink mobile-display-only prxl">
                         <img src="/static/images/icons/getting_done@2x.png" width="50" />
@@ -95,12 +95,12 @@ class Home extends React.Component {
 
                 </div>
               </div>
-              <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column flex-column-right mobile-flex-column-left column-one-half mobile-column-full screencast-fiix-report"></div>
-                <div className="flex-column column-one-half mobile-column-full mobile-flex-column-right ptxxxxl narrow-ptxxl prn">
+              <div className="flex-columns mobile-flex-no-columns bg-mist bg-pattern-dot-white">
+                <div className="flex-column flex-column-right mobile-flex-column-left column-one-half mobile-column-full screencast-fiix-report bg-white"></div>
+                <div className="flex-column column-one-half mobile-column-full mobile-flex-column-right prn">
 
                   <div className="column-right">
-                    <div className="max-width-30 plxxxxl prhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
+                    <div className="max-width-30 ptxxxxl narrow-ptxxl bg-mist plxxxxl prhuge narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
                       <div className="columns columns-elastic">
                         <div className="column column-shrink mobile-display-only prxl">
                           <img src="/static/images/icons/save_time@2x.png" width="45" />
@@ -126,11 +126,11 @@ class Home extends React.Component {
 
                 </div>
               </div>
-              <div className="flex-columns mobile-flex-no-columns">
-                <div className="flex-column column-one-half mobile-column-full bg-gray-light photo-happy-employees" />
-                <div className="flex-column column-one-half mobile-column-full ptxxxxl narrow-ptxxl">
+              <div className="flex-columns mobile-flex-no-columns bg-mist bg-pattern-dot-white">
+                <div className="flex-column column-one-half mobile-column-full photo-happy-employees" />
+                <div className="flex-column column-one-half mobile-column-full">
 
-                  <div className="max-width-30 plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
+                  <div className="max-width-30 ptxxxxl narrow-ptxxl bg-mist plhuge prxxxxl narrow-phxxl pbxxxxl narrow-pbxl mobile-max-width-none">
                     <div className="columns columns-elastic">
                       <div className="column column-shrink mobile-display-only prxl">
                         <img src="/static/images/icons/happiness@2x.png" width="49" className="mobile-display-only" />
@@ -153,17 +153,17 @@ class Home extends React.Component {
               </div>
             </div>
 
-            <div id="how" className="pvxxl narrow-ptl narrow-pbxxl mobile-pvl bg-mist bg-pattern-x-teal">
+            <div id="how" className="ptxxxxl pbxxl narrow-pvxl mobile-pvl bg-white bg-pattern-x-teal">
 
-              <div className="container container-c bg-mist">
+              <div className="container container-c bg-white narrow-pbm mobile-pbn">
 
                 <ResponsiveContainer>
-                  <h2 className="align-c bg-mist">Get 10x adoption of your workflows: how it works</h2>
+                  <h2 className="align-c">Get 10x adoption of your workflows: how it works</h2>
                 </ResponsiveContainer>
 
                 <div className="flex-columns mobile-flex-no-columns">
                   <div className="flex-column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
-                    <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl height height-full">
+                    <div className="phxl mhxl narrow-phl mobile-mhn pvxl height height-full">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_1@2x.png" width="93" />
                       </div>
@@ -173,7 +173,7 @@ class Home extends React.Component {
                   </div>
 
                   <div className="flex-column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
-                      <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl height height-full">
+                      <div className="phxl mhxl narrow-phl mobile-mhn pvxl height height-full">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_2@2x.png" width="91" />
                       </div>
@@ -183,7 +183,7 @@ class Home extends React.Component {
                   </div>
 
                   <div className="flex-column column-one-third mobile-column-full ptxxl narrow-ptxl mobile-ptl align-c phn">
-                      <div className="phxl mhxl narrow-phl mobile-mhn bg-mist pvxl height height-full">
+                      <div className="phxl mhxl narrow-phl mobile-mhn pvxl height height-full">
                       <div className="height-big-icon">
                         <img src="/static/images/icons/step_3@2x.png" width="100" />
                       </div>
@@ -196,7 +196,7 @@ class Home extends React.Component {
 
               <div className="container container-c">
 
-                <div className="align-c mtxxl narrow-mvl pvxxl narrow-pvl">
+                <div className="align-c mtxxl pvxxl narrow-pvl mobile-mtm mobile-pbs">
                   <ContactButton onClick={pageProps.toggleContactForm} />
                 </div>
               </div>

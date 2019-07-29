@@ -51,9 +51,11 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  linkClassFor(page?: NavSection) {
+  linkClassFor(page?: NavSection, isPopupMenu?: boolean) {
+    const activeClass = isPopupMenu ? "color-coral" : "type-white border-emphasis-bottom border-coral";
+    const inactiveClass = isPopupMenu ? "" : "pbxs";
     return `display-block link-light type-bold type-label height-xl ${
-      page && this.props.activeSection === page ? "type-white border-emphasis-bottom border-coral" : "pbxs"
+      page && this.props.activeSection === page ? activeClass : inactiveClass
     }`;
   }
 
@@ -70,15 +72,15 @@ class Header extends React.Component<Props, State> {
     });
   }
 
-  renderHomeLink() {
+  renderHomeLink(isPopupMenu?: boolean) {
     return (
-      <Link prefetch href="/"><a className={this.linkClassFor(NavSection.Home)}>Home</a></Link>
+      <Link prefetch href="/"><a className={this.linkClassFor(NavSection.Home, isPopupMenu)}>Home</a></Link>
     );
   }
 
-  renderAboutLink() {
+  renderAboutLink(isPopupMenu?: boolean) {
     return (
-      <Link prefetch href="/about/"><a className={this.linkClassFor(NavSection.About)}>About</a></Link>
+      <Link prefetch href="/about/"><a className={this.linkClassFor(NavSection.About, isPopupMenu)}>About</a></Link>
     );
   }
 
@@ -138,13 +140,13 @@ class Header extends React.Component<Props, State> {
             <div className="position-absolute position-top-left position-top-right narrow-display-only position-z-popup bg-cobalt">
               <div className={`align-c type-l ${this.state.expandMenu ? "ptxxxxl pbxxl slide-down" : "display-none"}`}>
                 {this.props.isHomeVisible ? (
-                  <div className="mvxl">{this.renderHomeLink()}</div>
+                  <div className="mvxl">{this.renderHomeLink(true)}</div>
                 ) : null}
                 <div className="mvxl">
                   <div className="type-label type-white type-gray-light">Solutions</div>
                   {this.renderSolutions()}
                 </div>
-                <div className="mvxl">{this.renderAboutLink()}</div>
+                <div className="mvxl">{this.renderAboutLink(true)}</div>
               </div>
             </div>
           </div>

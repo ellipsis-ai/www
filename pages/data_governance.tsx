@@ -173,7 +173,7 @@ class DataGovernance extends React.Component {
             </div>
 
             <div className="bg-mist ptxxl pbxl bg-pattern-dot-teal">
-              <div className="container container-c bg-mist">
+              <div className="container container-c bg-mist pbxl">
                 <ResponsiveContainer>
 
                   <h3 className="align-c">Security and compliance</h3>

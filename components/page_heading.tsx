@@ -10,11 +10,11 @@ class PageHeading extends React.PureComponent<Props> {
     return (
 
       <div className="container container-c ptl bg-eggplant">
-        <div className="columns">
-          <div className="column column-one-half mobile-column-full mobile-align-c">
+        <div className="flex-columns narrow-flex-no-columns">
+          <div className="flex-column flex-column-left narrow-align-c">
             <h3 className="type-label type-white mtn">{this.props.heading}</h3>
           </div>
-          <div className="column column-one-half mobile-column-full align-r mobile-align-c">
+          <div className="flex-column flex-column-right align-r narrow-align-c">
             <h3 className="type-white mtn">{this.props.subheading}</h3>
           </div>
         </div>

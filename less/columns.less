@@ -239,6 +239,8 @@
 }
 
 @containerWidth: @xxl * 38;
+@scrollbarWidth: 0;
+@requiredWidth: @containerWidth + @scrollbarWidth;
 
 .container {
   max-width: @containerWidth;
@@ -253,59 +255,59 @@
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 4 + 16) {
+@media (min-width: @requiredWidth + @xxl * 3) {
   .container-c {
     margin-left: @xxl;
     margin-right: @xxl;
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 6 + 16) {
+@media (min-width: @requiredWidth + @xxl * 5) {
   .container-c {
     margin-left: @xxl * 2;
+    margin-right: @xxl;
+  }
+}
+
+@media (min-width: @requiredWidth + @xxl * 7) {
+  .container-c {
+    margin-left: @xxl * 3;
     margin-right: @xxl * 2;
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 8 + 16) {
+@media (min-width: @requiredWidth + @xxl * 9) {
   .container-c {
-    margin-left: @xxl * 3;
+    margin-left: @xxl * 4;
     margin-right: @xxl * 3;
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 10 + 16) {
-  .container-c {
-    margin-left: @xxl * 4;
-    margin-right: @xxl * 4;
-  }
-}
-
-@media (min-width: @containerWidth + @xxl * 14 + 16) {
+@media (min-width: @requiredWidth + @xxl * 13) {
   .container-c {
     margin-left: @xxl * 6;
-    margin-right: @xxl * 6;
+    margin-right: @xxl * 5;
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 18 + 16) {
+@media (min-width: @requiredWidth + @xxl * 17) {
   .container-c {
     margin-left: @xxl * 8;
-    margin-right: @xxl * 8;
+    margin-right: @xxl * 7;
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 26 + 16) {
+@media (min-width: @requiredWidth + @xxl * 25) {
   .container-c {
     margin-left: @xxl * 12;
-    margin-right: @xxl * 12;
+    margin-right: @xxl * 11;
   }
 }
 
-@media (min-width: @containerWidth + @xxl * 34 + 16) {
+@media (min-width: @requiredWidth + @xxl * 33) {
   .container-c {
     margin-left: @xxl * 16;
-    margin-right: @xxl * 16;
+    margin-right: @xxl * 15;
   }
 }
 
